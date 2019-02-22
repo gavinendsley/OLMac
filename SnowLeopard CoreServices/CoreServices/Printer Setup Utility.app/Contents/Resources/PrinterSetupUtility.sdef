@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary xmlns:xi="http://www.w3.org/2001/XInclude">
+	<xi:include href="file:///System/Library/ScriptingDefinitions/CocoaStandard.sdef" xpointer="xpointer(/dictionary/suite)"/>	
+	<suite name="Print Center Suite" code="pctr" description="Terms and Events for controlling printers and their queues of jobs">
+		<enumeration name="PrinterStatus" code="stap">
+			<enumerator name="error" code="erro" description="error">
+				<cocoa name="Error" />
+			</enumerator>
+			<enumerator name="printing" code="prng" description="printing">
+				<cocoa name="Printing" />
+			</enumerator>
+			<enumerator name="idle" code="idle" description="idle">
+				<cocoa name="Idle" />
+			</enumerator>
+			<enumerator name="stopped" code="stop" description="stopped">
+				<cocoa name="Stopped" />
+			</enumerator>
+		</enumeration>
+		<enumeration name="Priority" code="prio">
+			<enumerator name="urgent" code="urge" description="urgent">
+				<cocoa name="Urgent" />
+			</enumerator>
+			<enumerator name="low" code="low " description="low">
+				<cocoa name="Low" />
+			</enumerator>
+			<enumerator name="normal" code="norm" description="normal">
+				<cocoa name="Normal" />
+			</enumerator>
+		</enumeration>
+		<enumeration name="JobStatus" code="staj">
+			<enumerator name="hold until" code="unti" description="hold until">
+				<cocoa name="HoldUntil" />
+			</enumerator>
+			<enumerator name="waiting" code="wait" description="waiting">
+				<cocoa name="Waiting" />
+			</enumerator>
+			<enumerator name="error" code="erro" description="error">
+				<cocoa name="Error" />
+			</enumerator>
+			<enumerator name="hold" code="hold" description="hold">
+				<cocoa name="Hold" />
+			</enumerator>
+			<enumerator name="finished" code="fini" description="finished">
+				<cocoa name="Finished" />
+			</enumerator>
+			<enumerator name="aborted" code="abor" description="aborted">
+				<cocoa name="Aborted" />
+			</enumerator>
+			<enumerator name="printing" code="prng" description="printing">
+				<cocoa name="Printing" />
+			</enumerator>
+		</enumeration>
+		<class name="printer" plural="printers" code="prnt" description="A printer">
+			<cocoa class="Printer" />
+			<property type="text" name="kind" code="kind" access="r" description="the manufacturer&apos;s description of this printer model">
+				<cocoa key="kind" />
+			</property>
+			<property type="text" name="name" code="pnam" access="r" description="the name that identifies this printer on the network">
+				<cocoa key="name" />
+			</property>
+			<property type="text" name="status description" code="stad" access="r" description="a description of the activity, if any, currently being performed by this printer">
+				<cocoa key="status" />
+			</property>
+			<property type="PrinterStatus" name="status" code="stat" access="r" description="a description of the activity, if any, currently being performed by this printer">
+				<cocoa key="aeStatus" />
+			</property>
+			<element type="job" access="r">
+				<cocoa key="jobs" />
+			</element>
+		</class>
+		<class name="job" plural="jobs" code="pjob" description="A print job">
+			<cocoa class="Job" />
+			<property type="Priority" name="priority" code="prio" access="r" description="the order of precedence of this job in the print queue">
+				<cocoa key="aePriority" />
+			</property>
+			<property type="text" name="name" code="pnam" access="r" description="the name that identifies this job in the print queue">
+				<cocoa key="name" />
+			</property>
+			<property type="JobStatus" name="status" code="stat" access="r" description="a description of the activity, if any, currently being performed on this job">
+				<cocoa key="aeStatus" />
+			</property>
+		</class>
+		<class-extension extends="application">
+			<property type="printer" name="current printer" code="cprn" description="the currently selected printer">
+				<cocoa key="currentPrinter" />
+			</property>
+			<element type="printer" access="r">
+				<cocoa key="printers" />
+			</element>
+		</class-extension>
+		<command name="get URL" code="GURLGURL" description="Open a printer URL">
+			<cocoa name="GetURL" class="GetPrinterURLCommand" />
+		</command>
+	</suite>
+</dictionary>

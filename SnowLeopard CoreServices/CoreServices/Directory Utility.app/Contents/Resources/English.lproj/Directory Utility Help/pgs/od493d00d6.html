@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Mapping the Primary Group ID to an Active Directory Attribute</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to specify an Active Directory attribute that you want the Active Directory connector to map to Mac OS X’s primary group ID." />
+      <meta name="topicid" content="od493d00d6" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od493d00d6"></a><a name="x67726F7570206163636F756E7473"></a><a name="x67726F757073"></a><a name="x6D617070696E6773"></a><a name="x416374697665204469726563746F7279"></a><a name="x474944202867726F757020494429"></a><a name="x554E4958"></a><a name="x5246432032333037206D617070696E67"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od493d00d6">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Mapping the Primary Group ID to an Active Directory Attribute</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">On a computer that’s configured to use Directory Utility’s Active Directory connector, you can specify an Active Directory
+                     attribute that you want mapped to Mac OS X’s primary group ID (GID) attribute in user accounts.
+                  </p>
+                  <p class="Para">Usually, the Active Directory schema must be extended to include an attribute that’s suitable for mapping to the primary GID:</p>
+                  <ul class="ListBullet">
+                     <li>
+                        <p class="Para">If the Active Directory administrator extends the Active Directory schema by installing Microsoft’s Services for UNIX, you
+                           can map the primary GID to the msSFU-30-Gid-Number attribute.
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para">If the Active Directory administrator manually extends the Active Directory schema to include RFC 2307 attributes, you can
+                           map the primary GID to gidNumber.
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para">If the Active Directory administrator manually extends the Active Directory schema to include the Mac OS X PrimaryGroupID
+                           attribute, you can map the primary GID to it.
+                        </p>
+                     </li>
+                  </ul>
+                  <p class="Para">If mapping of the primary GID is disabled, the Active Directory connector generates a primary GID based on Active Directory’s
+                     standard GUID attribute.
+                  </p>
+                  <div class="Alert">
+                     <div class="Warning"><span class="Warning">WARNING:  </span>If you change the mapping of the primary GID later, users might lose access to previously created files.
+                     </div>
+                  </div>
+               </div>
+               <div class="Task">
+                  <div class="Name">To map the primary GID to an attribute in an extended Active Directory schema:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Services.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list of services, select Active Directory and click the Edit (/) button.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the advanced options are hidden, click Show Advanced Options.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Mappings.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Select “Map user GID to attribute” and enter the name of the Active Directory attribute you want mapped to the primary group
+                           ID in user accounts.
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para">Click OK.</p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

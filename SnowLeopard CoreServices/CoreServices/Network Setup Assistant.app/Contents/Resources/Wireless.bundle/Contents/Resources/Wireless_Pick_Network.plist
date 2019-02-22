@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>Wireless_Pick_Network</key>
+	<dict>
+		<key>0100</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:WirelessNetwork</string>
+		</dict>
+		<key>0200</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:WirelessPassword</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>RequiredAny</string>
+				<string>WirelessNetworkName</string>
+			</array>
+			<key>WirelessNetworkName</key>
+			<string>0100</string>
+		</dict>
+		<key>0300</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:WirelessNetwork</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>Required</string>
+			</array>
+		</dict>
+		<key>0400</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:WirelessPassword</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>WirelessNetworkName</string>
+			</array>
+			<key>WirelessNetworkName</key>
+			<string>0300</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

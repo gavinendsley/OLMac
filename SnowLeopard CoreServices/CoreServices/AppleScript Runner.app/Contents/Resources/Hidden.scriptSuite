@@ -1,0 +1,46 @@
+{
+    Name = "Hidden";
+    AppleEventCode = "tpnm";
+
+    Commands = {
+        doAction = {
+            AppleEventClassCode = "faco";
+            AppleEventCode = "fola";
+            CommandClass = "DoActionVerb";
+            ResultAppleEventCode = "list";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "NSString";
+			};
+            Arguments = {
+                code = {
+                    Type = "NSNumber<ActionCodes>";
+                    AppleEventCode = "actn";
+                };
+                itemList = {
+                    Type = "NSObject";
+                    AppleEventCode = "flst";
+                    Optional = "YES";
+                };
+                windowSize = {
+                    Type = "NSData<NSCoreSuite.QDRect>";
+                    AppleEventCode = "fnsz";
+                    Optional = "YES";
+                };
+            };
+        };
+	};
+	Enumerations = {
+        ActionCodes = {
+            AppleEventCode = "actn";
+            Enumerators = {
+				WindowOpened = "fopn";
+				WindowClosed = "fclo";
+				WindowMoved = "fsiz";
+				ItemsAdded = "fget";
+				ItemsRemoved = "flos";
+			};
+        };
+    };
+}
+

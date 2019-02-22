@@ -1,0 +1,53 @@
+{
+    Name = "AppleScriptUtility";
+    AppleEventCode = "scut";
+
+    UsedFeatures = (UnnamedArguments); 
+    Classes = {
+        NSApplication = {
+            AppleEventCode = "capp";
+            Superclass = "NSCoreSuite.NSApplication";
+            Attributes = {
+                defaultScriptEditor = {
+                    AppleEventCode = "sced";
+                    ReadOnly = "NO";
+                    Type = "NSString<FilePath>";
+                };
+                uiElementsEnabled = {
+                    AppleEventCode = "uien";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+                guiScriptingEnabled = {
+                    AppleEventCode = "gsen";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+				scriptMenuEnabled = {
+                    AppleEventCode = "scmn";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+				showLibraryScripts = {
+                    AppleEventCode = "swlb";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+				applicationScriptsPosition = {
+                    AppleEventCode = "ascp";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<ApplicationScriptsPositions>";
+                };
+            };
+        };
+    };
+	Enumerations = {
+        ApplicationScriptsPositions = {
+            AppleEventCode = "ascp";
+            Enumerators = {
+				Top = "top ";
+				Bottom = "bttm";
+			};
+        };
+    };
+}

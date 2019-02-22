@@ -1,0 +1,34 @@
+@charset "UTF-8";
+@namespace html url(http://www.w3.org/1999/xhtml);
+
+body {overflow-x: hidden }
+
+html|html { 
+	background-color: #EFEFEF;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+html|body { 
+	font-family: 'LucidaGrande';
+	font-weight:normal;
+	font-size: 8pt;
+	color: #303030;
+	margin-left:6px;
+	margin-top:4px;
+}
+
+html|a	{
+	color:#000000;
+	text-decoration:none;
+}
+
+html|a:hover	{
+	color:#000000;
+	text-decoration:none;
+}
+
+/* no images on the popup */
+html|img {
+	display:none;
+}

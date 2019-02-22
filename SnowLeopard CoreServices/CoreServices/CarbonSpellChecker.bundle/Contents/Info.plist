@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>CarbonSpellChecker</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.CarbonSpellChecker</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.0.1</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>2.0.1</string>
+	<key>CFPlugInDynamicRegisterFunction</key>
+	<string></string>
+	<key>CFPlugInDynamicRegistration</key>
+	<string>NO</string>
+	<key>CFPlugInFactories</key>
+	<dict>
+		<key>029BA59E-4603-11D8-910B-000393921FDE</key>
+		<string>CSCFactory</string>
+	</dict>
+	<key>CFPlugInTypes</key>
+	<dict>
+		<key>6E96E664-456B-11D8-84EB-000393921FDE</key>
+		<array>
+			<string>029BA59E-4603-11D8-910B-000393921FDE0</string>
+		</array>
+	</dict>
+	<key>CFPlugInUnloadFunction</key>
+	<string></string>
+	<key>NSHumanReadableCopyright</key>
+	<string>© Copyright 2004-2009 Apple Inc., All Rights Reserved.</string>
+</dict>
+</plist>

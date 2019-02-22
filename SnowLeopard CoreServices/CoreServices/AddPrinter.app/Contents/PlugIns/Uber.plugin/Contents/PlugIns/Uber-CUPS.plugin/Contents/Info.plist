@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>Uber-CUPS</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.printer.uber.cups</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>cups</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>6.6</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>304.9</string>
+	<key>KnownBackend</key>
+	<array>
+		<string>fax</string>
+		<string>firewire</string>
+		<string>http</string>
+		<string>mdns</string>
+		<string>smb</string>
+		<string>usb</string>
+		<string>bleutooth</string>
+		<string>serial</string>
+	</array>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 1995-2007, Apple Inc., All Rights Reserved.</string>
+	<key>NSPrincipalClass</key>
+	<string>CUPSBrowser</string>
+	<key>ionaTypes</key>
+	<array>
+		<string>_printer._tcp.</string>
+		<string>_ipp._tcp.</string>
+		<string>_pdl-datastream._tcp.</string>
+		<string>_riousbprint._tcp.</string>
+		<string>_ipp-tls._tcp.</string>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Enabling the Root User Account</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to enable the root account using Directory Utility" />
+      <meta name="topicid" content="od492f6b5d" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od492f6b5d"></a><a name="x6163636F756E7473"></a><a name="x726F6F74206163636F756E74"></a><a name="x75736572206163636F756E7473"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od492f6b5d">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Enabling the Root User Account</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">You can use Directory Utility to enable the root user account. If you enable the root user account, use a complex password
+                     that contains alphanumeric and special characters, to prevent the password from being compromised.
+                  </p>
+                  <div class="Alert">
+                     <div class="Warning"><span class="Warning">WARNING:  </span>The root account is an unrestricted administrator account used to perform changes to critical system files. Even if you are
+                        logged in as an administrator, you must still use the root account, or <span class="CodeBody">sudo</span>, to perform critical system tasks.
+                     </div>
+                  </div>
+                  <p class="Para">Never use the root account to log in to a computer (remotely or locally). Instead, use <span class="CodeBody">sudo</span> to perform root tasks. You can restrict access to <span class="CodeBody">sudo</span> by adding users to the <span class="NoBreak">/etc/sudoers/</span> file.
+                  </p>
+                  <p class="Para">For more information about the root account, see Server Admin help.</p>
+               </div>
+               <div class="Task">
+                  <div class="Name">To enable the root user account:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Join or Edit.</p>
+                        <p class="Para">If you see an Edit button, your computer has at least one connection to a directory server.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Choose Edit &gt; Enable Root User.</p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

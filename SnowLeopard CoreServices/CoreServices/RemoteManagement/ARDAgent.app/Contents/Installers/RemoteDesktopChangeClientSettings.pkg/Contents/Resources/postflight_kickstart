@@ -1,0 +1,71 @@
+#!/usr/bin/perl
+# Emacs: -*- tab-width: 4; -*-
+# Copyright (c) 2002-2004, Apple Computer, Inc.  All Rights Reserved.
+
+use strict;
+use IO::File;
+
+## postflight_kickstart
+
+## Runs the kickstart tool to process any custom kickstart setups (one
+## per line) in the file postflight_kickstart_entries, if found.
+
+## Get the target volume.
+
+my $TargetVol = shift @ARGV; ## This is $3 from the installer shell script
+exit unless -d $TargetVol;
+
+## Locate the postflight_makeuser_entries file, if any, in this
+## directory.
+
+{
+	(my $EntriesFile = $0)	=~ s{[^/]+$ }{postflight_makeuser_entries}x;
+	if (-e $EntriesFile)
+	{
+		(my $Script = $0)	=~ s{[^/]+$ }{makeuser}x;
+		die "'$0' Could not find executable '$Script'\n" unless -x $Script;
+		
+		## Read the entries and call script once for each.
+		my $RawEntries		= eval {do {local $/; IO::File->new("<$EntriesFile")->getline()}};
+		my $Entries			= [grep {length} split /\n+/, $RawEntries];
+		
+		foreach (@$Entries)
+		{
+		    my $EscapedScript = $Script;
+		    $EscapedScript =~ s/'/'"'"'/g;
+		    
+			my $Cmd = "'$EscapedScript' $_\n";
+			
+			print $Cmd;
+			system($Cmd);
+		}
+	}    
+}
+
+## Locate the postflight_kickstart_entries file, if any, in this
+## directory.
+
+{
+	(my $EntriesFile = $0)	=~ s{[^/]+$ }{postflight_kickstart_entries}x;
+	if (-e $EntriesFile)
+	{
+		(my $Script = $0)	=~ s{[^/]+$ }{kickstart}x;
+		die "'$0' Could not find executable '$Script'\n" unless -x $Script;
+		
+		## Read the kickstart entries and call kickstart once for each.
+		my $RawEntries		= eval {do {local $/; IO::File->new("<$EntriesFile")->getline()}};
+		my $Entries			= [grep {length} split /\n+/, $RawEntries];
+		
+		foreach (@$Entries)
+		{
+		    my $EscapedScript = $Script;
+		    $EscapedScript =~ s/'/'"'"'/g;
+		    my $EscapedTargetVol = $TargetVol;
+		    $EscapedTargetVol =~ s/'/'"'"'/g;
+			my $Cmd = "'$EscapedScript' -targetdisk '$EscapedTargetVol' $_\n";
+			
+			print $Cmd;
+			system($Cmd);
+		}
+	}    
+}

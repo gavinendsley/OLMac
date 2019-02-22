@@ -1,0 +1,19 @@
+{
+    Name = "Database Events Suite"; 
+    Description = "Terms and Events for controlling the Database Events application";
+    
+    Classes = {
+        NSApplication = {
+            Name = "application";
+            PluralName = "applications"; 
+            Description = "The Database Events program"; 
+			Attributes = {
+				quitDelay = {
+					Name = "quit delay";
+					Description = "the time in seconds the application will idle before quitting; if set to zero, idle time will not cause the application to quit";
+				};
+			};
+        };
+    };
+}
+

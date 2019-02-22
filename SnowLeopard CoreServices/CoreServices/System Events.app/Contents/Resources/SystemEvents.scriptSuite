@@ -1,0 +1,378 @@
+{
+    Name = "SystemEvents";
+    AppleEventCode = "sevs";
+
+    UsedFeatures = (UnnamedArguments); 
+    Commands = {
+        beginTransaction = {
+            AppleEventClassCode = "misc";
+            AppleEventCode = "begi";
+            CommandClass = "BeginTransactionVerb";
+            Type = "NSNumber<Long>";
+            ResultAppleEventCode = "long";
+        };
+        endTransaction = {
+            AppleEventClassCode = "misc";
+            AppleEventCode = "endt";
+            CommandClass = "EndTransactionVerb";
+            Type = "";
+        };
+        abortTransaction = {
+            AppleEventClassCode = "misc";
+            AppleEventCode = "ttrm";
+            CommandClass = "AbortTransactionVerb";
+            Type = "";
+        };
+	};
+    Classes = {
+        NSApplication = {
+            AppleEventCode = "capp";
+            Superclass = "NSCoreSuite.NSApplication";
+            SupportedCommands = {
+				"Hidden.doScript" = "doScript:";
+                "DiskFolderFile.delete" = "deleteVerb:";
+                "SystemEvents.beginTransaction" = "beginTransaction:";
+                "SystemEvents.endTransaction" = "endTransaction:";
+                "SystemEvents.abortTransaction" = "abortTransaction:";
+            };
+            ToManyRelationships = {
+                screenSavers = {
+                    AppleEventCode = "ssvr";
+                    Type = "ScreenSaver.ScreenSaver";
+                };
+                desktops = {
+                    AppleEventCode = "dskp";
+                    Type = "Desktop.Desktop";
+                };
+                qtDatas = {
+                    AppleEventCode = "qtfd";
+					LocationRequiredToCreate = "NO";
+                    Type = "QTFile.sevsQTData";
+                };
+                qtFiles = {
+                    AppleEventCode = "qtff";
+                    Type = "QTFile.sevsQTFile";
+                };
+                audioDatas = {
+                    AppleEventCode = "audd";
+					LocationRequiredToCreate = "NO";
+                    Type = "Audio.AudioData";
+                };
+                audioFiles = {
+                    AppleEventCode = "audf";
+                    Type = "Audio.AudioFile";
+                };
+                movieDatas = {
+                    AppleEventCode = "movd";
+					LocationRequiredToCreate = "NO";
+                    Type = "Movie.MovieData";
+                };
+                movieFiles = {
+                    AppleEventCode = "movf";
+                    Type = "Movie.MovieFile";
+                };
+                plistItems = {
+                    AppleEventCode = "plii";
+					LocationRequiredToCreate = "NO";
+                    Type = "PropertyList.PropertyListItem";
+                };
+                plistFiles = {
+                    AppleEventCode = "plif";
+					LocationRequiredToCreate = "NO";
+                    Type = "PropertyList.PropertyListFile";
+                };
+                xmlFiles = {
+                    AppleEventCode = "xmlf";
+                    Type = "XML.XMLFile";
+                };
+                xmlDatas = {
+                    AppleEventCode = "xmld";
+					LocationRequiredToCreate = "NO";
+                    Type = "XML.XMLData";
+                };
+                localUsers = {
+                    AppleEventCode = "uacc";
+                    Type = "Accounts.User";
+                };
+                loginItems = {
+                    AppleEventCode = "logi";
+					LocationRequiredToCreate = "NO";
+                    Type = "LoginItemsPref.LoginItem";
+                };
+                processes = {
+                    AppleEventCode = "prcs";
+                    Type = "Processes.Process";
+                };
+                applicationProcesses = {
+                    AppleEventCode = "pcap";
+                    Type = "Processes.ApplicationProcess";
+                };
+                deskAccessoryProcesses = {
+                    AppleEventCode = "pcda";
+                    Type = "Processes.DeskAccessoryProcess";
+                };
+                folderActions = {
+                    AppleEventCode = "foac";
+					LocationRequiredToCreate = "NO";
+                    Type = "FolderActions.FolderAction";
+                };
+                oldItems = {
+                    AppleEventCode = "cobj";
+                    Type = "DiskFolderFile.OldItem";
+                };
+                items = {
+                    AppleEventCode = "ditm";
+                    Type = "DiskFolderFile.Item";
+                };
+                disks = {
+                    AppleEventCode = "cdis";
+                    Type = "DiskFolderFile.Disk";
+                };
+                domains = {
+                    AppleEventCode = "doma";
+                    Type = "DiskFolderFile.Domain";
+                };
+                folders = {
+                    AppleEventCode = "cfol";
+					LocationRequiredToCreate = "NO";
+                    Type = "DiskFolderFile.Folder";
+                };
+                files = {
+                    AppleEventCode = "file";
+					LocationRequiredToCreate = "NO";
+                    Type = "DiskFolderFile.File";
+                };
+                filePackages = {
+                    AppleEventCode = "cpkg";
+                    Type = "DiskFolderFile.FilePackage";
+                };
+                aliases = {
+                    AppleEventCode = "alis";
+                    Type = "DiskFolderFile.Alias";
+                };
+                uiElements = {
+                    AppleEventCode = "uiel";
+                    Type = "Processes.UIElement";
+                };
+            };
+            Attributes = {
+                currentScreenSaver = {
+                    AppleEventCode = "ssvc";
+                    Type = "ScreenSaver.ScreenSaver";
+                };    
+                screenSaverPreferences = {
+                    AppleEventCode = "ssvp";
+                    Type = "ScreenSaver.ScreenSaverPreferencesObject";
+                };                
+                networkPref = {
+                    AppleEventCode = "netp";
+                    Type = "NetworkPref.ANPNetworkScripting";
+                };                
+                securityPref = {
+                    AppleEventCode = "secp";
+                    Type = "Security.SecurityScripting";
+                };                
+                digiHubPref = {
+                    AppleEventCode = "dhas";
+                    Type = "DigiHubPref.DigiHubPref";
+                };
+                exposePref = {
+                    AppleEventCode = "epas";
+                    Type = "ExposePref.ExposePref";
+                };
+                dockPref = {
+                    AppleEventCode = "dpas";
+                    Type = "DockPref.DockPref";
+                };
+                appearancePref = {
+                    AppleEventCode = "aprp";
+                    Type = "Appearance.AppearanceScripting";
+                };                
+                currentDesktop = {
+                    AppleEventCode = "curd";
+                    ReadOnly = "YES";
+                    Type = "Desktop.Desktop";
+                };    
+                quitDelay = {
+                    AppleEventCode = "qdel";
+                    Type = "NSNumber<UnsignedLong>";
+                };
+				scriptMenuEnabled = {
+                    AppleEventCode = "scmn";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Bool>";
+                };
+                currentUser = {
+                    AppleEventCode = "curu";
+                    ReadOnly = "YES";
+                    Type = "Accounts.User";
+                };                
+                folderActionsEnabled = {
+                    AppleEventCode = "faen";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+                uiElementsEnabled = {
+                    AppleEventCode = "uien";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+				startupDisk = {
+                    AppleEventCode = "sdsk";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Disk";
+				};
+				domainSystem = {
+                    AppleEventCode = "flds";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.SystemDomain";
+				};
+				domainLocal = {
+                    AppleEventCode = "fldl";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.LocalDomain";
+				};
+				domainNetwork = {
+                    AppleEventCode = "fldn";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.NetworkDomain";
+				};
+				domainUser = {
+                    AppleEventCode = "fldu";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.UserDomain";
+				};
+				domainClassic = {
+                    AppleEventCode = "fldc";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.ClassicDomain";
+				};
+                folderApplications = {
+                    AppleEventCode = "apps";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderApplicationSupport = {
+                    AppleEventCode = "asup";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderDesktop = {
+                    AppleEventCode = "desk";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderDesktopPictures = {
+                    AppleEventCode = "dtp$";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderDocuments = {
+                    AppleEventCode = "docs";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderDownloads = {
+                    AppleEventCode = "down";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderFavorites = {
+                    AppleEventCode = "favs";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderFolderActionScripts = {
+                    AppleEventCode = "fasf";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderFonts = {
+                    AppleEventCode = "font";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderHome = {
+                    AppleEventCode = "cusr";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderLibrary = {
+                    AppleEventCode = "dlib";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderMovies = {
+                    AppleEventCode = "mdoc";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderMusic = {
+                    AppleEventCode = "%doc";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderPictures = {
+                    AppleEventCode = "pdoc";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderPreferences = {
+                    AppleEventCode = "pref";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderPublic = {
+                    AppleEventCode = "pubb";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderScriptingAdditions = {
+                    AppleEventCode = "$scr";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderScripts = {
+                    AppleEventCode = "scr$";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderSharedDocuments = {
+                    AppleEventCode = "sdat";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderSites = {
+                    AppleEventCode = "site";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderSpeakable = {
+                    AppleEventCode = "spki";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderTemporary = {
+                    AppleEventCode = "temp";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderTrash = {
+                    AppleEventCode = "trsh";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderUtilities = {
+                    AppleEventCode = "uti$";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+                folderWorkflows = {
+                    AppleEventCode = "flow";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Folder";
+                };
+            };
+        };
+    };
+}

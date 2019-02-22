@@ -1,0 +1,24 @@
+{
+    Name = "Audio";
+    AppleEventCode = "audz";
+
+    UsedFeatures = (UnnamedArguments); 
+    Classes = {
+        AudioFile = {
+            AppleEventCode = "audf";
+            Superclass = "QTFile.sevsQTFile";
+			DefaultSubcontainerAttribute = "contents";
+            Attributes = {
+                contents = {
+                    AppleEventCode = "pcnt";
+                    ReadOnly = "YES";
+                    Type = "AudioData";
+                };
+            };
+        };
+        AudioData = {
+            AppleEventCode = "audd";
+            Superclass = "QTFile.sevsQTData";
+        };
+    };
+}

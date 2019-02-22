@@ -1,0 +1,16 @@
+  Host *
+    PasswordAuthentication no
+    BatchMode yes
+    CheckHostIP no
+    ConnectTimeout 10
+    StrictHostKeyChecking no
+    IdentitiesOnly yes
+    IdentityFile ~/Library/FileSync/FileSyncAgent_key_dir/FileSyncAgent_key
+    Port 2336
+    Protocol 2
+    EscapeChar none
+    PubkeyAuthentication yes
+    PreferredAuthentications publickey
+    Compression no
+   GlobalKnownHostsFile /dev/null
+   UserKnownHostsFile /dev/null

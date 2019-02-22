@@ -1,0 +1,102 @@
+{
+    Name = "FolderActionsSetup";
+    AppleEventCode = "faco";
+
+    UsedFeatures = (UnnamedArguments); 
+    Commands = {
+        Open = {
+            AppleEventClassCode = "aevt";
+            AppleEventCode = "odoc";
+            CommandClass = "OpenCommand";
+            Type = "FolderAction";
+            ResultAppleEventCode = "foac";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "NSObject";
+			};
+        };
+	};
+    Classes = {
+        NSApplication = {
+            AppleEventCode = "capp";
+            Superclass = "NSCoreSuite.NSApplication";
+            ToManyRelationships = {
+                folderActions = {
+                    AppleEventCode = "foac";
+					LocationRequiredToCreate = "NO";
+                    Type = "FolderActions.FolderAction";
+                };
+            };
+            Attributes = {
+                folderActionsEnabled = {
+                    AppleEventCode = "faen";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+            };
+        };
+        FolderAction = {
+            AppleEventCode = "foac";
+            Superclass = "NSCoreSuite.AbstractObject";
+            SupportedCommands = {
+                "DiskFolderFile.delete" = "deleteVerb:";
+            };
+            ToManyRelationships = {
+                scripts = {
+                    AppleEventCode = "scpt";
+					LocationRequiredToCreate = "NO";
+                    Type = "FolderActions.Script";
+                };
+			};
+            Attributes = {
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "NO";
+                    Type = "NSString";
+                };
+                volume = {
+                    AppleEventCode = "volu";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                path = {
+                    AppleEventCode = "ppth";
+                    ReadOnly = "YES";
+                    Type = "NSString<FilePath>";
+                };
+                enabled = {
+                    AppleEventCode = "enaB";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+            };
+        };
+        Script = {
+            AppleEventCode = "scpt";
+            Superclass = "NSCoreSuite.AbstractObject";
+            Attributes = {
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                hfsPath = {
+                    AppleEventCode = "ppth";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                posixPath = {
+                    AppleEventCode = "posx";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                enabled = {
+                    AppleEventCode = "enaB";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+            };
+        };
+    };
+}
+

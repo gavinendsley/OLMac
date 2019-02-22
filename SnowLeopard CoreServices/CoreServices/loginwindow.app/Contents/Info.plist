@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Application-Group</key>
+	<string>dot-mac</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeIconFile</key>
+			<string>FileVault.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>FileVault sparse image</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>fiva</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>loginwindow</string>
+	<key>CFBundleIconFile</key>
+	<string>loginwindow.png</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.loginwindow</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>loginwindow</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>6.1.1</string>
+	<key>CFBundleSignature</key>
+	<string>lgnw</string>
+	<key>CFBundleVersion</key>
+	<string>6.1.1</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.6</string>
+	<key>LSRequiresNativeExecution</key>
+	<true/>
+	<key>LSUIElement</key>
+	<true/>
+	<key>NSExtensions</key>
+	<dict/>
+	<key>NSMainNibFile</key>
+	<string>loginwindow</string>
+	<key>NSPrincipalClass</key>
+	<string>LoginApp</string>
+</dict>
+</plist>

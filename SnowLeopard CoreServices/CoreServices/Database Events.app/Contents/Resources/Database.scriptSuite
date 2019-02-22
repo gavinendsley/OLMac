@@ -1,0 +1,86 @@
+{
+    Name = "Database"; 
+    AppleEventCode = "DATA"; 
+    
+    Classes = {
+        Database = {
+            AppleEventCode = "DATA";
+            Superclass = "NSCoreSuite.AbstractObject";
+            SupportedCommands = {
+                "NSCoreSuite.Count" = "countVerb:";
+                "NSCoreSuite.Open" = "openVerb:";
+                "NSCoreSuite.Close" = "closeVerb:";
+                "NSCoreSuite.Save" = "saveVerb:";
+            };
+            ToManyRelationships = {
+                records = {
+                    AppleEventCode = "reco";
+					LocationRequiredToCreate = "NO";
+                    ReadOnly = "NO";
+                    Type = "Record";
+                };
+            }; 
+            Attributes = {
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                location = {
+                    AppleEventCode = "iloc";
+                    ReadOnly = "YES";
+                    Type = "NSString<FilePath>";
+                };
+            }; 
+        };
+        Record = {
+            AppleEventCode = "reco";
+            Superclass = "NSCoreSuite.AbstractObject";
+            SupportedCommands = {
+                "NSCoreSuite.Count" = "countVerb:";
+            };
+            ToManyRelationships = {
+                asFields = {
+                    AppleEventCode = "fiel";
+					LocationRequiredToCreate = "NO";
+                    ReadOnly = "NO";
+                    Type = "Field";
+                };
+            }; 
+            Attributes = {
+                uniqueID = {
+                    AppleEventCode = "ID  ";
+                    ReadOnly = "YES";
+                    Type = "NSNumber";
+                };
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+            }; 
+        };
+        Field = {
+            AppleEventCode = "fiel";
+            Superclass = "NSCoreSuite.AbstractObject";
+            Attributes = {
+                uniqueID = {
+                    AppleEventCode = "ID  ";
+                    ReadOnly = "YES";
+                    Type = "NSNumber";
+                };
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                value = {
+                    AppleEventCode = "pval";
+                    ReadOnly = "NO";
+                    Type = "NSObject";
+                };
+            }; 
+        };
+    }; 
+}
+

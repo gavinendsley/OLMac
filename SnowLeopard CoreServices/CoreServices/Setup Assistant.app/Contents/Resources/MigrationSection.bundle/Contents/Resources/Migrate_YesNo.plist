@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Migrate_YesNo</key>
+	<dict>
+		<key>0100</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>PerformMigration</string>
+			<key>Key_SaveList</key>
+			<array>
+				<string>Key_Main</string>
+			</array>
+		</dict>
+		<key>0101</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>Yes</string>
+		</dict>
+		<key>0102</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>Backup</string>
+		</dict>
+		<key>0103</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>No</string>
+		</dict>
+		<key>0104</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MigrateInternal</string>
+		</dict>
+	</dict>
+	<key>nextPage</key>
+	<string>Migrate_How</string>
+</dict>
+</plist>

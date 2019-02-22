@@ -1,0 +1,7 @@
+#!/bin/sh
+
+[ ! -d /Library/FileSync ] && mkdir /Library/FileSync > /dev/null 2> /dev/null
+[ ! -f /Library/FileSync/ssh_host_rsa_key ] && ssh-keygen -q -t rsa  -f /Library/FileSync/ssh_host_rsa_key -N "" -C "" < /dev/null > /dev/null 2> /dev/null
+[ ! -f /Library/FileSync/ssh_host_dsa_key ] && ssh-keygen -q -t dsa  -f /Library/FileSync/ssh_host_dsa_key -N "" -C "" < /dev/null > /dev/null 2> /dev/null
+
+exec /usr/sbin/sshd $@

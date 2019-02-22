@@ -1,0 +1,44 @@
+#!/usr/bin/perl
+#donotclean
+
+my $ROOT_DIR = $ARGV[0];
+my $DATA_FILE = $ARGV[1];
+
+open (FILE, $DATA_FILE) || die ;
+
+while (defined (my $deleteme = <FILE>)) {
+    chomp $deleteme;
+    if (length($deleteme) > 0) {
+        deleteTree($ROOT_DIR . $deleteme);
+	}
+}
+
+sub deleteTree
+{
+    my $path            = $_[0];
+
+    if (-e $path)
+    {
+        if ((-d $path) && !(-l $path)) {
+            local* THEDIR;
+            my $file;
+
+            opendir THEDIR, $path;
+            while ($file = readdir(THEDIR)) {
+				if ($file ne '.' && $file ne '..') {
+					deleteTree($path . "/" . $file);
+				}
+            }
+            closedir THEDIR;
+			rmdir $path;
+        } 
+		else {
+			unlink $path;
+        }
+    } 
+	else {
+        if (-l $path) {
+            unlink $path;
+        }
+    }
+}

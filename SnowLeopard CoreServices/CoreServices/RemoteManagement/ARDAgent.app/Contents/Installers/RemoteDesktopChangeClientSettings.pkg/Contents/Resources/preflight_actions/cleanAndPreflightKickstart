@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+my $PKGDIR          = $ARGV[0];
+my $TARGET          = $ARGV[2];
+
+## ARD client installer preflight script
+
+## Run postflight makeuser and/or kickstart events, if any
+system("$PKGDIR/Contents/Resources/preflight_kickstart", "$TARGET");
+
+exit(0);

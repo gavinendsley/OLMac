@@ -1,0 +1,29 @@
+{
+    Name = "DatabaseEvents"; 
+    AppleEventCode = "dbev"; 
+    
+    Classes = {
+        NSApplication = {
+            AppleEventCode = "capp";
+            Superclass = "NSCoreSuite.NSApplication";
+            SupportedCommands = {
+                "NSCoreSuite.Open" = "handleOpenAppleEvent:"; 
+            }; 
+            ToManyRelationships = {
+                databases = {
+                    AppleEventCode = "DATA";
+					LocationRequiredToCreate = "NO";
+                    ReadOnly = "NO";
+                    Type = "Database.Database";
+                };
+            }; 
+            Attributes = {
+                quitDelay = {
+                    AppleEventCode = "qdel";
+                    Type = "NSNumber<UnsignedLong>";
+                };
+            }; 
+        };
+    }; 
+}
+

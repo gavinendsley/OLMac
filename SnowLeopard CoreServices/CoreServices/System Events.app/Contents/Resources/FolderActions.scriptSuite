@@ -1,0 +1,71 @@
+{
+    Name = "FolderActions";
+    AppleEventCode = "faco";
+
+    UsedFeatures = (UnnamedArguments); 
+    Classes = {
+        FolderAction = {
+            AppleEventCode = "foac";
+            Superclass = "NSCoreSuite.AbstractObject";
+            SupportedCommands = {
+                "DiskFolderFile.delete" = "deleteVerb:";
+            };
+            ToManyRelationships = {
+                scripts = {
+                    AppleEventCode = "scpt";
+					LocationRequiredToCreate = "NO";
+                    Type = "FolderActions.Script";
+                };
+			};
+            Attributes = {
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "NO";
+                    Type = "NSString";
+                };
+                volume = {
+                    AppleEventCode = "volu";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                path = {
+                    AppleEventCode = "ppth";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                enabled = {
+                    AppleEventCode = "enaB";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+            };
+        };
+        Script = {
+            AppleEventCode = "scpt";
+            Superclass = "NSCoreSuite.AbstractObject";
+            Attributes = {
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                hfsPath = {
+                    AppleEventCode = "ppth";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                posixPath = {
+                    AppleEventCode = "posx";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                enabled = {
+                    AppleEventCode = "enaB";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+            };
+        };
+    };
+}
+

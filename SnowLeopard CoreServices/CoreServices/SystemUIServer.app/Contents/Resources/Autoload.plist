@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<array>
+	<dict>
+		<key>id</key>
+		<integer>-10014</integer>
+		<key>method</key>
+		<string>_userCanLoad</string>
+		<key>path</key>
+		<string>/System/Library/CoreServices/Menu Extras/User.menu</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>-10000</integer>
+		<key>method</key>
+		<string>_clockCanLoad</string>
+		<key>path</key>
+		<string>/System/Library/CoreServices/Menu Extras/Clock.menu</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>-10016</string>
+		<key>method</key>
+		<string>_textInputCanLoad</string>
+		<key>path</key>
+		<string>/System/Library/CoreServices/Menu Extras/TextInput.menu</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>-10001</integer>
+		<key>method</key>
+		<string>_batteryCanLoad</string>
+		<key>path</key>
+		<string>/System/Library/CoreServices/Menu Extras/Battery.menu</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>-10002</integer>
+		<key>method</key>
+		<string>_volumeCanLoad</string>
+		<key>path</key>
+		<string>/System/Library/CoreServices/Menu Extras/Volume.menu</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>-10008</integer>
+		<key>method</key>
+		<string>_ejectCanLoad</string>
+		<key>path</key>
+		<string>/System/Library/CoreServices/Menu Extras/Eject.menu</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>-10004</string>
+		<key>method</key>
+		<string>_airportCanLoad</string>
+		<key>path</key>
+		<string>/System/Library/CoreServices/Menu Extras/AirPort.menu</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>-10006</string>
+		<key>method</key>
+		<string>_pppCanLoad</string>
+		<key>path</key>
+		<string>/System/Library/CoreServices/Menu Extras/PPP.menu</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>-10007</string>
+		<key>method</key>
+		<string>_pppoeCanLoad</string>
+		<key>path</key>
+		<string>/System/Library/CoreServices/Menu Extras/PPPoE.menu</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>-10010</string>
+		<key>method</key>
+		<string>_bluetoothCanLoad</string>
+		<key>path</key>
+		<string>/System/Library/CoreServices/Menu Extras/Bluetooth.menu</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>-10018</string>
+		<key>method</key>
+		<string>_remoteDesktopCanLoad</string>
+		<key>path</key>
+		<string>/System/Library/CoreServices/Menu Extras/RemoteDesktop.menu</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>-10024</string>
+		<key>method</key>
+		<string>_timeMachineCanLoad</string>
+		<key>path</key>
+		<string>/System/Library/CoreServices/Menu Extras/TimeMachine.menu</string>
+	</dict>
+</array>
+</plist>

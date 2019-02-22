@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeIconFile</key>
+			<string>com.apple.ilmbplugins.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>iLifeMediaBrowser plug-in</string>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.apple.iLifeMediaBrowser.plugin</string>
+			</array>
+			<key>LSTypeIsPackage</key>
+			<true/>
+		</dict>
+	</array>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.iLifeMediaBrowser.coretypes</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>iLifeMediaBrowserTypes</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.5.5</string>
+	<key>CFBundleSignature</key>
+	<string>rDrD</string>
+	<key>CFBundleVersion</key>
+	<string>468.2.2</string>
+	<key>CSResourcesFileMapped</key>
+	<string>yes</string>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>com.apple.plugin</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>iLifeMediaBrowser plug-In</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.apple.iLifeMediaBrowser.plugin</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<string>ilmbplugin</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AFAssistantBackgroundImageFileName</key>
+	<string>Certificate Assistant Window Graphic.tif</string>
+	<key>AFAssistantSectionBundles</key>
+	<array>
+		<string>0_Introduction</string>
+		<string>1_CreateCertificateSelf</string>
+		<string>2_SetDefaultCA</string>
+		<string>3_CreateAndConfigure</string>
+		<string>4_CreateCertificateOther</string>
+		<string>5_RequestCertificate</string>
+		<string>7_EvalCerts</string>
+	</array>
+	<key>AFAssistantTitle</key>
+	<string>Certificate Assistant</string>
+	<key>Application-Group</key>
+	<string>dot-mac</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>Certificate Assistant</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>certAuthorityConfig</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>certAuthorityConfig</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>*</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>*</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>certSigningRequest</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>certSigningRequest</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>Certificate Assistant</string>
+	<key>CFBundleIconFile</key>
+	<string>Certificate Assistant.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.CertificateAssistant</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Certificate Assistant</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>3.0</string>
+	<key>CFBundleSignature</key>
+	<string>crta</string>
+	<key>CFBundleVersion</key>
+	<string>36996</string>
+	<key>LSHasLocalizedDisplayName</key>
+	<true/>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>

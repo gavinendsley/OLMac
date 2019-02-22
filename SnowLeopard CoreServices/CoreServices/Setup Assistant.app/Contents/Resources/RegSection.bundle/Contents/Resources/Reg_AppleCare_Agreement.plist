@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Reg_AppleCare_Agreement</key>
+	<dict>
+		<key>0100</key>
+		<dict>
+			<key>CharacterSet</key>
+			<array>
+				<string>Integer</string>
+			</array>
+			<key>Error_AppleCareAgreement</key>
+			<string>ERROR_APPLECARE_AGREEMENT</string>
+			<key>Key_Main</key>
+			<string>MacBuddy:MachineInfo:AppleCareAgreementNumber</string>
+			<key>Key_SaveList</key>
+			<array>
+				<string>Key_Main</string>
+			</array>
+			<key>MaxLength</key>
+			<string>15</string>
+			<key>MinLength</key>
+			<string>13</string>
+			<key>NSAccessibility</key>
+			<dict>
+				<key>AXDescription</key>
+				<string>apple care agreement number</string>
+			</dict>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>AppleCareAgreement</string>
+			</array>
+		</dict>
+	</dict>
+	<key>mbAfterSkipRegistration</key>
+	<string>Reg__NeedAccountOrNot</string>
+	<key>nextPage</key>
+	<string>Reg_SPAM</string>
+</dict>
+</plist>

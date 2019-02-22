@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Changing a Configuration for Accessing an LDAP Directory</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to change the settings of an LDAP directory configuration." />
+      <meta name="topicid" content="od494741f2" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od494741f2"></a><a name="x636F6E66696775726174696F6E"></a><a name="x4C44415020284C69676874776569676874204469726563746F7279204163636573732050726F746F636F6C292073657276696365"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od494741f2">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Changing a Configuration for Accessing an LDAP Directory</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">You can use Directory Utility to change the settings of an LDAP directory configuration. The configuration settings specify
+                     how Open Directory accesses an LDAPv3 or LDAPv2 directory.
+                  </p>
+                  <p class="Para">If the LDAP configuration was provided by DHCP, it can’t be changed, so this type of configuration is dimmed in the LDAP configurations
+                     list.
+                  </p>
+               </div>
+               <div class="Task">
+                  <div class="Name">To edit a configuration for accessing an LDAP directory:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Services.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list of services, select LDAPv3 and click the Edit (/) button.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the list of server configurations is hidden, click Show Options.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Make changes as needed to the following settings:</p>
+                        <ul class="ListBullet">
+                           <li>
+                              <p class="Para"><span class="Emphasis">Enable: </span>Click a checkbox to enable or disable access to an LDAP directory server.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Configuration Name: </span>Double-click a configuration name to edit it.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Server Name or IP Address: </span>Double-click a server name or IP address to change it.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">LDAP Mapping: </span>From the pop-up menu, choose a template, enter the search base suffix for the LDAP directory, and click OK.
+                              </p>
+                              <p class="Para">If you chose a template, you must enter a search base suffix or the computer can’t find information in the LDAP directory.
+                                 Typically, the search base suffix is derived from the server’s DNS name. For example, for a server whose DNS name is <span class="NoBreak">ods.example.com</span> the search base suffix is “dc=ods,dc=example,dc=com.”
+                              </p>
+                              <p class="Para">If you choose From Server instead of a template, a search base suffix is not needed. In this case, Open Directory assumes
+                                 the search base suffix is the first level of the LDAP directory.
+                              </p>
+                              <p class="Para">If you choose Custom, you must set up mappings between the Mac OS X record types and attributes and the classes and attributes
+                                 of the LDAP directory you’re connecting to. For more information, see <a href="od494316a0.html">Configuring LDAP Searches and Mappings</a>.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">SSL: </span>Click the checkbox to enable or disable encrypted communications using the SSL protocol. Before you select the SSL checkbox,
+                                 ask your Open Directory administrator if SSL is needed.
+                              </p>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p class="Para">To change the following default settings for this LDAP configuration, click Edit to display the options for the selected LDAP
+                           configuration, make changes, and click OK when you finish editing the LDAP configuration options:
+                        </p>
+                        <ul class="ListBullet">
+                           <li>
+                              <p class="Para">Click Connection to set timeout options, specify a custom port, ignore server referrals, or force use of the LDAPv2 (read-only)
+                                 protocol. For more information, see <a href="od493d3826.html">Changing the Connection Settings for an LDAP Directory</a>.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">Click Search &amp; Mappings to set up searches and mappings for an LDAP server. For more information, see <a href="od494583e8.html">Setting Up Trusted Binding for an LDAP Directory</a>.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">Click Security to set up an authenticated connection (instead of trusted binding) and other security policy options. For more
+                                 information, see <a href="od49353261.html">Changing the Security Policy for an LDAP Connection</a>.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">Click Bind to set up trusted binding, or click Unbind to stop trusted binding. (You might not see these buttons if the LDAP
+                                 directory doesn’t permit trusted binding.) For more information, see <a href="od494583e8.html">Setting Up Trusted Binding for an LDAP Directory</a>.
+                              </p>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p class="Para">To finish changing the configuration to access an LDAP directory, click OK.</p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

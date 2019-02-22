@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>LAN_PPPoE</key>
+	<dict>
+		<key>0100</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:PPPoEServiceProvider</string>
+			<key>NSAccessibility</key>
+			<dict>
+				<key>AXDescription</key>
+				<string>service provider</string>
+			</dict>
+		</dict>
+		<key>0200</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:PPPoEServiceName</string>
+			<key>NSAccessibility</key>
+			<dict>
+				<key>AXDescription</key>
+				<string>ppp o e service name</string>
+			</dict>
+		</dict>
+		<key>0300</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:PPPoEUserName</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>Required</string>
+			</array>
+			<key>MaxLength</key>
+			<string>255</string>
+			<key>NSAccessibility</key>
+			<dict>
+				<key>AXDescription</key>
+				<string>account name</string>
+			</dict>
+		</dict>
+		<key>0400</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:PPPoEPassword</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>Required</string>
+			</array>
+			<key>MaxLength</key>
+			<string>255</string>
+			<key>NSAccessibility</key>
+			<dict>
+				<key>AXDescription</key>
+				<string>password</string>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

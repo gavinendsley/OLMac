@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+
+<installer-gui-script 
+	minSpecVersion='1'>
+
+	<title>Self Test</title>
+
+	<script>
+		function volCheckScript(){
+			system.log('*** Running Volume Check ***');
+			system.log('system.version.ProductVersion = ' + system.version.ProductVersion);
+			system.log('Target 	    = ' + my.target.mountpoint);
+			if(my.target.subpath){
+				system.log('Target Subpath = ' + my.target.subpath);
+			}
+			system.log('Target Value    = ' + my.target);
+			if(my.target.systemVersion){
+				system.log('Target System    = ' +  my.target.systemVersion.ProductName + ' ' + my.target.systemVersion.ProductVersion + ' (' +  my.target.systemVersion.ProductBuildVersion + ')');			
+			}
+			system.log('Space Remaining = ' + my.target.availableKilobytes);
+			system.log('*** Done Volume Check ***');
+			system.log('');
+			system.log('');
+			system.log('');
+
+			if(my.target.mountpoint == '/'){
+				my.result.message = 'If you can read this, VolumeCheck works!';
+				my.result.type = 'Fatal';
+				
+				return false;
+			}
+
+			return true;
+		}
+		
+		function installCheckScript(){
+			system.log('*** Running Installation Check ***\n');
+			system.log('system.version.ProductVersion = ' + system.version.ProductVersion);
+			system.log('system.gestalt("sysv") = ' + system.gestalt('sysv').toString(16));
+			system.log("system.sysctl('hw.model') = " + system.sysctl('hw.model'));
+			
+			system.log('system.ioregistry.fromPath("IOService:/").model = '
+						+ system.ioregistry.fromPath('IOService:/').model);
+			system.log('system.ioregistry.fromPath("IOService:/").compatible[1] = '
+						+ system.ioregistry.fromPath('IOService:/').compatible[1]);
+			system.log('system.ioregistry.fromPath("IOService:/").compatible.length = '
+						+ system.ioregistry.fromPath('IOService:/').compatible.length);
+			system.log('system.ioregistry.matchingClass("IOMedia")["BSD Name"]: '
+						+ system.ioregistry.matchingClass('IOMedia')["BSD Name"]);
+
+			system.log('system.files.fileExistsAtPath("/mach_kernel") = '
+						+ system.files.fileExistsAtPath('/mach_kernel'));
+			system.log('system.files.plistAtPath("/System/Library/CoreServices/Finder.app/Contents/Info.plist").CFBundleName = '
+						+ system.files.plistAtPath('/System/Library/CoreServices/Finder.app/Contents/Info.plist').CFBundleName);
+			system.log('system.files.bundleAtPath("/Applications/Stickies.app").CFBundleShortVersionString = '
+						+ system.files.bundleAtPath('/Applications/Stickies.app').CFBundleShortVersionString);
+
+			system.log('*** Done Installation Check ***');
+			system.log('');
+			system.log('');
+	
+			return true;
+		}
+
+		function choicesTargetTest(){
+			if(my.target == undefined){
+				return false;
+			}
+
+			return true;
+		}
+
+		function choicesTestScript(){
+			if(choices.a == undefined){
+				return false;
+			}
+			
+			return true;
+		}
+
+		function choiceLocalizationTest1(myChoice){
+			var answer1 = system.localizedString('test1');
+			var answer2 = system.localizedStringWithFormat('test2','passed');
+			var answer3 = system.localizedStringWithFormat('test3','3','4');
+			var passed = true;
+			var failmessage = '';
+
+			system.log('Loc test 1 ' + answer1);
+			system.log('Loc test 2 ' + answer2);
+			system.log('Loc test 3 ' + answer3);
+			if(answer1 != 'passed'){
+				failmessage = failmessage + 'Failed localization test 1\n';
+				passed = false;
+			}
+			
+			if(answer2 != 'passed'){
+				failmessage = failmessage + 'Failed localization test 2\n';
+				passed = false;
+			}			
+
+			if(answer3 != '1 2 3 4'){
+				failmessage = failmessage + 'Failed localization test 3\n';
+				passed = false;
+			}			
+			
+			if(choices.hidden_localization.title != "passed"){
+				failmessage = failmessage + 'Failed localization test 4\n';
+				passed = false;
+			}
+
+			myChoice.tooltip = failmessage;
+
+			return passed;
+		}
+	</script>
+	
+	<volume-check script="volCheckScript()"/>
+	<installation-check script="installCheckScript()"/>
+	
+	<choices-outline>
+		<line choice="a"/>
+		<line choice="b"/>
+		<line choice="c"/>
+		<line choice="d"/>
+		<line choice="e"/>
+		<line choice="f"/>
+		<line choice="hidden_localization"/>
+	</choices-outline>
+	
+	<choice id = "a"
+			title = "Test 1 (Targets)"
+			description = "TARGET_DESCRIPTION"
+			start_selected = "choicesTargetTest()"
+			start_enabled = "false"
+	/>
+
+	<choice id = "b"
+			title = "Test 2 (Choices)"
+			description = "CHOICES_DESCRIPTION"
+			start_selected = "choicesTestScript()"			
+			start_enabled = "false"
+	/>	
+
+	<choice id = "c"
+			title = "needed by d"
+			start_visible = "false"
+			enabled = "choices.d.selected"			
+	/>	
+
+	<choice id = "d"
+			title = "d"
+			start_visible = "false"	
+			selected = "choices.c.selected || choices.c.selected"
+			enabled = "!choices.c.selected"
+		
+	/>	
+	<choice id = "e"
+			title = "Test 3 (Dependencies)"
+			description = "DEPENDENCIES_DESCRIPTION"
+			selected = "choices.c.enabled"		
+			start_enabled = "false"
+	/>	
+
+	<choice id = "f"
+			title = "Test 4 (Localization)"
+			description = "LOCALIZATION_DESCRIPTION"
+			enabled = "false"
+			selected = "choiceLocalizationTest1(choices.f)"
+	/>	
+	<choice id = "hidden_localization"
+			title = "HIDDEN_LOCALIZATION"
+			visible = "false"
+			enabled = "false"
+	/>	
+
+
+</installer-gui-script>

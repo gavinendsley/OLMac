@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnableTransactions</key>
+	<true/>
+	<key>KeepAlive</key>
+	<dict>
+		<key>PathState</key>
+		<dict>
+			<key>/Library/Preferences/com.apple.AirPortBaseStationAgent.launchd</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>Label</key>
+	<string>com.apple.AirPortBaseStationAgent</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/System/Library/CoreServices/AirPort Base Station Agent.app/Contents/MacOS/AirPort Base Station Agent</string>
+		<string>-launchd</string>
+		<string>-allowquit</string>
+	</array>
+	<key>BinaryOrderPreference</key>
+	<array>
+		<integer>7</integer>
+		<integer>-1</integer>
+	</array>
+</dict>
+</plist>

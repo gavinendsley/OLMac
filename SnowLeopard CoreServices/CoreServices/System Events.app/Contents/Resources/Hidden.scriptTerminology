@@ -1,0 +1,148 @@
+{
+    Name = "Hidden Suite";
+    Description = "Hidden Terms and Events for controlling the System Events application";
+
+    Commands = {
+        doScript = {
+            Description = "Execute an OSA script.";
+            Name = "do script";
+			UnnamedArgument = {
+				Description = "The file path to an OSA script.";
+			};
+        };
+        doAction = {
+            Description = "Send a folder action code to a folder action script";
+            Name = "do folder action";
+			UnnamedArgument = {
+				Description = "The folder for which the actions are to be performed.";
+			};
+            Arguments = {
+                code = {
+                    Name = "folder action code";
+                    Description = "the folder action message to process";
+                };
+                itemList = {
+                    Name = "with item list";
+                    Description = "a list of items for the folder action message to process";
+                };
+                windowSize = {
+                    Name = "with window size";
+                    Description = "the new window size for the folder action message to process";
+                };
+            };
+        };
+        increment = {
+            Description = "cause the target process to behave as if the UI element were incremented";
+            Name = "increment";
+			UnnamedArgument = {
+				Description = "The UI element to be incremented.";
+			};
+        };
+        decrement = {
+            Description = "cause the target process to behave as if the UI element were decremented";
+            Name = "decrement";
+			UnnamedArgument = {
+				Description = "The UI element to be decremented.";
+			};
+        };
+        confirm = {
+            Description = "cause the target process to behave as if the UI element were confirmed";
+            Name = "confirm";
+			UnnamedArgument = {
+				Description = "The UI element to be confirmed.";
+			};
+        };
+        pick = {
+            Description = "cause the target process to behave as if the UI element were picked";
+            Name = "pick";
+			UnnamedArgument = {
+				Description = "The UI element to be picked.";
+			};
+        };
+        cancel = {
+            Description = "cause the target process to behave as if the UI element were cancelled";
+            Name = "cancel";
+			UnnamedArgument = {
+				Description = "The UI element to be cancelled.";
+			};
+        };
+        keydown = {
+            Description = "cause the target process to behave as if keys were held down";
+            Name = "key down";
+			UnnamedArgument = {
+				Description = "The key to be held down.";
+			};
+        };
+        keyup = {
+            Description = "cause the target process to behave as if keys were released";
+            Name = "key up";
+			UnnamedArgument = {
+				Description = "The key to be let up.";
+			};
+        };
+        attachAction = {
+            Description = "Attach an action to a folder";
+            Name = "attach action to";
+			UnnamedArgument = {
+				Description = "The folder to which the action is to be attached.";
+			};
+            Arguments = {
+                using = {
+                    Name = "using";
+                    Description = "a file containing the script to attach";
+                };
+            };
+        };
+        removeAction = {
+            Description = "Remove a folder action from a folder";
+            Name = "remove action from";
+			UnnamedArgument = {
+				Description = "The folder from which the action is to be removed.";
+			};
+            Arguments = {
+                usingNumber = {
+                    Name = "using action number";
+                    Description = "the index number of the action to remove...";
+                };
+                usingName = {
+                    Name = "using action name";
+                    Description = "...or the name of the action to remove";
+                };
+            };
+        };
+        editAction = {
+            Description = "Edit an action of a folder";
+            Name = "edit action of";
+			UnnamedArgument = {
+				Description = "The folder for which the action is to be edited.";
+			};
+            Arguments = {
+                usingNumber = {
+                    Name = "using action number";
+                    Description = "the index number of the action to edit...";
+                };
+                usingName = {
+                    Name = "using action name";
+                    Description = "...or the name of the action to edit";
+                };
+            };
+        };
+        attachedScripts = {
+            Description = "List the actions attached to a folder";
+            Name = "attached scripts";
+			UnnamedArgument = {
+				Description = "The folder for which the attached scripts are to be listed.";
+			};
+        };
+    };
+	Enumerations = {
+        ActionCodes = {
+            WindowOpened = {Description = "window opened"; Name = "window opened"; };
+            WindowClosed = {Description = "window closed"; Name = "window closed"; };
+            WindowMoved = {Description = "window moved"; Name = "window moved"; };
+            ItemsAdded = {Description = "items added"; Name = "items added"; };
+            ItemsRemoved = {Description = "items removed"; Name = "items removed"; };
+        };
+    };
+}
+

@@ -1,0 +1,178 @@
+{
+    Name = "Image Events Suite";
+    Description = "Terms and Events for controlling the Image Events application";
+
+    Classes = {
+        NSApplication = {
+            Name = "application";
+            PluralName = "applications";
+            Description = "The Image Events application";
+			Attributes = {
+				systemProfileLocation = {
+					Name = "system profile location";
+					Description = "the default system profile location";
+				};
+				defaultRGBProfileLocation = {
+					Name = "default RGB profile location";
+					Description = "the default RGB profile location";
+				};
+				defaultCMYKProfileLocation = {
+					Name = "default CMYK profile location";
+					Description = "the default CMYK profile location";
+				};
+				defaultLabProfileLocation = {
+					Name = "default Lab profile location";
+					Description = "the default Lab profile location";
+				};
+				defaultXYZProfileLocation = {
+					Name = "default XYZ profile location";
+					Description = "the default XYZ profile location";
+				};
+				defaultGrayProfileLocation = {
+					Name = "default Gray profile location";
+					Description = "the default Gray profile location";
+				};
+				systemProfile = {
+					Name = "system profile";
+					Description = "the default system profile";
+				};
+				defaultRGBProfile = {
+					Name = "default RGB profile";
+					Description = "the default RGB profile";
+				};
+				defaultCMYKProfile = {
+					Name = "default CMYK profile";
+					Description = "the default CMYK profile";
+				};
+				defaultLabProfile = {
+					Name = "default Lab profile";
+					Description = "the default Lab profile";
+				};
+				defaultXYZProfile = {
+					Name = "default XYZ profile";
+					Description = "the default XYZ profile";
+				};
+				defaultGrayProfile = {
+					Name = "default Gray profile";
+					Description = "the default Gray profile";
+				};
+				preferredCMM = {
+					Name = "preferred CMM";
+					Description = "specifies preferred Color Management Module to use, or \"automatic\"";
+				};
+				profileFolder = {
+					Name = "profile folder";
+					Description = "the ColorSync profile folder";
+				};
+				quitDelay = {
+					Name = "quit delay";
+					Description = "the time in seconds the application will idle before quitting; if set to zero, idle time will not cause the application to quit";
+				};
+                startupDisk = {
+ 					Name = "startup disk";
+                    Description = "the disk from which Mac OS X was loaded";
+                };
+				domainSystem = {
+ 					Name = "system domain";
+                    Description = "the collection of folders belonging to the System";
+				};
+				domainLocal = {
+ 					Name = "local domain";
+                    Description = "the collection of folders residing on the Local machine";
+				};
+				domainNetwork = {
+ 					Name = "network domain";
+                    Description = "the collection of folders residing on the Network";
+				};
+				domainUser = {
+ 					Name = "user domain";
+                    Description = "the collection of folders belonging to the User";
+				};
+				domainClassic = {
+ 					Name = "Classic domain";
+                    Description = "the collection of folders belonging to the Classic System";
+				};
+                folderApplications = {
+					Name = "applications folder";
+					Description = "The user's Applications folder";
+                };
+                folderDesktop = {
+					Name = "desktop folder";
+					Description = "The user's Desktop folder";
+                };
+                folderDesktopPictures = {
+					Name = "desktop pictures folder";
+					Description = "The Desktop Pictures folder";
+                };
+                folderDocuments = {
+					Name = "documents folder";
+					Description = "The user's Documents folder";
+                };
+                folderFavorites = {
+					Name = "favorites folder";
+					Description = "The user's Favorites folder";
+                };
+                folderFolderActionScripts = {
+					Name = "Folder Action scripts folder";
+					Description = "The user's Folder Action Scripts folder";
+                };
+                folderFonts = {
+					Name = "fonts folder";
+					Description = "The Fonts folder";
+                };
+                folderHome = {
+					Name = "home folder";
+					Description = "The Home folder of the currently logged in user";
+                };
+                folderMovies = {
+					Name = "movies folder";
+					Description = "The user's Movies folder";
+                };
+                folderMusic = {
+					Name = "music folder";
+					Description = "The user's Music folder";
+                };
+                folderPictures = {
+					Name = "pictures folder";
+					Description = "The user's Pictures folder";
+                };
+                folderPreferences = {
+					Name = "preferences folder";
+					Description = "The user's Preferences folder";
+                };
+                folderPublic = {
+					Name = "public folder";
+					Description = "The user's Public folder";
+                };
+                folderScriptingAdditions = {
+					Name = "scripting additions folder";
+					Description = "The Scripting Additions folder";
+                };
+                folderScripts = {
+					Name = "scripts folder";
+					Description = "The user's Scripts folder";
+                };
+                folderSites = {
+					Name = "sites folder";
+					Description = "The user's Sites folder";
+                };
+                folderSpeakable = {
+					Name = "speakable items folder";
+					Description = "The Speakable Items folder";
+                };
+                folderTemporary = {
+					Name = "temporary items folder";
+					Description = "The Temporary Items folder";
+                };
+                folderTrash = {
+					Name = "trash";
+					Description = "The user's Trash folder";
+                };
+                folderUtilities = {
+					Name = "utilities folder";
+					Description = "The Utilities folder";
+                };
+			};
+        };
+    };
+}

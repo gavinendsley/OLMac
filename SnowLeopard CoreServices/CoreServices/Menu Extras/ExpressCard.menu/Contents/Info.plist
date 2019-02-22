@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>ExpressCard</string>
+	<key>CFBundleGetInfoString</key>
+	<string>2.0, Copyright © 2002-2008 Apple Inc.  All Rights Reserved.</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.menuextra.expresscard</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>ExpressCard</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>2</string>
+	<key>CSResourcesFileMapped</key>
+	<true/>
+	<key>NSMenuExtraWidth</key>
+	<integer>22</integer>
+	<key>NSPrincipalClass</key>
+	<string>AppleExpressCardExtra</string>
+</dict>
+</plist>

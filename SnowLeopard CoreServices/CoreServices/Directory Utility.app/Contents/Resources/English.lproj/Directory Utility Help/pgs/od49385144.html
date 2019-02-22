@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Setting Up Home Folders for Active Directory User Accounts</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to start or stop using network home folders or local home folders for Active Directory user accounts." />
+      <meta name="topicid" content="od49385144" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od49385144"></a><a name="x416374697665204469726563746F7279"></a><a name="x686F6D6520666F6C64657273"></a><a name="x6E6574776F726B20686F6D6520666F6C64657273"></a><a name="x6C6F63616C20686F6D6520666F6C64657273"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od49385144">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Setting Up Home Folders for Active Directory User Accounts</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">On a computer that’s configured to use the Directory Utility Active Directory connector you can enable or disable network
+                     home folders or local home folders for Active Directory user accounts.
+                  </p>
+                  <p class="Para">With network home folders, a user’s Windows network home folder is mounted as the Mac OS X home folder when the user logs
+                     in.
+                  </p>
+                  <p class="Para">You determine whether the network home folder location is obtained from the Active Directory standard homeDirectory attribute
+                     or from the Mac OS X homeDirectory attribute, if the Active Directory schema has been extended to include it.
+                  </p>
+                  <p class="Para">With local home folders, each Active Directory user who logs in has a home folder on the Mac OS X startup disk. In addition,
+                     the user’s network home folder is mounted as a network volume, like a share point. The user can copy files between this network
+                     volume and the local home folder.
+                  </p>
+               </div>
+               <div class="Task">
+                  <div class="Name">To set up home folders for Active Directory user accounts:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Join or Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Services.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list of services, select Active Directory and click the Edit (/) button.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the advanced options are hidden, click Show Advanced Options.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click User Experience.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If you want Active Directory user accounts to have local home folders in the computer’s /Users folder, click “Force local
+                           home folder on startup disk.”
+                        </p>
+                        <p class="Para">This option is not available if “Create mobile account at login” is selected.</p>
+                     </li>
+                     <li>
+                        <p class="Para">To use the Active Directory standard attribute for the home folder location, select “Use UNC path from Active Directory to
+                           derive network home location” and then choose from the following protocols for accessing the home folder:
+                        </p>
+                        <ul class="ListBullet">
+                           <li>
+                              <p class="Para">To use the standard Windows protocol SMB, choose smb from the “Network protocol to be used” pop-up menu.</p>
+                           </li>
+                           <li>
+                              <p class="Para">To use the standard Macintosh protocol AFP, choose afp from the “Network protocol to be used” pop-up menu.</p>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p class="Para">To use the Mac OS X attribute for the home folder location, deselect “Use UNC path from Active Directory to derive network
+                           home location.”
+                        </p>
+                        <p class="Para">To use the Mac OS X attribute, the Active Directory schema must be extended to include it.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click OK.</p>
+                     </li>
+                  </ol>
+               </div>
+               <div class="Outro">
+                  <p class="Para">If you change the name of a user account in the Active Directory domain, the server creates a home folder (and subfolders)
+                     for the user account the next time it is used for logging in to a Mac OS X computer. The user can still navigate to the old
+                     home folder and see its contents in the Finder.
+                  </p>
+                  <p class="Para">You can prevent creation of a new home folder by renaming the old folder before the user next logs in.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

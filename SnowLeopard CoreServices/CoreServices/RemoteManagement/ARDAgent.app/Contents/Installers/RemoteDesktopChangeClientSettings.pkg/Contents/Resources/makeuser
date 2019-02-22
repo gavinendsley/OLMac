@@ -1,0 +1,472 @@
+#!/bin/bash
+
+################################################################################
+#                                                                              #
+# makeuser:                                                                    #
+# ---------                                                                    #
+# Creat an account on the current volume.                                      #
+#                                                                              #
+#  Copyright (C) 2006 Apple Computer, Custom Software Solutions,               #
+#          All Rights Reserved                                                 #
+#                                                                              #
+# Created by: Timothy R. Weiand                                                #
+# Created on: 10/20/2006                                                       #
+#                                                                              #
+################################################################################
+# Assumptions made by the author of this script:
+# 1) This script will always be run agains the root volume.
+# 2) This script is run on 10.3, 10.4 or 10.5.
+
+##################################################
+# Print Usage:                                   #
+##################################################
+function print_usage() {
+	cat << _END_USAGE	
+	
+$(basename $0) [ -v -h ] {other options}
+
+General Options:
+----------------
+-h | --help                    : Print command help.
+-v | --verbose                 : Verbose output.
+
+Required Account Settings Options:
+----------------------------------
+-n | --longname       "<string>" : User long name.
+-s | --shortname      "<string>" : User short name.
+
+Optional Account Settings Options:
+----------------------------------
+-l | --loginpic      "<file>"   : Choose login picture.
+-c | --cryptpassword "<string>" : Cryt password for this user.
+
+_END_USAGE
+}
+
+##################################################
+# is_flag                                        #
+##################################################
+is_flag() {
+
+	local option rv
+
+	# Argument to check.
+	option=$1
+
+	declare -i rv
+
+	if [[ -z "${option}" ]]; then
+		#print_debug " Option is blank."
+		rv=-1
+	else
+
+		if [[ "${option#-*}" != "${option}" ]]; then
+			rv=0
+		else
+			rv=1
+		fi
+	fi
+
+	return ${rv}
+}
+
+
+
+function print_debug() {
+	if [[ -n "${VERBOSE}" ]]; then
+		printf "debug: $@\n" 1>&2
+	fi
+}
+
+function print_error() {
+	printf "ERROR: $@\n" 1>&2
+}
+
+################################################################################
+#  MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN  #
+################################################################################
+
+##################################################
+# Script Global Variables                        #
+##################################################
+show_usage="false"
+return_code=0
+unset root_volume
+
+##################################################
+# Script local variables                         #
+##################################################
+script_dir="$(dirname "$0")"
+script_name="$(basename "$0")"
+
+##################################################
+# Verify Flags/Digest Arguments                  #
+##################################################
+total_args=$#
+
+# Pre-search for verbose flag.
+for option in $@; do
+	if [[ "${option}" == "-v" || "${option}" == "--verbose" ]]; then
+		export VERBOSE="true"
+		print_debug "-v, Verbose output requested."
+		break
+	fi
+done
+
+# Process all flags for this script.
+for ((counter=0; ${counter} < ${total_args}; counter=$counter+1)); do
+
+	option="${1}"
+
+	# Verify that we are processing a flag.
+	is_flag "$1"
+	if [[ $? != 0 ]]; then
+		print_error "Unknown value passed to script: \"$1\"."
+		pint_usage="true"
+		shift && counter=${counter}+1
+		continue
+	fi
+
+	case "$option" in
+
+		# Common Arguments
+		# ----------------
+		-h | --help ) 
+			print_debug "-h, show usage requested."
+			show_usage="true"
+			;;
+
+		-v | --verbose ) 
+			export VERBOSE="true"
+			;;
+
+		# Script specific arguments
+		# -------------------------
+		-n | --longname | -realname )
+			print_debug "--longname requested."
+
+			shift && counter=$counter+1
+			is_flag "$1"
+			if [[ $? -ne 1 ]]; then
+				print_error "Expected argment after --longname"
+				show_usage="true"
+				return_value=${RV_SCRIPT}
+				continue
+			fi 
+
+			print_debug " ==> \"$1\""
+			longname="$1"
+			;;
+
+		-s | --shortname | -user )
+			print_debug "--shortname requested."
+
+			shift && counter=$counter+1
+			is_flag "$1"
+			if [[ $? -ne 1 ]]; then
+				print_error "Expected argment after --shortname"
+				show_usage="true"
+				return_value=${RV_SCRIPT}
+				continue
+			fi 
+
+			print_debug " ==> \"$1\""
+			shortname="$1"
+			;;
+
+		-c | --cryptpassword | -cryptpass )
+			print_debug "--cryptpassword requested."
+
+			shift && counter=$counter+1
+			is_flag "$1"
+			if [[ $? -ne 1 ]]; then
+				print_error "Expected argment after --cryptpassword"
+				show_usage="true"
+				return_value=${RV_SCRIPT}
+				continue
+			fi 
+
+			print_debug " ==> \"$1\""
+			cryptpassword="$1"
+			;;
+
+		-l | --loginpic | -loginpic )
+			print_debug "--loginpic requested."
+
+			shift && counter=$counter+1
+			is_flag "$1"
+			if [[ $? -ne 1 ]]; then
+				print_error "Expected argment after --loginpic"
+				show_usage="true"
+				return_value=${RV_SCRIPT}
+				continue
+			fi 
+
+			print_debug " ==> \"$1\""
+			loginpic="$1"
+			;;
+
+		# Unknown flag processing
+		# -----------------------
+		* )
+			print_error "Unknown flag passed \"$1\"."
+			show_usage=1
+			;;
+		esac
+
+	shift
+done
+
+##################################################
+# Verify Argument Values Global                  #
+##################################################
+
+# Ensure we are running this script as root (to allow access to all NetInfo and file interactions)
+if [[ "$(id -u)" != "0" ]] ; then
+	print_error "You must be root to run this tool."
+	show_usage="true"
+	return_value=${RC_ROOT}
+fi
+
+os_version="$(defaults read /System/Library/CoreServices/SystemVersion ProductVersion)"
+case "${os_version}" in
+	10.3*)
+		os_version="3"
+		ucmd="nicl"
+		ucmd_users="users"
+		ucmd_groups="groups"
+		;;
+	10.4*)
+		os_version="4"
+		ucmd="nicl"
+		ucmd_users="users"
+		ucmd_groups="groups"
+		;;
+	10.5*)
+		os_version="5"
+		ucmd="dscl"
+		ucmd_users="Users"
+		ucmd_groups="Groups"
+		;;
+	10.6*)
+	    os_version="6"
+    	ucmd="dscl"
+    	ucmd_users="Users"
+    	ucmd_groups="Groups"
+    	;;
+	10.7*)
+	    os_version="7"
+    	ucmd="dscl"
+    	ucmd_users="Users"
+    	ucmd_groups="Groups"
+    	;;
+	*)
+		print_error "Unable to determine OS version: ${os_version}."
+		show_usage="true"
+		return_value=-1
+		;;
+esac
+
+print_debug "Processing user for \"Mac OS 10.${os_version}\"."
+##################################################
+# Pre processing                                 #
+##################################################
+if [[ ! -x "$(which ${ucmd})" ]]; then
+	print_error "\"${ucmd}\" not found."
+	show_usage="true"
+	return_value=${RV_SCRIPT}
+else
+		ucmd="eval ${ucmd} . "
+fi
+
+##################################################
+# Verify Argument Values Script                  #
+##################################################
+if [[ -z "${longname}" ]]; then
+	print_error "--longname not provided."
+	show_usage="true"
+	return_value=${RV_SCRIPT}
+fi
+
+if [[ -z "${shortname}" ]]; then
+	print_error "Flag --shortname not provided."
+	show_usage="true"
+	return_value=${RV_SCRIPT}
+else
+	if [[ -n "${ucmd}" ]]; then
+
+		# Verify that user does not exists.
+		${ucmd} -read "/${ucmd_users}/${shortname}" >/dev/null 2>&1
+		if [[ $? == 0 ]]; then
+			print_error "User \"${shortname}\" already exists."
+			show_usage="true"
+			return_value=${RV_SCRIPT}
+		fi
+
+		# Verify that group does not exist.
+		${ucmd} -read "/${ucmd_groups}/${shortname}" >/dev/null 2>&1
+		if [[ $? == 0 ]]; then
+			print_error "Group \"${shortname}\" already exists."
+			show_usage="true"
+			return_value=${RV_SCRIPT}
+		fi
+
+		# Verify home directory does not exist.
+		if [[ -d "/${ucmd_users}/${shortname}" ]]; then
+			print_error "Home directory \"${root_volume}/Users/${shortname}\" already exists."
+			show_usage="true"
+			return_value=${RV_SCRIPT}
+		fi
+	fi
+
+fi
+
+if [[ -n "${loginpic}" ]]; then
+
+	if [[ -f "${root_volume}${loginpic}" ]]; then
+		print_debug "Using image with absolute path: \"${loginpic}\"."
+	else
+		loginpic="$(find -x "${root_volume}/Library/User Pictures" -type f -iname "${loginpic}.*")"
+		if [[ -z "${loginpic}" ]]; then
+			print_error "Can not find path to user image \"${loginpic}\"."
+			show_usage="true"
+			return_value=${RV_SCRIPT}
+		else
+			if [[ "$(printf "%s" "${loginpic}" | wc -l)" -gt 1 ]]; then
+				print_error "Found multiple paths for user image \"${loginpic}\"."
+				show_usage="true"
+				return_value=${RV_SCRIPT}
+			fi
+		fi
+	fi
+else
+	rand=$RANDOM
+	mod="$(find -x /Library/User\ Pictures -type f | wc -l )"
+	let "rand %= ${mod}"
+	loginpic=$(find -x /Library/User\ Pictures -type f | head -n $rand | tail -n 1)
+	print_debug "Assigning random login picture \"${loginpic}\"."
+fi
+
+##################################################
+# Exit on validation error(s)                    #
+##################################################
+if [[ "${show_usage}" == "true" ]]; then
+	print_usage
+	exit ${return_value}
+fi
+
+################################################################################
+#  Script processing                                                           #
+################################################################################
+declare -i uid gid
+user_home="/Users/${shortname}"
+user_template_dir="/System/Library/User Template/"
+skel_dir_nonloc="${user_template_dir}/Non_localized"
+skel_dir_en="${user_template_dir}/English.lproj"
+
+# Determine uuid
+# --------------
+uu_id="$(uuidgen)"
+print_debug "Assigned uuid \"${uu_id}\" to \"${shortname}\"."
+
+# Create group properties
+# -----------------------
+
+case ${os_version} in
+
+	3 )
+		gid=$(${ucmd} -list /${ucmd_groups}/staff gid | awk -- '{print $2;}')
+		${ucmd} -append "/${ucmd_groups}/staff" "${ucmd_users}"  "${shortname}"
+		;;
+	4 )
+		gid=$(${ucmd} -list /${ucmd_groups} gid | awk -- '{print $2;}' | sort -n | tail -n 1)
+		print_debug "Lowest group ID found \"${gid}\"."
+		if [[ ${gid} -lt 501 ]]; then
+			gid=501
+		else
+			let "gid+=1"
+		fi
+		${ucmd} -create "/${ucmd_groups}/${shortname}"
+		${ucmd} -create "/${ucmd_groups}/${shortname}" "${ucmd_users}"  "${shortname}"
+		${ucmd} -create "/${ucmd_groups}/${shortname}" "passwd" "*"
+		${ucmd} -create "/${ucmd_groups}/${shortname}" "gid"    "${gid}"
+		;;
+	* )
+		gid=$(${ucmd} -read /${ucmd_groups}/staff PrimaryGroupID | awk -- '{print $2;}')
+		dseditgroup -o edit -a "${shortname}" -t user staff
+		;;
+esac
+print_debug " => Assigned group ID \"${gid}\" to \"${shortname}\"."
+
+# Create user properties
+# -----------------------
+
+if [[ ${os_version} -lt 5 ]]; then
+	uid=$(${ucmd} -list /${ucmd_users} uid | awk -- '{print $2;}' | sort -n | tail -n 1)
+	print_debug "Lowest user ID found \"${uid}\"."
+	if [[ ${uid} -lt 501 ]]; then
+		uid=501
+	else
+		let "uid+=1"
+	fi
+else
+	uid=$(${ucmd} -list /${ucmd_users} UniqueID | awk -- '{print $2;}' | sort -n | tail -n 1)
+	print_debug "Lowest user ID found \"${uid}\"."
+	if [[ ${uid} -lt 501 ]]; then
+		uid=501
+	else
+		let "uid+=1"
+	fi
+fi
+print_debug " => Assigned user ID \"${uid}\" to \"${shortname}\"."
+
+${ucmd} -create "/${ucmd_users}/${shortname}"
+
+if [[ ${os_version} -lt 5 ]]; then
+
+	case ${os_version} in
+		3 )
+			${ucmd} -create "/${ucmd_users}/${shortname}" "shell" "/bin/tcsh"
+			${ucmd} -create "/${ucmd_users}/${shortname}" "_writers_realname" "${shortname}"
+			;;
+		4 )
+			${ucmd} -create "/${ucmd_users}/${shortname}" "shell" "/bin/bash"
+			;;
+	esac
+	
+	${ucmd} -create "/${ucmd_users}/${shortname}" "generateduid" \"${uu_id}\"
+	${ucmd} -create "/${ucmd_users}/${shortname}" "home" "\"${user_home}\""
+	${ucmd} -create "/${ucmd_users}/${shortname}" "gid" "${gid}"
+	${ucmd} -create "/${ucmd_users}/${shortname}" "realname" "\"${longname}\""
+	${ucmd} -create "/${ucmd_users}/${shortname}" "sharedDir" "Public"
+	${ucmd} -create "/${ucmd_users}/${shortname}" "uid" "${uid}"
+	${ucmd} -create "/${ucmd_users}/${shortname}" "_writers_passwd" "${shortname}"
+	${ucmd} -create "/${ucmd_users}/${shortname}" "_writers_tim_passwd" "${shortname}"
+	${ucmd} -create "/${ucmd_users}/${shortname}" "_writers_picture" "${shortname}"
+	${ucmd} -create "/${ucmd_users}/${shortname}" "picture" "\"${loginpic}\""
+	
+	${ucmd} -create "/${ucmd_users}/${shortname}" "authentication_authority" "\";basic;\""
+	${ucmd} -create "/${ucmd_users}/${shortname}" "passwd" "\"${cryptpassword}\""
+else
+	${ucmd} -create "/${ucmd_users}/${shortname}" "GeneratedUID" \"${uu_id}\"
+	${ucmd} -create "/${ucmd_users}/${shortname}" "NFSHomeDirectory" \"${user_home}\"
+	${ucmd} -create "/${ucmd_users}/${shortname}" "Picture" \"${loginpic}\"
+	${ucmd} -create "/${ucmd_users}/${shortname}" "PrimaryGroupID" "${gid}"
+	${ucmd} -create "/${ucmd_users}/${shortname}" "RealName" \"${longname}\"
+	${ucmd} -create "/${ucmd_users}/${shortname}" "UniqueID" "${uid}"
+	${ucmd} -create "/${ucmd_users}/${shortname}" "UserShell" "/bin/bash"
+
+	${ucmd} -create "/${ucmd_users}/${shortname}" "AuthenticationAuthority" "\";basic;\""
+	${ucmd} -create "/${ucmd_users}/${shortname}" "Password" \"${cryptpassword}\"
+fi
+
+# User Home Directory
+# -------------------
+mkdir -p "${user_home}"
+
+# Normal user template operations, no special case for CSS
+ditto -rsrc "${skel_dir_nonloc}"  "${user_home}"
+ditto -rsrc "${skel_dir_en}"      "${user_home}"
+
+# Change the permissions on the directory.
+chown -R ${uid}:${gid} "${user_home}"

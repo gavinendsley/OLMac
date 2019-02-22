@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>Reg_Want_SBS</key>
+	<dict>
+		<key>0200</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>ShortUsername</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>Required</string>
+			</array>
+			<key>MaxLength</key>
+			<string>128</string>
+			<key>NavigateByReturn</key>
+			<string>YES</string>
+			<key>NSAccessibility</key>
+			<dict>
+				<key>AXDescription</key>
+				<string>name</string>
+			</dict>
+		</dict>
+		<key>0300</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>Password</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>RequiredAny</string>
+				<string>LDAPPassword</string>
+			</array>
+			<key>LDAPPassword</key>
+			<string>0200</string>
+			<key>NSAccessibility</key>
+			<dict>
+				<key>AXDescription</key>
+				<string>password</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>nextPage</key>
+	<string>Reg__HasNIOrNot</string>
+</dict>
+</plist>

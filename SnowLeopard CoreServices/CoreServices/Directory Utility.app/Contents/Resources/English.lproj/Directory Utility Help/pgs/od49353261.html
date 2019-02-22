@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Changing the Security Policy for an LDAP Connection</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to configure a stricter security policy for an LDAPv3 connection than the security policy of the LDAP directory." />
+      <meta name="topicid" content="od49353261" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od49353261"></a><a name="x4C444150763320616363657373"></a><a name="x4C44415020284C69676874776569676874204469726563746F7279204163636573732050726F746F636F6C292073657276696365"></a><a name="x7365637572697479"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od49353261">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Changing the Security Policy for an LDAP Connection</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">Using Directory Utility, you can configure a stricter security policy for an LDAPv3 connection than the security policy of
+                     the LDAP directory. For example, if the LDAP directory’s security policy permits clear-text passwords, you can set an LDAPv3
+                     connection to not permit clear-text passwords.
+                  </p>
+                  <p class="Para">Setting a stricter security policy protects your computer from a malicious hacker trying to use a rogue LDAP server to gain
+                     control of your computer.
+                  </p>
+                  <p class="Para">The computer must communicate with the LDAP server to show the state of the security options. Therefore when you change security
+                     options for an LDAPv3 connection, the computer’s authentication search policy should include the LDAPv3 connection.
+                  </p>
+                  <p class="Para">The permissible settings of an LDAPv3 connection’s security options are subject to the LDAP server’s security capabilities
+                     and requirements. For example, if the LDAP server doesn’t support Kerberos authentication, several LDAPv3 connection security
+                     options are disabled.
+                  </p>
+               </div>
+               <div class="Task">
+                  <div class="Name">To change an LDAPv3 connection’s security options:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Search Policy.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Authentication and make sure the LDAPv3 directory you want is listed in the search policy.</p>
+                        <p class="Para">For more information about adding the LDAPv3 directory to the authentication search policy, see <a href="od494687d3.html">Defining Custom Search Policies</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Services.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list of services, select LDAPv3 and click the Edit (/) button.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the list of server configurations is hidden, click Show Options.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Select the configuration for the directory you want, then click Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Security and then change any of the following settings.</p>
+                        <div class="Alert">
+                           <div class="Note"><span class="Note">Note:  </span>The security settings here and on the corresponding LDAP server are determined when the LDAP connection is set up. The settings
+                              aren’t updated when server settings are changed.
+                           </div>
+                        </div>
+                        <p class="Para">If any of the last four options are selected but disabled, the LDAP directory requires them. If any of these options are unselected
+                           and disabled, the LDAP server doesn’t support them.
+                        </p>
+                        <ul class="ListBullet">
+                           <li>
+                              <p class="Para"><span class="Emphasis">Use authentication when connecting: </span>Determines whether the LDAPv3 connection authenticates itself with the LDAP directory by supplying the specified distinguished
+                                 name and password. This option is not visible if the LDAPv3 connection uses trusted binding with the LDAP directory.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Bound to the directory as: </span>Specifies the credentials the LDAPv3 connection uses for trusted binding with the LDAP directory. This option and the credentials
+                                 can’t be changed here. Instead, you can unbind and then bind again with different credentials.
+                              </p>
+                              <p class="Para">For more information, see <a href="od493c34c2.html">Stopping Trusted Binding with an LDAP Directory</a> and <a href="od494583e8.html">Setting Up Trusted Binding for an LDAP Directory</a>.
+                              </p>
+                              <p class="Para">This option is not visible unless the LDAPv3 connection uses trusted binding.</p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Disable clear text passwords: </span>Determines whether the password is to be sent as cleartext if it can’t be validated using an authentication method that sends
+                                 an encrypted password.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Digitally sign all packets (requires Kerberos): </span>Certifies that directory data from the LDAP server hasn’t been intercepted and modified by another computer while en route
+                                 to your computer.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Encrypt all packets (requires SSL or Kerberos): </span>Requires the LDAP server to encrypt directory data using SSL or Kerberos before sending it to your computer. Before you select
+                                 the “Encrypt all packets (requires SSL or Kerberos)” checkbox, ask your Open Directory administrator if SSL is needed.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Block man-in-the-middle attacks (requires Kerberos) </span>Protects against a rogue server posing as the LDAP server. Best if used with the “Digitally sign all packets” option.
+                              </p>
+                           </li>
+                        </ul>
+                     </li>
+                  </ol>
+               </div>
+               <div class="LinkInternal"><span class="LinkInternal">Related Topics</span><div class="LinkTopicPage"><a href="od49475b81.html">Authenticating an LDAP Connection</a></div>
+                  <div class="LinkTopicPage"><a href="od4946f007.html">Changing the Password Used for Authenticating an LDAP Connection</a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

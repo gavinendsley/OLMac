@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- paths we do not want to include in a system backup -->
+	<key>PathsExcluded</key>
+	<array>
+		<string>/.DocumentRevisions-V100</string> <!-- rdar://9083263 -->
+		<string>/.MobileBackups</string>
+		<string>/MobileBackups.trash</string>
+		<string>/.MobileBackups.trash</string>
+		<string>/.Spotlight-V100</string>
+		<string>/.Trashes</string>
+		<string>/.fseventsd</string>
+		<string>/.hotfiles.btree</string>
+		<string>/Backups.backupdb</string>
+		<string>/Desktop DB</string>
+		<string>/Desktop DF</string>
+		<string>/Network/Servers</string>
+		<string>/Previous Systems</string>
+		<string>/Users/Shared/SC Info</string>
+		<string>/Users/Guest</string>
+		<string>/dev</string>
+		<string>/home</string>
+		<string>/net</string>
+		<string>/private/var/db/efw_cache</string>
+		<string>/private/var/db/Spotlight</string>			<!-- old tiger location of the Spotlight db -->
+		<string>/private/var/db/Spotlight-V100</string>		<!-- old tiger location of the Spotlight db -->
+	</array>
+	<!-- paths where we need to capture top level folder to restore disk structure, but don't want to backup any contents -->
+	<key>ContentsExcluded</key>
+	<array>
+		<string>/Volumes</string>
+		<string>/Network</string>
+		<string>/automount</string>
+		<string>/.vol</string>
+		<string>/tmp</string>
+		<string>/cores</string>
+		<string>/private/tmp</string>
+		<string>/private/Network</string>
+		<string>/private/tftpboot</string>
+		<string>/private/var/automount</string>
+		<string>/private/var/folders</string>
+		<string>/private/var/run</string>
+		<string>/private/var/tmp</string>
+		<string>/private/var/vm</string>
+		<string>/private/var/db/dhcpclient</string>
+		<string>/private/var/db/fseventsd</string>
+		<string>/Library/Caches</string>
+		<string>/Library/Logs</string>
+		<string>/System/Library/Caches</string>
+		<string>/System/Library/Extensions/Caches</string>
+	</array>
+	<!-- paths where we need to capture entire subtree folder layout to restore disk structure, but don't want to backup contained files -->
+	<key>FileContentsExcluded</key>
+	<array>
+		<string>/private/var/log</string>
+		<string>/private/var/spool/cups</string>
+        <string>/private/var/spool/fax</string>
+        <string>/private/var/spool/uucp</string>
+	</array>
+	<!-- standard user paths we want to skip for each user (subpath relative to root of home directory) -->
+	<key>UserPathsExcluded</key>
+	<array>
+		<string>Library/Application Support/SyncServices/data.version</string>
+		<string>Library/Caches</string>
+		<string>Library/Logs</string>
+		<string>Library/Mail/Envelope Index</string>
+		<string>Library/Mail/AvailableFeeds</string>
+		<string>Library/Mirrors</string>
+		<string>Library/PubSub/Database</string>
+		<string>Library/PubSub/Downloads</string>
+		<string>Library/PubSub/Feeds</string>
+		<string>Library/Safari/Icons.db</string>
+        <string>Library/Safari/WebpageIcons.db</string>
+		<string>Library/Safari/HistoryIndex.sk</string>
+	</array>
+</dict>
+</plist>

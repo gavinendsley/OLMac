@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>Language Chooser</string>
+	<key>CFBundleGetInfoString</key>
+	<string>System Language Initializer</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.LanguageChooser</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Language Chooser</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>20</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>62</string>
+	<key>IFLanguageOrder</key>
+	<array>
+		<string>English</string>
+		<string>Japanese</string>
+		<string>French</string>
+		<string>German</string>
+		<string>Spanish</string>
+		<string>Italian</string>
+		<string>pt</string>
+		<string>Dutch</string>
+		<string>sv</string>
+		<string>no</string>
+		<string>da</string>
+		<string>fi</string>
+		<string>zh_CN</string>
+		<string>zh_TW</string>
+		<string>ko</string>
+	</array>
+	<key>LSUIElement</key>
+	<string>1</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>

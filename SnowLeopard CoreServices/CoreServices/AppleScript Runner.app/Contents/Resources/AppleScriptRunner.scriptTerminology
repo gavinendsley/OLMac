@@ -1,0 +1,21 @@
+{
+    Name = "AppleScript Runner Suite";
+    Description = "Terms and Events for controlling the AppleScript Runner application";
+
+    Commands = {
+        doScript = {
+            Description = "Execute an OSA script.";
+            Name = "do script";
+			UnnamedArgument = {
+				Description = "The file path to an OSA script.";
+			};
+        };
+	};
+    Classes = {
+        NSApplication = {
+            Name = "application";
+            PluralName = "applications";
+            Description = "The AppleScript Runner application";
+        };
+    };
+}

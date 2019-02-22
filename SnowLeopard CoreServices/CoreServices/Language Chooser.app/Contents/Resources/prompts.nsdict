@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+			<key>English</key>
+			<string>Use English for the main language</string>
+
+			<key>Japanese</key>
+			<string>主に日本語を使用する</string>
+
+			<key>French</key>
+			<string>Utiliser le français comme langue principale</string>
+
+			<key>German</key>
+			<string>Deutsch als Standardsprache verwenden</string>
+
+			<key>Spanish</key>
+			<string>Usar español como idioma principal</string>
+
+			<key>Italian</key>
+			<string>Usa l'italiano come lingua principale</string>
+
+			<key>pt</key>
+			<string>Usar português do Brasil como idioma principal</string>
+
+			<key>Dutch</key>
+			<string>Gebruik Nederlands als hoofdtaal</string>
+
+			<key>sv</key>
+			<string>Använd svenska som huvudspråk</string>
+
+			<key>no</key>
+			<string>Bruk norsk som hovedspråk</string>
+
+			<key>da</key>
+			<string>Brug dansk som hovedsprog</string>
+
+			<key>fi</key>
+			<string>Käytä pääkielenä suomea</string>
+
+			<key>ru</key>
+			<string>Выбрать pусский как главный язык</string>
+
+			<key>zh_CN</key>
+			<string>以简体中文作为主语言</string>
+
+			<key>zh_TW</key>
+			<string>以繁體中文作為主要語言</string>
+
+			<key>ko</key>
+			<string>주 언어로 한글 사용</string>
+			
+			<key>pl</key>
+			<string>Użyj polskiego jako języka głównego</string>
+			
+			<key>pt_PT</key>
+			<string>Usar o português europeu como idioma principal</string>
+	</dict>
+</plist>

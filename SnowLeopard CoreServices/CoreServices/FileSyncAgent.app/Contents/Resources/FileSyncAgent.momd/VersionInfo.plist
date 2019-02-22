@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSManagedObjectModel_CurrentVersionName</key>
+	<string>FileSyncAgent-v1</string>
+	<key>NSManagedObjectModel_VersionHashes</key>
+	<dict>
+		<key>FileSyncAgent-v1</key>
+		<dict>
+			<key>SHomeDirExclusions</key>
+			<data>
+			nNXwjkzLgrCdWPWStcFhSvOHjyMhWOPwsm0vfr7zTD4=
+			</data>
+			<key>SPeer</key>
+			<data>
+			IYIPbmVaGQiFHgv4F/EUnVPaEmxi2J0vrugxLTlzVz8=
+			</data>
+			<key>SPeer_FS</key>
+			<data>
+			vCILtqOTFR6z9hZC9QQXVT3wzGPvwHf/Fl+J4wn+Kgs=
+			</data>
+			<key>SPeer_FS_PHD</key>
+			<data>
+			ciY2nxKw9m3C7DA+/E/BN50TcExFo9jWPS10nM0ROiM=
+			</data>
+			<key>SPeer_FS_dmg</key>
+			<data>
+			wrzAVisSvKLqxqEi6oTxiPWsYVwmkxEyAYVFsGybaTs=
+			</data>
+			<key>SPeer_NetClient</key>
+			<data>
+			cHlGTMHe007CyIgPT4w+hNvBHoZNchZbAesdxSo2qDQ=
+			</data>
+			<key>SPeer_iDisk_local</key>
+			<data>
+			C4UlKBx6rTMbdQ2h5raFuhKC+nI2cCJWoUgMdAgeI1o=
+			</data>
+			<key>SPeer_iDisk_remote</key>
+			<data>
+			W/vGE7LW5pjCHbHrQT+BtEm6Jpc+gkjvBqv/RWqo7e0=
+			</data>
+			<key>SSyncSet</key>
+			<data>
+			FfeuyKWXJ9l/tEf4NbgjKPGUYkncwARg9qbG7PBqmV8=
+			</data>
+			<key>SSyncSet_PHD</key>
+			<data>
+			JS9t7DoyxH/D88RSxz7/KMmGGdNjzOZFKoF4hCufRpc=
+			</data>
+			<key>SSyncSet_iDisk</key>
+			<data>
+			lktAXIwnu8SwpWviZj9W51DrVd9+pJnBcKYs32KZkvU=
+			</data>
+		</dict>
+	</dict>
+</dict>
+</plist>

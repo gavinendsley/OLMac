@@ -1,0 +1,64 @@
+{
+    Name = "Movie File Suite";
+    Description = "Terms and Events for accessing the content of Movie files";
+
+    Classes = {
+        MovieFile = {
+            Name = "movie file";
+            PluralName = "movie files";
+            Description = "A file containing data in Movie format";
+            Attributes = {
+                contents = {
+                    Name = "contents";
+                    Description = "the contents of the movie file; elements and properties of the movie data may be accessed as if they were elements and properties of the movie file";
+                };
+            };
+        };
+        MovieData = {
+            Name = "movie data";
+            Description = "Data in Movie format";
+            Attributes = {
+                bounds = {
+                    Name = "bounds";
+                    Description = "the bounding rectangle of the movie file";
+                };
+                naturalDimensions = {
+                    Name = "natural dimensions";
+                    Description = "the dimensions the movie has when it is not scaled";
+                };
+                creationTime = {
+                    Name = "creation time";
+                    Description = "the creation time of the movie file";
+                };
+                modificationTime = {
+                    Name = "modification time";
+                    Description = "the modification time of the movie file";
+                };
+                dataSize = {
+                    Name = "data size";
+                    Description = "the size of the movie file data";
+                };
+                duration = {
+                    Name = "duration";
+                    Description = "the duration of the movie file";
+                };
+                preferredRate = {
+                    Name = "preferred rate";
+                    Description = "the preferred rate of the movie file";
+                };
+                preferredVolume = {
+                    Name = "preferred volume";
+                    Description = "the preferred volume of the movie file";
+                };
+                previewTime = {
+                    Name = "preview time";
+                    Description = "the preview time of the movie file";
+                };
+                previewDuration = {
+                    Name = "preview duration";
+                    Description = "the preview duration of the movie file";
+                };
+            };
+        };
+    };
+}

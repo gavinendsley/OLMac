@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Defining Automatic Search Policies</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to configure a Mac OS X computer’s authentication and contacts search policies to be defined automatically." />
+      <meta name="topicid" content="od49470de9" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od49470de9"></a><a name="x73656172636820706F6C6963696573"></a><a name="x636C69656E7420636F6D707574657273"></a><a name="x646F6D61696E732C206469726563746F7279"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od49470de9">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Defining Automatic Search Policies</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">Using Directory Utility, you can configure a Mac OS X computer’s authentication and contacts search policies to be defined
+                     automatically.
+                  </p>
+                  <p class="Para">An automatically defined search policy includes the local directory domain. It can also include an LDAP directory server specified
+                     by the DHCP service.
+                  </p>
+                  <p class="Para">This is the default configuration for the authentication and contacts search policies.</p>
+                  <div class="Alert">
+                     <div class="Note"><span class="Note">Note:  </span>Some applications, such as Mac OS X Mail and Address Book, can access LDAP directories directly, without using Open Directory.
+                        To set up one of these applications to access LDAP directories directly, open the application and set the correct preference.
+                     </div>
+                  </div>
+                  <div class="Alert">
+                     <div class="Important"><span class="Important">Important:  </span>If you configure Mac OS X to use an automatic authentication search policy and a DHCP-supplied LDAP server or a DHCP-supplied
+                        shared directory domain, you increase the risk of a malicious user gaining control of your computer. The risk is even higher
+                        if your computer is configured to connect to a wireless network. For more information, see <a href="od49451b71.html">Protecting Computers from a Malicious DHCP Server</a>.
+                     </div>
+                  </div>
+               </div>
+               <div class="Task">
+                  <div class="Name">To have a search policy defined automatically:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Join or Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Search Policy and choose a search policy:</p>
+                        <ul class="ListBullet">
+                           <li>
+                              <p class="Para"><span class="Emphasis">Authentication: </span>Shows the search policy used for authentication and most other administrative data.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Contacts: </span>Shows the search policy used for contact information in applications such as Address Book.
+                              </p>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p class="Para">From the Search pop-up menu, choose Automatic, then click Apply.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In System Preferences, make sure the computer’s Network preferences are configured to use DHCP or DHCP with a manual IP address.</p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

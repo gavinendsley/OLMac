@@ -1,0 +1,21 @@
+#!/bin/zsh -e
+
+## Store vnc server settings in the file
+## "/Library/Preferences/com.apple.VNCSettings.txt"
+
+## Must be run sudo (EUID 0) with environment variable VNCSETTINGS
+## containing the encoded settings string.
+
+[ "x$EUID"         = "x0" ]	     ## Exit unless root
+[ "x$VNCSETTINGS" != "x"  ]	     ## Exit unless value specified.
+
+VNCSETTINGSFILE="/Library/Preferences/com.apple.VNCSettings.txt"
+
+ /usr/bin/touch        "$VNCSETTINGSFILE"
+     /bin/chmod 600    "$VNCSETTINGSFILE"
+
+print "$VNCSETTINGS" > "$VNCSETTINGSFILE"
+
+/usr/sbin/chown 0      "$VNCSETTINGSFILE"
+ /usr/bin/chgrp 0      "$VNCSETTINGSFILE"
+     /bin/chmod 400    "$VNCSETTINGSFILE"

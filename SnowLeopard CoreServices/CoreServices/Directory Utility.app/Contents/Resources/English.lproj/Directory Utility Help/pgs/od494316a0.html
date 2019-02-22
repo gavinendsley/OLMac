@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Configuring LDAP Searches and Mappings</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to edit the mappings, search bases, and search scopes that specify how Mac OS X finds specific data items in an LDAP directory." />
+      <meta name="topicid" content="od494316a0" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od494316a0"></a><a name="x4C44415020284C69676874776569676874204469726563746F7279204163636573732050726F746F636F6C292073657276696365"></a><a name="x6D617070696E6773"></a><a name="x736561726368696E67"></a><a name="x61747472696275746573"></a><a name="x5265616C4E616D65"></a><a name="x73656172636820626173652C204C444150"></a><a name="x7265636F726473"></a><a name="x6469726563746F7279207365727669636573"></a><a name="x74656D706C617465732C204C444150206D617070696E67"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od494316a0">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Configuring LDAP Searches and Mappings</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">Using Directory Utility, you can edit the mappings, search bases, and search scopes that specify how Mac OS X finds specific
+                     data items in an LDAP directory. You can edit these settings separately for each LDAP directory configuration listed in Directory
+                     Utility. Each LDAP directory configuration specifies how Mac OS X accesses data in an LDAPv3 or LDAPv2 directory.
+                  </p>
+                  <p class="Para">You can edit the following:</p>
+                  <ul class="ListBullet">
+                     <li>
+                        <p class="Para">The mapping of each Mac OS X record type to LDAP object classes</p>
+                     </li>
+                     <li>
+                        <p class="Para">The mapping of Mac OS X data types, or attributes, to LDAP attributes for each record type</p>
+                     </li>
+                     <li>
+                        <p class="Para">The LDAP search base and search scope that determine where Mac OS X looks for a Mac OS X record type in an LDAP directory</p>
+                     </li>
+                  </ul>
+                  <p class="Para">When mapping Mac OS X user attributes to a read/write LDAP directory domain (an LDAP domain that is not read-only), the LDAP
+                     attribute mapped to RealName must not be the same as the first attribute in a list of LDAP attributes mapped to RecordName.
+                  </p>
+                  <p class="Para">For example, the cn attribute must not be the first attribute mapped to RecordName if cn is also mapped to RealName.</p>
+                  <p class="Para">If the LDAP attribute mapped to RealName is the same as the first attribute mapped to RecordName, problems will occur when
+                     you try to edit the full (long) name or the first short name in Workgroup Manager. 
+                  </p>
+                  <p class="Para">For more information about Mac OS X record types and attributes, see <span class="Emphasis">Open Directory Administration </span>(available at <a href="http://www.apple.com/server/resources/">www.apple.com/server/resources/</a>).
+                  </p>
+               </div>
+               <div class="Task">
+                  <div class="Name">To edit search bases and mappings for an LDAP server:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Services.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list of services, select LDAPv3 and click the Edit (/) button.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the list of server configurations is hidden, click Show Options.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list, select a server configuration and click Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Search &amp; Mappings.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Select the mappings you want to use as a starting point; otherwise, choose Custom to begin with no predefined mappings.</p>
+                        <p class="Para">If you choose one of the LDAP mapping templates, a search base suffix that you can change appears, or you can accept the default
+                           search base suffix by clicking OK.
+                        </p>
+                        <p class="Para">Click the “Access this LDAPv3 server using” pop-up menu and choose a mapping template to use its mappings as a starting point.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Add record types and change their search bases as needed:</p>
+                        <ul class="ListBullet">
+                           <li>
+                              <p class="Para">To add record types, click Add (below the Record Types and Attributes list); then, in the sheet that appears, select Record
+                                 Types, select record types from the list, and click OK.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">To change the search base and search scope of a record type, select it in the Record Types and Attributes list, and then edit
+                                 the “Search base” field. Select “all subtrees” to set the search scope to include the LDAP directory’s hierarchy from the
+                                 search base down, or select “first level only” to set the search scope to include only the search base and one level below
+                                 it in the LDAP directory’s hierarchy.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">To remove a record type, in the Record Types and Attributes list select the type and click Delete.</p>
+                           </li>
+                           <li>
+                              <p class="Para">To add a mapping for a record type, select the record type in the Record Types and Attributes list, then click Add (below
+                                 “Map to __ items in list”) and enter the name of an object class from the LDAP directory. 
+                              </p>
+                              <p class="Para">To add another LDAP object class, press Return and enter the name of the object class and specify whether to use the listed
+                                 LDAP object classes by using the pop-up menu above the list.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">To change a mapping for a record type, select the record type in the Record Types and Attributes list, double-click the LDAP
+                                 object class you want to change in the “Map to __ items in list,” and then edit it. Specify whether to use the listed LDAP
+                                 object classes by using the pop-up menu above the list.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">To remove a mapping for a record type, in the Record Types and Attributes list, select the record type, select the LDAP object
+                                 class you want to remove from the “Map to __ items in list,” and then click Delete (below “Map to __ items in list”).
+                              </p>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p class="Para">Add attributes and change their mappings as needed:</p>
+                        <ul class="ListBullet">
+                           <li>
+                              <p class="Para">To add attributes to a record type, in the Record Types and Attributes list, select the record type and click Add (below the
+                                 Record Types and Attributes list); then, in the sheet that appears, select Attribute Types, select attribute types, and click
+                                 OK.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">To add a mapping for an attribute, in the Record Types and Attributes list, select the attribute, click Add (below “Map to
+                                 __ items in list”), and enter the name of an attribute from the LDAP directory. To add another LDAP attribute, press Return
+                                 and enter the name of the attribute.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">To change a mapping for an attribute, in the Record Types and Attributes list, select the attribute, double-click the item
+                                 you want to change in the “Map to __ items in list,” and then edit the item name.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">To remove a mapping for an attribute, in the Record Types and Attributes list, select the attribute, select the item you want
+                                 to remove from the “Map to __ items in list,” and then click Delete (below “Map to __ items in list”).
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">To change the order of attributes appearing in the list on the right, drag the attributes up or down in the list.</p>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p class="Para">To save your mappings as a template, click Save Template.</p>
+                        <p class="Para">Templates saved in the default location are listed in pop-up menus of LDAP mapping templates the next time you open Directory
+                           Utility. The default location for saved templates is in your home folder at this path:
+                        </p>
+                        <p class="Para">~/Library/Application Support/Directory Access/LDAPv3/Templates</p>
+                     </li>
+                     <li>
+                        <p class="Para">To store the mappings in the LDAP directory so it can supply them automatically to its clients, click Write to Server and
+                           then enter a search base to store the mappings, a distinguished name of an administrator or other user with write permission
+                           for the search base (for example, uid=diradmin,cn=users,dc=ods,dc=example,dc=com), and a password.
+                        </p>
+                        <p class="Para">If you are writing mappings to an Open Directory LDAP server, the correct search base is cn=config,<span class="Emphasis">suffix</span> (where <span class="Emphasis">suffix</span> is the server’s search base suffix, such as <span class="NoBreak">dc=ods,dc=example,dc=com</span>).
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+               <div class="Outro">
+                  <p class="Para">The LDAP directory supplies its mappings to Mac OS X clients whose custom search policy includes a connection that’s configured
+                     to get mappings from the LDAP server. 
+                  </p>
+                  <p class="Para">The LDAP directory also supplies its mappings to all Mac OS X clients that have an automatic search policy. For more information,
+                     see <a href="od4937cc9f.html">Configuring Access to an LDAP Directory</a> and <a href="od49349646.html">Using Advanced Search Policy Settings</a>.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

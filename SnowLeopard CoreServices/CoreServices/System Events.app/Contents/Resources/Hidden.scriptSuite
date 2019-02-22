@@ -1,0 +1,204 @@
+{
+    Name = "Hidden";
+    AppleEventCode = "tpnm";
+
+    Commands = {
+        doScript = {
+            AppleEventClassCode = "misc";
+            AppleEventCode = "dosc";
+            CommandClass = "DoScriptVerb";
+            ResultAppleEventCode = "****";
+            Type = "NSObject";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "NSString";
+			};
+        };
+        doAction = {
+            AppleEventClassCode = "faco";
+            AppleEventCode = "fola";
+            CommandClass = "DoActionVerb";
+            ResultAppleEventCode = "list";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "NSString";
+			};
+            Arguments = {
+                code = {
+                    Type = "NSNumber<ActionCodes>";
+                    AppleEventCode = "actn";
+                };
+                itemList = {
+                    Type = "NSObject";
+                    AppleEventCode = "flst";
+                    Optional = "YES";
+                };
+                windowSize = {
+                    Type = "NSData<NSCoreSuite.QDRect>";
+                    AppleEventCode = "fnsz";
+                    Optional = "YES";
+                };
+            };
+        };
+        increment = {
+            AppleEventClassCode = "prcs";
+            AppleEventCode = "incE";
+            CommandClass = "NSScriptCommand";
+            Type = "Processes.UIElement";
+            ResultAppleEventCode = "uiel";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "Processes.UIElement";
+			};
+        };
+        decrement = {
+            AppleEventClassCode = "prcs";
+            AppleEventCode = "decr";
+            CommandClass = "NSScriptCommand";
+            Type = "Processes.UIElement";
+            ResultAppleEventCode = "uiel";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "Processes.UIElement";
+			};
+        };
+        confirm = {
+            AppleEventClassCode = "prcs";
+            AppleEventCode = "cnfm";
+            CommandClass = "NSScriptCommand";
+            Type = "Processes.UIElement";
+            ResultAppleEventCode = "uiel";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "Processes.UIElement";
+			};
+        };
+        pick = {
+            AppleEventClassCode = "prcs";
+            AppleEventCode = "pick";
+            CommandClass = "NSScriptCommand";
+            Type = "Processes.UIElement";
+            ResultAppleEventCode = "uiel";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "Processes.UIElement";
+			};
+        };
+        cancel = {
+            AppleEventClassCode = "prcs";
+            AppleEventCode = "cncl";
+            CommandClass = "NSScriptCommand";
+            Type = "Processes.UIElement";
+            ResultAppleEventCode = "uiel";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "Processes.UIElement";
+			};
+        };
+        keydown = {
+            AppleEventClassCode = "prcs";
+            AppleEventCode = "keyF";
+            CommandClass = "KeyDownVerb";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "NSString";
+			};
+        };
+        keyup = {
+            AppleEventClassCode = "prcs";
+            AppleEventCode = "keyU";
+            CommandClass = "KeyUpVerb";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "NSString";
+			};
+        };
+        attachAction = {
+            AppleEventClassCode = "faco";
+            AppleEventCode = "atfa";
+            CommandClass = "AttachActionVerb";
+            Type = "FolderActions.FolderAction";
+            ResultAppleEventCode = "foac";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "DiskFolderFile.Folder";
+			};
+            Arguments = {
+                using = {
+                    Type = "NSString";
+                    AppleEventCode = "faal";
+                };
+            };
+        };
+        removeAction = {
+            AppleEventClassCode = "faco";
+            AppleEventCode = "rmfa";
+            CommandClass = "RemoveActionVerb";
+            Type = "FolderActions.FolderAction";
+            ResultAppleEventCode = "foac";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "DiskFolderFile.Folder";
+			};
+            Arguments = {
+                usingNumber = {
+                    Type = "NSNumber";
+                    AppleEventCode = "indx";
+                    Optional = "YES";
+                };
+                usingName = {
+                    Type = "NSString";
+                    AppleEventCode = "snam";
+                    Optional = "YES";
+                };
+            };
+        };
+        editAction = {
+            AppleEventClassCode = "faco";
+            AppleEventCode = "edfa";
+            CommandClass = "EditActionVerb";
+            Type = "DiskFolderFile.File";
+            ResultAppleEventCode = "file";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "DiskFolderFile.Folder";
+			};
+            Arguments = {
+                usingNumber = {
+                    Type = "NSNumber";
+                    AppleEventCode = "indx";
+                    Optional = "YES";
+                };
+                usingName = {
+                    Type = "NSString";
+                    AppleEventCode = "snam";
+                    Optional = "YES";
+                };
+            };
+        };
+        attachedScripts = {
+            AppleEventClassCode = "faco";
+            AppleEventCode = "lact";
+            CommandClass = "AttachedScriptsVerb";
+            Type = "NSArray";
+            ResultAppleEventCode = "list";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "DiskFolderFile.Folder";
+			};
+        };
+    };
+	Enumerations = {
+        ActionCodes = {
+            AppleEventCode = "actn";
+            Enumerators = {
+				WindowOpened = "fopn";
+				WindowClosed = "fclo";
+				WindowMoved = "fsiz";
+				ItemsAdded = "fget";
+				ItemsRemoved = "flos";
+			};
+        };
+    };
+}
+

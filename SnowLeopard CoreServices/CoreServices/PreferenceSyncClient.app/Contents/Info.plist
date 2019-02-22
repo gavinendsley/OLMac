@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>PreferenceSyncClient</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.PreferenceSync</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>PreferenceSyncClient</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>30</string>
+	<key>FilterDomainStrings</key>
+	<array>
+		<string>com.apple.recentitems</string>
+		<string>com.apple.DotMacSync</string>
+		<string>com.apple.dashboard</string>
+		<string>com.apple.dotmactranslator</string>
+		<string>widget-</string>
+		<string>com.apple.keychainsync</string>
+		<string>com.apple.dock</string>
+		<string>com.apple.PreferenceSync</string>
+		<string>com.apple.scheduler</string>
+		<string>com.apple.loginitems</string>
+		<string>loginwindow</string>
+		<string>com.apple.security</string>
+		<string>edu.mit.Kerberos</string>
+	</array>
+	<key>FilterPrefStrings</key>
+	<array>
+		<string>ApplicationCrashedAfterRelaunch</string>
+		<string>NSRecentDocumentRecords</string>
+		<string>NSWindow Frame</string>
+		<string>com.apple.PreferenceSync.ExcludeSyncKeys</string>
+		<string>NSNavLast</string>
+		<string>NSNavPanelExpandedSize</string>
+	</array>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>

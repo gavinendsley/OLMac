@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Editing RFC 2307 Mapping to Enable Creating Users</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to enable creating users in a non-Apple LDAP directory that uses RFC 2307 (UNIX) mappings." />
+      <meta name="topicid" content="od4934ca4f" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od4934ca4f"></a><a name="x6469726563746F7279207365727669636573"></a><a name="x6D617070696E6773"></a><a name="x7265636F726473"></a><a name="x5246432032333037206D617070696E67"></a><a name="x7573657273"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od4934ca4f">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Editing RFC 2307 Mapping to Enable Creating Users</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">Before you can use Workgroup Manager to create users on a non-Apple LDAP directory server that uses RFC 2307 (UNIX) mappings,
+                     you must edit the mapping of the Users record type. You do this with Directory Utility.
+                  </p>
+               </div>
+               <div class="Task">
+                  <div class="Name">To enable creating user records in an LDAP directory with RFC 2307 mappings:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Services.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list of services, select LDAPv3 and click the Edit (/) button.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the list of server configurations is hidden, click Show Options.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Select the directory configuration with RFC 2307 mappings, then click Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Search &amp; Mappings.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list on the left, select Users.</p>
+                        <p class="Para">By default, “Map to __ items in list” is set to Any and the list on the right includes posixAccount, inetOrgPerson, and shadowAccount.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Change “Map to __ items in list” to All and then change the list on the right to include the set of LDAP object classes you
+                           want the Users record type mapped to.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+               <div class="Outro">
+                  <p class="Para">For example, you could delete shadowAccount from the list so that users map to only posixAccount and inetOrgPerson. Alternatively,
+                     you could map Users to account, posixAccount, and shadowAccount:
+                  </p>
+                  <ul class="ListBullet">
+                     <li>
+                        <p class="Para">To change an item on the list, double-click it.</p>
+                     </li>
+                     <li>
+                        <p class="Para">To add an item to the list, click Add.</p>
+                     </li>
+                     <li>
+                        <p class="Para">To delete the selected item from the list, click Delete.</p>
+                     </li>
+                     <li>
+                        <p class="Para">To change the order of listed items, drag items up or down in the list.</p>
+                     </li>
+                  </ul>
+                  <p class="Para">You can find the object classes of user records in the LDAP directory by using the <span class="CodeBody">ldapsearch</span> UNIX tool in Terminal. For example, the following code finds object classes for a user record whose cn attribute is “Leonardo
+                     da Vinci:”
+                  </p>
+                  <div class="CodeListing">
+                     <div class="CodeLines">
+                        <div class="CodeLine">$ ldapsearch -x -h ldapserver.example.com -b “dc=example, dc=com” ’cn=Leonardo da Vinci’ objectClass</div>
+                     </div>
+                  </div>
+                  <p class="Para">The output displayed for this example would be:</p>
+                  <div class="CodeListing">
+                     <div class="CodeLines">
+                        <div class="CodeLine"># Leonardo da Vinci, example.com</div>
+                        <div class="CodeLine">dn: cn=Leonardo da Vinci, dc=example, dc=com</div>
+                        <div class="CodeLine">objectClass: inetOrgPerson</div>
+                        <div class="CodeLine">objectClass: posixAccount</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

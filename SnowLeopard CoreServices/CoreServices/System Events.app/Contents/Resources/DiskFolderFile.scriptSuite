@@ -1,0 +1,718 @@
+{
+    Name = "DiskFolderFile";
+    AppleEventCode = "cdis";
+
+    UsedFeatures = (UnnamedArguments); 
+    Commands = {
+        delete = {
+            AppleEventClassCode = "core";
+            AppleEventCode = "delo";
+            CommandClass = "NSDeleteCommand";
+            Type = "";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "Item";
+			};
+        };
+        move = {
+            AppleEventClassCode = "core";
+            AppleEventCode = "move";
+            CommandClass = "NSScriptCommand";
+            Type = "Item";
+            ResultAppleEventCode = "ditm";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "Item";
+			};
+            Arguments = {
+                ToLocation = {
+                    Type = "NSPositionalSpecifier";
+                    AppleEventCode = "insh";
+                    Optional = "NO";
+                };
+            };
+        };
+        open = {
+            AppleEventClassCode = "aevt";
+            AppleEventCode = "odoc";
+            CommandClass = "OpenVerb";
+            Type = "File";
+            ResultAppleEventCode = "file";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "File";
+			};
+        };
+	};
+    Classes = {
+        OldItem = {
+            AppleEventCode = "cobj";
+            Superclass = "NSCoreSuite.AbstractObject";
+            Attributes = {
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "NO";
+                    Type = "NSString";
+                };
+                uniqueID = {
+                    AppleEventCode = "ID  ";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+			};
+		};
+        Item = {
+            AppleEventCode = "ditm";
+            Superclass = "NSCoreSuite.AbstractObject";
+            SupportedCommands = {
+                "DiskFolderFile.move" = "move:";
+                "DiskFolderFile.open" = "open:";
+                "Hidden.doScript" = "doScriptVerb:";
+            };
+            Attributes = {
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "NO";
+                    Type = "NSString";
+                };
+                uniqueID = {
+                    AppleEventCode = "ID  ";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                volume = {
+                    AppleEventCode = "volu";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                hfsPath = {
+                    AppleEventCode = "ppth";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                posixPath = {
+                    AppleEventCode = "posx";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                creationDate = {
+                    AppleEventCode = "ascd";
+                    ReadOnly = "YES";
+                    Type = "NSDate";
+                };
+                modificationDate = {
+                    AppleEventCode = "asmo";
+                    Type = "NSDate";
+                };
+                nameExtension = {
+                    AppleEventCode = "extn";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                busyStatus = {
+                    AppleEventCode = "busy";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Bool>";
+                };
+                packageFolder = {
+                    AppleEventCode = "pkgf";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Bool>";
+                };
+                visible = {
+                    AppleEventCode = "pvis";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+                url = {
+                    AppleEventCode = "url ";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                displayedName = {
+                    AppleEventCode = "dnam";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                logicalSize = {
+                    AppleEventCode = "ptsz";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<LongLong>";
+                };
+                physicalSize = {
+                    AppleEventCode = "phys";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<LongLong>";
+                };
+                container = {
+                    AppleEventCode = "ctnr";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Item";
+                };
+            };
+        };
+        Disk = {
+            AppleEventCode = "cdis";
+            Superclass = "DiskFolderFile.Item";
+            SupportedCommands = {
+                "DiskFolderFile.delete" = "deleteVerb:";
+            };
+            ToManyRelationships = {
+                oldItems = {
+                    AppleEventCode = "cobj";
+                    Type = "OldItem";
+                };
+                items = {
+                    AppleEventCode = "ditm";
+                    Type = "Item";
+                };
+                folders = {
+                    AppleEventCode = "cfol";
+					LocationRequiredToCreate = "NO";
+                    Type = "Folder";
+                };
+                files = {
+                    AppleEventCode = "file";
+					LocationRequiredToCreate = "NO";
+                    Type = "File";
+                };
+                filePackages = {
+                    AppleEventCode = "cpkg";
+                    Type = "FilePackage";
+                };
+                aliases = {
+                    AppleEventCode = "alis";
+                    Type = "Alias";
+                };
+            };
+            Attributes = {
+                capacity = {
+                    AppleEventCode = "capa";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<LongLong>";
+                };
+                freeSpace = {
+                    AppleEventCode = "frsp";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<LongLong>";
+                };
+                ejectable = {
+                    AppleEventCode = "isej";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Bool>";
+                };
+                localVolume = {
+                    AppleEventCode = "isrv";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Bool>";
+                };
+                startup = {
+                    AppleEventCode = "istd";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Bool>";
+                };
+                format = {
+                    AppleEventCode = "dfmt";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<DiskFormats>";
+                };
+                ignorePrivileges = {
+                    AppleEventCode = "igpr";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+                afpZone = {
+                    AppleEventCode = "zone";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                afpServer = {
+                    AppleEventCode = "srvr";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+            };
+        };
+        Domain = {
+            AppleEventCode = "doma";
+            Superclass = "NSCoreSuite.AbstractObject";
+            ToManyRelationships = {
+                folders = {
+                    AppleEventCode = "cfol";
+                    Type = "Folder";
+                };
+            };
+            Attributes = {
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                uniqueID = {
+                    AppleEventCode = "ID  ";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                folderApplications = {
+                    AppleEventCode = "apps";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderApplicationSupport = {
+                    AppleEventCode = "asup";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderDesktopPictures = {
+                    AppleEventCode = "dtp$";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderFolderActionScripts = {
+                    AppleEventCode = "fasf";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderFonts = {
+                    AppleEventCode = "font";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderLibrary = {
+                    AppleEventCode = "dlib";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderPreferences = {
+                    AppleEventCode = "pref";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderScriptingAdditions = {
+                    AppleEventCode = "$scr";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderScripts = {
+                    AppleEventCode = "scr$";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderSharedDocuments = {
+                    AppleEventCode = "sdat";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderSpeakable = {
+                    AppleEventCode = "spki";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderUtilities = {
+                    AppleEventCode = "uti$";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderWorkflows = {
+                    AppleEventCode = "flow";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+            };
+        };
+        SystemDomain = {
+            AppleEventCode = "doms";
+            Superclass = "DiskFolderFile.Domain";
+            ToManyRelationships = {
+                folders = {
+                    AppleEventCode = "cfol";
+                    Type = "Folder";
+                };
+            };
+        };
+        LocalDomain = {
+            AppleEventCode = "doml";
+            Superclass = "DiskFolderFile.Domain";
+            ToManyRelationships = {
+                folders = {
+                    AppleEventCode = "cfol";
+                    Type = "Folder";
+                };
+            };
+        };
+        NetworkDomain = {
+            AppleEventCode = "domn";
+            Superclass = "DiskFolderFile.Domain";
+            ToManyRelationships = {
+                folders = {
+                    AppleEventCode = "cfol";
+                    Type = "Folder";
+                };
+            };
+        };
+        UserDomain = {
+            AppleEventCode = "domu";
+            Superclass = "DiskFolderFile.Domain";
+            ToManyRelationships = {
+                folders = {
+                    AppleEventCode = "cfol";
+                    Type = "Folder";
+                };
+            };
+            Attributes = {
+                folderDesktop = {
+                    AppleEventCode = "desk";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderDocuments = {
+                    AppleEventCode = "docs";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderDownloads = {
+                    AppleEventCode = "down";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderFavorites = {
+                    AppleEventCode = "favs";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderHome = {
+                    AppleEventCode = "cusr";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderMovies = {
+                    AppleEventCode = "mdoc";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderMusic = {
+                    AppleEventCode = "%doc";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderPictures = {
+                    AppleEventCode = "pdoc";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderPublic = {
+                    AppleEventCode = "pubb";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderSites = {
+                    AppleEventCode = "site";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderTemporary = {
+                    AppleEventCode = "temp";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+            };
+        };
+        ClassicDomain = {
+            AppleEventCode = "domc";
+            Superclass = "DiskFolderFile.Domain";
+            ToManyRelationships = {
+                folders = {
+                    AppleEventCode = "cfol";
+                    Type = "Folder";
+                };
+            };
+            Attributes = {
+                folderAppleMenu = {
+                    AppleEventCode = "amnu";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderControlPanels = {
+                    AppleEventCode = "ctrl";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderControlStripModules = {
+                    AppleEventCode = "sdev";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderDesktop = {
+                    AppleEventCode = "desk";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderExtensions = {
+                    AppleEventCode = "extz";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderFonts = {
+                    AppleEventCode = "font";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderLauncher = {
+                    AppleEventCode = "laun";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderPreferences = {
+                    AppleEventCode = "pref";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderShutdown = {
+                    AppleEventCode = "shdf";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderStartup = {
+                    AppleEventCode = "empz";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+                folderSystem = {
+                    AppleEventCode = "macs";
+                    ReadOnly = "YES";
+                    Type = "Folder";
+                };
+            };
+        };
+        Folder = {
+            AppleEventCode = "cfol";
+            Superclass = "DiskFolderFile.Item";
+            SupportedCommands = {
+                "Hidden.attachAction" = "folderAction:";
+                "Hidden.removeAction" = "folderAction:";
+                "Hidden.editAction" = "folderAction:";
+                "Hidden.attachedScripts" = "folderAction:";
+                "Hidden.doAction" = "folderAction:";
+                "DiskFolderFile.delete" = "deleteVerb:";
+            };
+            ToManyRelationships = {
+                oldItems = {
+                    AppleEventCode = "cobj";
+                    Type = "OldItem";
+                };
+                items = {
+                    AppleEventCode = "ditm";
+                    Type = "Item";
+                };
+                folders = {
+                    AppleEventCode = "cfol";
+					LocationRequiredToCreate = "NO";
+                    Type = "Folder";
+                };
+                files = {
+                    AppleEventCode = "file";
+					LocationRequiredToCreate = "NO";
+                    Type = "File";
+                };
+                filePackages = {
+                    AppleEventCode = "cpkg";
+                    Type = "FilePackage";
+                };
+                aliases = {
+                    AppleEventCode = "alis";
+                    Type = "Alias";
+                };
+            };
+        };
+        File = {
+            AppleEventCode = "file";
+            Superclass = "DiskFolderFile.Item";
+            Attributes = {
+                fileType = {
+                    AppleEventCode = "asty";
+                    ReadOnly = "NO";
+                    Type = "NSString";
+                };
+                creatorType = {
+                    AppleEventCode = "fcrt";
+                    ReadOnly = "NO";
+                    Type = "NSString";
+                };
+                stationery = {
+                    AppleEventCode = "pspd";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+                kind = {
+                    AppleEventCode = "kind";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                uniformTypeID = {
+                    AppleEventCode = "utid";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                productVersion = {
+                    AppleEventCode = "ver2";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                version = {
+                    AppleEventCode = "vers";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                shortVersion = {
+                    AppleEventCode = "assv";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                defaultApplication = {
+                    AppleEventCode = "asda";
+                    ReadOnly = "NO";
+                    Type = "DiskFolderFile.Item";
+                };
+            };
+        };
+        FilePackage = {
+            AppleEventCode = "cpkg";
+            Superclass = "DiskFolderFile.File";
+            SupportedCommands = {
+                "DiskFolderFile.delete" = "deleteVerb:";
+            };
+            ToManyRelationships = {
+                oldItems = {
+                    AppleEventCode = "cobj";
+                    Type = "OldItem";
+                };
+                items = {
+                    AppleEventCode = "ditm";
+                    Type = "Item";
+                };
+                folders = {
+                    AppleEventCode = "cfol";
+					LocationRequiredToCreate = "NO";
+                    Type = "Folder";
+                };
+                files = {
+                    AppleEventCode = "file";
+					LocationRequiredToCreate = "NO";
+                    Type = "File";
+                };
+                filePackages = {
+                    AppleEventCode = "cpkg";
+                    Type = "FilePackage";
+                };
+                aliases = {
+                    AppleEventCode = "alis";
+                    Type = "Alias";
+                };
+            };
+        };
+        Alias = {
+            AppleEventCode = "alis";
+            Superclass = "DiskFolderFile.Item";
+            SupportedCommands = {
+                "FolderActions.attachAction" = "folderAction:";
+                "FolderActions.removeAction" = "folderAction:";
+                "FolderActions.editAction" = "folderAction:";
+                "FolderActions.attachedScripts" = "folderAction:";
+                "FolderActions.doAction" = "folderAction:";
+                "DiskFolderFile.delete" = "deleteVerb:";
+            };
+            ToManyRelationships = {
+                oldItems = {
+                    AppleEventCode = "cobj";
+                    Type = "OldItem";
+                };
+                items = {
+                    AppleEventCode = "ditm";
+                    Type = "Item";
+                };
+                folders = {
+                    AppleEventCode = "cfol";
+					LocationRequiredToCreate = "NO";
+                    Type = "Folder";
+                };
+                files = {
+                    AppleEventCode = "file";
+					LocationRequiredToCreate = "NO";
+                    Type = "File";
+                };
+                filePackages = {
+                    AppleEventCode = "cpkg";
+                    Type = "FilePackage";
+                };
+                aliases = {
+                    AppleEventCode = "alis";
+                    Type = "Alias";
+                };
+            };
+            Attributes = {
+                fileType = {
+                    AppleEventCode = "asty";
+                    ReadOnly = "NO";
+                    Type = "NSString";
+                };
+                creatorType = {
+                    AppleEventCode = "fcrt";
+                    ReadOnly = "NO";
+                    Type = "NSString";
+                };
+                stationery = {
+                    AppleEventCode = "pspd";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+                kind = {
+                    AppleEventCode = "kind";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                uniformTypeID = {
+                    AppleEventCode = "utid";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                productVersion = {
+                    AppleEventCode = "ver2";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                version = {
+                    AppleEventCode = "vers";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                shortVersion = {
+                    AppleEventCode = "assv";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+            };
+        };
+    };
+	Enumerations = {
+        DiskFormats = {
+            AppleEventCode = "edfm";
+            Enumerators = {
+				MacOS = "dfhf";
+				MacOSExtended = "dfh+";
+				UFS = "dfuf";
+				NFS = "dfnf";
+				Audio = "dfau";
+				ProDOS = "dfpr";
+				MSDOS = "dfms";
+				ISO9660 = "df96";
+				HighSierra = "dfhs";
+				QuickTake = "dfqt";
+				ApplePhoto = "dfph";
+				AppleShare = "dfas";
+				UDF = "dfud";
+				WebDAV = "dfwd";
+				Unknown = "df$$";
+			};
+        };
+    };
+}

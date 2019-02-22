@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>Script Menu</string>
+	<key>CFBundleGetInfoString</key>
+	<string>1.2.4, Copyright Apple Computer, Inc. 2001-2008</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.scriptmenu</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Script Menu</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.2.4</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.2.4</string>
+	<key>LSHasLocalizedDisplayName</key>
+	<true/>
+	<key>NSMenuExtraWidth</key>
+	<integer>22</integer>
+	<key>NSPrincipalClass</key>
+	<string>AppleOSAScriptMenu</string>
+</dict>
+</plist>

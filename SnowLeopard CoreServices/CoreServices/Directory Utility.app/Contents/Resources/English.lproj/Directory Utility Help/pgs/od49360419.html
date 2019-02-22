@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Configuring Access to an LDAP Directory Manually</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to manually create a configuration that specifies how Mac OS X accesses an LDAPv3 or LDAPv2 directory." />
+      <meta name="topicid" content="od49360419" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od49360419"></a><a name="x4C44415020284C69676874776569676874204469726563746F7279204163636573732050726F746F636F6C292073657276696365"></a><a name="x636F6E66696775726174696F6E"></a><a name="x6D617070696E6773"></a><a name="x5246432032333037206D617070696E67"></a><a name="x554E4958"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od49360419">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Configuring Access to an LDAP Directory Manually</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">You can manually create a configuration that specifies how Mac OS X accesses an LDAPv3 or LDAPv2 directory. You must know
+                     the DNS name or IP address of the LDAP directory server.
+                  </p>
+                  <p class="Para">If the directory is not hosted by Mac OS X Server, you must know the search base and the template for mapping Mac OS X data
+                     to the directory’s data. The supported mapping templates are:
+                  </p>
+                  <ul class="ListBullet">
+                     <li>
+                        <p class="Para"><span class="EmphasisDisplay">From Server, </span>for a directory that supplies its own mappings and search base, such as Mac OS X Server
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para"><span class="EmphasisDisplay">Open Directory Server, </span>for a directory that uses the Mac OS X Server schema
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para"><span class="EmphasisDisplay">Active Directory, </span>for a directory hosted by a Windows 2000, Windows 2003, or later server
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para"><span class="EmphasisDisplay">RFC 2307, </span>for most directories hosted by UNIX servers
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para"><span class="EmphasisDisplay">Custom, </span>for directories that don’t use any of the above mappings
+                        </p>
+                     </li>
+                  </ul>
+                  <p class="Para">The LDAPv3 plug-in fully supports Open Directory replication and failover. If the Open Directory master becomes unavailable,
+                     the plug-in falls back to a nearby replica.
+                  </p>
+                  <div class="Alert">
+                     <div class="Important"><span class="Important">Important:  </span>If your computer name contains a hyphen, you might not be able to join or bind to a Directory Domain such as LDAP or Active
+                        Directory. To establish binding, use a computer name that does not contain a hyphen.
+                     </div>
+                  </div>
+               </div>
+               <div class="Task">
+                  <div class="Name">To manually configure access to an LDAP directory:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Join or Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Services.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list of services, select LDAPv3 and click the Edit (/) button.</p>
+                        <p class="Para">You can select LDAPv3 in the list of services without selecting the Enable checkbox for LDAPv3.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click New, then click Manual.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Enter a name for the configuration.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Press Tab and enter the DNS name or IP address of the server that hosts the LDAP directory you want to access.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Next to the DNS name or IP address, click the pop-up menu and choose a mapping template or method:</p>
+                        <ul class="ListBullet">
+                           <li>
+                              <p class="Para"><span class="EmphasisDisplay">If you choose From Server, </span>a search base suffix is not needed. In this case, Open Directory assumes the search base suffix is the first level of the
+                                 LDAP directory.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="EmphasisDisplay">If you choose a template, </span>enter the search base suffix for the LDAP directory and click OK. You must enter a search base suffix or the computer can’t
+                                 find information in the LDAP directory.
+                              </p>
+                              <p class="Para">Typically, the search base suffix is derived from the server’s DNS name. For example, the search base suffix could be “dc=ods,dc=example,dc=com”
+                                 for a server whose DNS name is ods.example.com.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="EmphasisDisplay">If you choose Custom, </span>you must set up mappings between Mac OS X record types and attributes and the classes and attributes of the LDAP directory
+                                 you’re connecting to. For more information, see <a href="od494316a0.html">Configuring LDAP Searches and Mappings</a>.
+                              </p>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p class="Para">Before you select the “Encrypt using SSL” checkbox, check with your Open Directory administrator to determine if SSL is needed.</p>
+                     </li>
+                     <li>
+                        <p class="Para">To change the following settings for this LDAP configuration, click Edit to display the options for the selected LDAP configuration,
+                           make changes, and click OK when you finish editing the LDAP configuration options.
+                        </p>
+                        <ul class="ListBullet">
+                           <li>
+                              <p class="Para">Click Connection to set timeout options, specify a custom port, ignore server referrals, or force use of the LDAPv2 (read-only)
+                                 protocol. For more information, see <a href="od493d3826.html">Changing the Connection Settings for an LDAP Directory</a>.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">Click Search &amp; Mappings to set up searches and mappings for an LDAP server. For more information, see <a href="od494583e8.html">Setting Up Trusted Binding for an LDAP Directory</a>.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">Click Security to set up an authenticated connection (instead of trusted binding) and other security policy options. For more
+                                 information, see <a href="od49353261.html">Changing the Security Policy for an LDAP Connection</a>.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">Click Bind to set up trusted bindings (if the LDAP directory supports it). For more information, see <a href="od494583e8.html">Setting Up Trusted Binding for an LDAP Directory</a>.
+                              </p>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p class="Para">Click OK to finish manually creating the configuration to access an LDAP directory.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If you want the computer to access the LDAP directory you created a configuration for, add the directory to a custom search
+                           policy in the Authentication pane and the Contacts pane of Search Policy in Directory Utility, then make sure LDAPv3 is enabled
+                           in the Services pane.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+               <div class="Outro">
+                  <p class="Para">For more information, see <a href="od493c0032.html">Enabling or Disabling LDAP Directory Services</a> and <a href="od494687d3.html">Defining Custom Search Policies</a>.
+                  </p>
+                  <div class="Alert">
+                     <div class="Note"><span class="Note">Note:  </span>Before you can use Workgroup Manager to create users on a non-Apple LDAP server that uses RFC 2307 (UNIX) mappings, you must
+                        edit the mapping of the Users record type. For more information, see <a href="od4934ca4f.html">Editing RFC 2307 Mapping to Enable Creating Users</a>.
+                     </div>
+                  </div>
+                  <div class="Alert">
+                     <div class="Important"><span class="Important">Important:  </span>If you change your IP address and computer name using <span class="CodeBody">changeip</span> while you are connected to a directory server, you must disconnect and reconnect to the directory server to update the directory
+                        with the new computer name and IP address. If you do not disconnect and reconnect to the directory server, the directory will
+                        not update and will continue to use the old computer name and IP address.
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

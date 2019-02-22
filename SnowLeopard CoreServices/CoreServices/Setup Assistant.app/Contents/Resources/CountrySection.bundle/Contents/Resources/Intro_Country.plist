@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>Intro_Country</key>
+	<dict>
+		<key>0100</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:CustomerInfo:Address:CountryName</string>
+			<key>Key_SaveList</key>
+			<array>
+				<string>Key_Main</string>
+			</array>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>dock</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>dockling.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>Dock Extra</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>dlng</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSIsAppleDefaultForType</key>
+			<true/>
+			<key>LSTypeIsPackage</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>wdgt</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>widget.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>Widget</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSIsAppleDefaultForType</key>
+			<true/>
+			<key>LSTypeIsPackage</key>
+			<true/>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>Dock</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Dock 1.7</string>
+	<key>CFBundleIconFile</key>
+	<string>Dock.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.dock</string>
+	<key>CFBundleName</key>
+	<string>Dock</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.7</string>
+	<key>CFBundleSignature</key>
+	<string>dock</string>
+	<key>CFBundleURLTypes</key>
+	<array/>
+	<key>CFBundleVersion</key>
+	<string>769.18</string>
+	<key>LSRequiresNativeExecution</key>
+	<false/>
+	<key>LSUIElement</key>
+	<string>1</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright 2000-2009, Apple Inc.</string>
+	<key>NSServices</key>
+	<array/>
+	<key>UTExportedTypeDeclarations</key>
+	<array/>
+	<key>UTImportedTypeDeclarations</key>
+	<array/>
+	<key>com.apple.PreferenceSync.ExcludeSyncKeys</key>
+	<array>
+		<string>persistent-apps</string>
+		<string>persistent-others</string>
+		<string>trash-full</string>
+		<string>mod-count</string>
+		<string>checked-for-dashboard</string>
+		<string>dashboard-in-dock</string>
+	</array>
+</dict>
+</plist>

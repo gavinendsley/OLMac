@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Setting Up Mobile User Accounts in Active Directory</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to start or stop using mobile Active Directory user accounts on a computer that is configured to access an Active Directory domain." />
+      <meta name="topicid" content="od49383687" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od49383687"></a><a name="x416374697665204469726563746F7279"></a><a name="x6D6F62696C65206163636F756E7473"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od49383687">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Setting Up Mobile User Accounts in Active Directory</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">You can enable or disable mobile Active Directory user accounts on a computer that is configured to use Directory Utility’s
+                     Active Directory connector. Users with mobile accounts can log in using their Active Directory credentials when the computer
+                     is not connected to the Active Directory server.
+                  </p>
+                  <p class="Para">The Active Directory connector caches credentials for a user’s mobile account when the user logs in while the computer is
+                     connected to the Active Directory domain. This credential caching does not require changing the Active Directory schema.
+                  </p>
+                  <p class="Para">If the Active Directory schema has been extended to include Mac OS X managed client attributes, those mobile account settings
+                     are used instead of the Active Directory connector mobile account setting.
+                  </p>
+                  <p class="Para">You can have mobile accounts created automatically or you can require that Active Directory users confirm creation of a mobile
+                     account.
+                  </p>
+               </div>
+               <div class="Task">
+                  <div class="Name">To enable or disable mobile accounts in an Active Directory domain:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Join or Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Services.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list of services, select Active Directory and click the Edit (/) button.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the advanced options are hidden, click Show Advanced Options.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click User Experience, then click “Create mobile account at login,” and optionally click “Require confirmation before creating
+                           a mobile account.”
+                        </p>
+                        <ul class="ListBullet">
+                           <li>
+                              <p class="Para">If both options are selected, each user decides whether to create a mobile account during login. When a user logs in to Mac OS X
+                                 using an Active Directory user account, or when logging in as a network user, the user sees a dialog with controls for creating
+                                 a mobile account immediately.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">If the first option is selected and the second option is unselected, mobile accounts are created when users log in.</p>
+                           </li>
+                           <li>
+                              <p class="Para">If the first option is not selected, the second option is disabled.</p>
+                           </li>
+                        </ul>
+                     </li>
+                     <li>
+                        <p class="Para">Click OK.</p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

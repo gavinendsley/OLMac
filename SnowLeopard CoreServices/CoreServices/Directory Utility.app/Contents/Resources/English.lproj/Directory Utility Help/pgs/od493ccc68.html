@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Unbinding from the Active Directory Server</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to unbind the computer from a connection using Directory Utility’s Active Directory connector." />
+      <meta name="topicid" content="od493ccc68" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od493ccc68"></a><a name="x416374697665204469726563746F7279"></a><a name="x62696E64696E67"></a><a name="x73657276657273"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od493ccc68">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Unbinding from the Active Directory Server</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">If the computer is using Directory Utility’s Active Directory connector to bind to an Active Directory server, you can unbind
+                     the computer from the Active Directory server.
+                  </p>
+                  <p class="Para">You can forcibly unbind if the computer can’t contact the server or if the computer record has been removed from the server.</p>
+               </div>
+               <div class="Task">
+                  <div class="Name">To unbind the computer from the Active Directory server:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Services.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list of services, select Active Directory and click the Edit (/) button.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Unbind, authenticate as a user who has rights to terminate a connection to the Active Directory domain, and click OK.</p>
+                        <p class="Para">If you see an alert saying the credentials weren’t accepted or the computer can’t contact Active Directory, click Force Unbind
+                           to forcibly break the connection.
+                        </p>
+                        <p class="Para">If you forcibly unbind, Active Directory still contains a computer record for this computer. Notify the Active Directory administrator
+                           so the administrator knows to remove the computer record.
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para">In the Services pane, deselect Active Directory’s Enable setting, then click Apply.</p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

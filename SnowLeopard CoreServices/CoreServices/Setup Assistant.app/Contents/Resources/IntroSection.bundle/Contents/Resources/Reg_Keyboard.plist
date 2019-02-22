@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>Reg_Keyboard</key>
+	<dict>
+		<key>0200</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>UseAltInputMethod</string>
+		</dict>
+		<key>0201</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>NO</string>
+		</dict>
+		<key>0202</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>YES</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

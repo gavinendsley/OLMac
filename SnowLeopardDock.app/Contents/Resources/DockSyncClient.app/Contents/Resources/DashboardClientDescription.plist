@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DisplayName</key>
+	<string>Dashboard</string>
+	<key>Entities</key>
+	<dict>
+		<key>com.apple.dashboard.widget</key>
+		<array>
+			<string>widgetID</string>
+			<string>bundleID</string>
+			<string>position</string>
+			<string>properties</string>
+			<string>inLayer</string>
+		</array>
+	</dict>
+	<key>Type</key>
+	<string>app</string>
+	<key>ImagePath</key>
+    <string>/System/Library/CoreServices/Dock.app/Contents/Resources/Widget Installer.app/Contents/Resources/Dashboard.icns</string>
+    <key>SyncsWith</key>
+    <dict>
+        <key>SyncAlertToolPath</key>
+        <string>/System/Library/CoreServices/Dock.app/Contents/Resources/DockSyncClient.app/Contents/MacOS/DockSyncClient</string>
+        <key>SyncAlertTypes</key>
+        <array>
+            <string>app</string>
+            <string>server</string>
+        </array>
+    </dict>
+</dict>
+</plist>

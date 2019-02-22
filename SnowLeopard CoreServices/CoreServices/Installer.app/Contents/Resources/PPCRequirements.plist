@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Description</key>
+		<string>QuickTime MPEG2 [6748520]</string>
+		<key>Predicate</key>
+		<string>( SUBQUERY( packages, $p, $p.identifier BEGINSWITH &quot;com.apple.pkg.QuickTimeMPEG2&quot; &amp;&amp; $p.version BEGINSWITH &quot;6.4.1&quot; ).@count != 0 )</string>
+	</dict>
+	<dict>
+		<key>Description</key>
+		<string>VirusScan 8.6.1 [6889655]</string>
+		<key>Predicate</key>
+		<string>( SUBQUERY( packages, $p, $p.identifier == &quot;com.nai.virusscan&quot; &amp;&amp; $p.normalizedVersion &lt;= &quot;008.006.001.001.000&quot; ).@count != 0 )</string>
+	</dict>
+	<dict>
+		<key>Description</key>
+		<string>NAV 11 [6514248]</string>
+		<key>Predicate</key>
+		<string>( SUBQUERY( packages, $p, $p.identifier == &quot;com.symantec.nav.install&quot; &amp;&amp; $p.normalizedVersion &lt;= &quot;011.000.000.011.000&quot; ).@count != 0 )</string>
+	</dict>
+	<dict>
+		<key>Description</key>
+		<string>Nikon CaptureNX2 [6864210]</string>
+		<key>Predicate</key>
+		<string>(packages[FIRST].identifier == &quot;com.nikon.capturenx2&quot;) AND (packages[FIRST].version BEGINSWITH &quot;2.&quot;)</string>
+	</dict>
+	<dict>
+		<key>Description</key>
+		<string>Office 2008 [6889655]</string>
+		<key>Predicate</key>
+		<string>( SUBQUERY( packages, $p, $p.identifier BEGINSWITH &quot;ident.pkg.Office2008&quot; &amp;&amp; $p.normalizedVersion &lt;= &quot;000.000.000.012.000&quot; ).@count != 0 )</string>
+	</dict>
+	<dict>
+		<key>Description</key>
+		<string>iLife '06 [6889655]</string>
+		<key>Predicate</key>
+		<string>ANY packages.identifier == &quot;com.apple.pkg.iLife06&quot;</string>
+	</dict>
+	<dict>
+		<key>Description</key>
+		<string>Final Cut Studio [6889655]</string>
+		<key>Predicate</key>
+		<string>( SUBQUERY( packages, $p, $p.identifier == &quot;com.apple.pkg.FinalCutPro&quot; &amp;&amp; $p.normalizedVersion &lt;= &quot;006.000.000.1730000.1217&quot; ).@count != 0 )</string>
+	</dict>
+	<dict>
+		<key>Description</key>
+		<string>DVD Studio Pro [6889655]</string>
+		<key>Predicate</key>
+		<string>( SUBQUERY( packages, $p, $p.identifier == &quot;com.apple.pkg.DVDStudioPro4&quot; &amp;&amp; $p.normalizedVersion &lt;= &quot;004.001.000.1000000.920&quot; ).@count != 0 )</string>
+	</dict>
+	<dict>
+		<key>Description</key>
+		<string>Final Cut Server [6889655]</string>
+		<key>Predicate</key>
+		<string>( SUBQUERY( packages, $p, $p.identifier == &quot;com.apple.pkg.FinalCutServer&quot; &amp;&amp; $p.normalizedVersion &lt;= &quot;001.000.000.280000.221&quot; ).@count != 0 )</string>
+	</dict>
+	<dict>
+		<key>Description</key>
+		<string>Logic Studio [6889655]</string>
+		<key>Predicate</key>
+		<string>( SUBQUERY( packages, $p, $p.identifier == &quot;com.apple.pkg.LogicPro&quot; &amp;&amp; $p.normalizedVersion &lt;= &quot;008.000.000.990000.369&quot; ).@count != 0 )</string>
+	</dict>
+	<dict>
+		<key>Description</key>
+		<string>LiveType Media [6889655]</string>
+		<key>Predicate</key>
+		<string>( SUBQUERY( packages, $p, $p.identifier IN { &quot;com.apple.mpkg.LiveTypeMedia1&quot;, &quot;com.apple.pkg.LiveTypeMedia2A&quot; } ).@count != 0 )</string>
+	</dict>
+</array>
+</plist>

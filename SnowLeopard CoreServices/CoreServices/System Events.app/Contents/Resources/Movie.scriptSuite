@@ -1,0 +1,46 @@
+{
+    Name = "Movie";
+    AppleEventCode = "movz";
+
+    UsedFeatures = (UnnamedArguments); 
+    Classes = {
+        MovieFile = {
+            AppleEventCode = "movf";
+            Superclass = "QTFile.sevsQTFile";
+			DefaultSubcontainerAttribute = "contents";
+            Attributes = {
+                contents = {
+                    AppleEventCode = "pcnt";
+                    ReadOnly = "YES";
+                    Type = "MovieData";
+                };
+            };
+        };
+        MovieData = {
+            AppleEventCode = "movd";
+            Superclass = "QTFile.sevsQTData";
+            Attributes = {
+                bounds = {
+                    AppleEventCode = "pbnd";
+                    ReadOnly = "YES";
+                    Type = "NSArray";
+                };
+                naturalDimensions = {
+                    AppleEventCode = "ndim";
+                    ReadOnly = "YES";
+                    Type = "NSArray";
+                };
+                previewTime = {
+                    AppleEventCode = "pvwt";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Long>";
+                };
+                previewDuration = {
+                    AppleEventCode = "pvwd";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Long>";
+                };
+            };
+        };
+    };
+}

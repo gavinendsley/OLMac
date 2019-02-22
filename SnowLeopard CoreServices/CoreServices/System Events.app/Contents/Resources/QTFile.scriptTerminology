@@ -1,0 +1,214 @@
+{
+    Name = "QuickTime File Suite";
+    Description = "Terms and Events for accessing the content of QuickTime files";
+
+    Classes = {
+        sevsQTAnnotation = {
+            Name = "annotation";
+            Description = "A unit of user data in a QuickTime file";
+            Attributes = {
+                uniqueID = {
+                    Name = "id";
+                    Description = "the unique identifier of the annotation";
+                };
+                name = {
+                    Name = "name";
+                    Description = "the name of the annotation";
+                };
+                fullText = {
+                    Name = "full text";
+                    Description = "the full text of the annotation";
+                };
+            };
+        };
+        sevsQTTrack = {
+            Name = "track";
+            PluralName = "tracks";
+            Description = "A track in a QuickTime file";
+            Attributes = {
+                name = {
+                    Name = "name";
+                    Description = "the name of the track";
+                };
+                dimensions = {
+                    Name = "dimensions";
+                    Description = "the current dimensions of the track";
+                };
+                creationTime = {
+                    Name = "creation time";
+                    Description = "the creation time of the track";
+                };
+                modificationTime = {
+                    Name = "modification time";
+                    Description = "the modification time of the track";
+                };
+                dataSize = {
+                    Name = "data size";
+                    Description = "the size of the track data";
+                };
+                duration = {
+                    Name = "duration";
+                    Description = "the duration of the track, in terms of the time scale";
+                };
+                audioChannelCount = {
+                    Name = "audio channel count";
+                    Description = "the number of channels in the audio";
+                };
+                audioCharacteristic = {
+                    Name = "audio characteristic";
+                    Description = "can the track be heard?";
+                };
+                audioSampleRate = {
+                    Name = "audio sample rate";
+                    Description = "the sample rate of the audio in kHz";
+                };
+                audioSampleSize = {
+                    Name = "audio sample size";
+                    Description = "the size of uncompressed audio samples in bits";
+                };
+                dataFormat = {
+                    Name = "data format";
+                    Description = "the data format";
+                };
+                dataRate = {
+                    Name = "data rate";
+                    Description = "the data rate (bytes/sec) of the track";
+                };
+                enabled = {
+                    Name = "enabled";
+                    Description = "should this track be used when the movie is playing?";
+                };
+                highQuality = {
+                    Name = "high quality";
+                    Description = "is the track high quality?";
+                };
+                href = {
+                    Name = "href";
+                    Description = "the internet location to open when clicking on the track";
+                };
+                kind = {
+                    Name = "kind";
+                    Description = "the name of the media in the track, in the current language (e.g., 'Sound', 'Video', 'Text', ...)";
+                };
+                startTime = {
+                    Name = "start time";
+                    Description = "the time delay before this track starts playing";
+                };
+                type = {
+                    Name = "type";
+                    Description = "the type of media in the track (e.g., 'soun', 'vide', 'text', ...)";
+                };
+                typeClass = {
+                    Name = "type class";
+                    Description = "deprecated: use \"type\" instead ( included only to resolve a terminology conflict )";
+                };
+                videoDepth = {
+                    Name = "video depth";
+                    Description = "the color depth of the video";
+                };
+                visualCharacteristic = {
+                    Name = "visual characteristic";
+                    Description = "can the track be seen?";
+                };
+            };
+        };
+        sevsQTFile = {
+            Name = "QuickTime file";
+            PluralName = "QuickTime files";
+            Description = "A file containing data in QuickTime format";
+            Attributes = {
+                contents = {
+                    Name = "contents";
+                    Description = "the contents of the QuickTime file; elements and properties of the QuickTime data may be accessed as if they were elements and properties of the QuickTime file";
+                };
+            };
+        };
+        sevsQTData = {
+            Name = "QuickTime data";
+            Description = "Data in QuickTime format";
+            Attributes = {
+                duration = {
+                    Name = "duration";
+                    Description = "the duration of the QuickTime file, in terms of the time scale";
+                };
+                timeScale = {
+                    Name = "time scale";
+                    Description = "the time scale of the QuickTime file";
+                };
+                looping = {
+                    Name = "looping";
+                    Description = "keep playing the movie in a loop?";
+                };
+                autoPlay = {
+                    Name = "auto play";
+                    Description = "will the movie automatically start playing? (saved with QuickTime file)";
+                };
+                autoPresent = {
+                    Name = "auto present";
+                    Description = "will the movie automatically start presenting? (saved with QuickTime file)";
+                };
+                autoQuitWhenDone = {
+                    Name = "auto quit when done";
+                    Description = "will the player automatically quit when done playing? (saved with QuickTime file)";
+                };
+                href = {
+                    Name = "href";
+                    Description = "the internet location to open when clicking on the movie (overrides track hrefs)";
+                };
+                presentationMode = {
+                    Name = "presentation mode";
+                    Description = "mode in which the movie will be presented";
+                };
+                presentationSize = {
+                    Name = "presentation size";
+                    Description = "size at which the movie will be presented";
+                };
+                storedStream = {
+                    Name = "stored stream";
+                    Description = "is this a stored streaming movie?";
+                };
+                creationTime = {
+                    Name = "creation time";
+                    Description = "the creation time of the QuickTime file";
+                };
+                modificationTime = {
+                    Name = "modification time";
+                    Description = "the modification time of the QuickTime file";
+                };
+                dataSize = {
+                    Name = "data size";
+                    Description = "the size of the QuickTime file data";
+                };
+                preferredRate = {
+                    Name = "preferred rate";
+                    Description = "the preferred rate of the QuickTime file";
+                };
+                preferredVolume = {
+                    Name = "preferred volume";
+                    Description = "the preferred volume of the QuickTime file";
+                };
+                previewTime = {
+                    Name = "preview time";
+                    Description = "the preview time of the QuickTime file";
+                };
+                previewDuration = {
+                    Name = "preview duration";
+                    Description = "the preview duration of the QuickTime file";
+                };
+            };
+        };
+    };
+	Enumerations = {
+        PresentationModes = {
+			Normal = {Description = "normal"; Name = "normal"; };
+			SlideShow = {Description = "slide show"; Name = "slide show"; };
+        };
+        PresentationSizes = {
+			Half = {Description = "half"; Name = "half"; };
+			Normal = {Description = "normal"; Name = "normal"; };
+			Double = {Description = "double"; Name = "double"; };
+			Screen = {Description = "screen"; Name = "screen"; };
+			Current = {Description = "current"; Name = "current"; };
+        };
+    };
+}

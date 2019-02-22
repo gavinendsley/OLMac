@@ -1,0 +1,271 @@
+{
+    Name = "QTFile";
+    AppleEventCode = "qtfz";
+
+    UsedFeatures = (UnnamedArguments); 
+    Classes = {
+        sevsQTAnnotation = {
+            AppleEventCode = "anno";
+            Superclass = "NSCoreSuite.AbstractObject";
+            Attributes = {
+                uniqueID = {
+                    AppleEventCode = "ID  ";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                fullText = {
+                    AppleEventCode = "anot";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+            };
+        };
+        sevsQTTrack = {
+            AppleEventCode = "trak";
+            Superclass = "NSCoreSuite.AbstractObject";
+            ToManyRelationships = {
+                qtAnnotations = {
+                    AppleEventCode = "anno";
+                    ReadOnly = "NO";
+                    Type = "sevsQTAnnotation";
+                };
+            };
+            Attributes = {
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                dimensions = {
+                    AppleEventCode = "pdim";
+                    ReadOnly = "YES";
+                    Type = "NSArray";
+                };
+                creationTime = {
+                    AppleEventCode = "mdcr";
+                    ReadOnly = "YES";
+                    Type = "NSDate";
+                };
+                modificationTime = {
+                    AppleEventCode = "mdtm";
+                    ReadOnly = "YES";
+                    Type = "NSDate";
+                };
+                dataSize = {
+                    AppleEventCode = "dsiz";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Long>";
+                };
+                duration = {
+                    AppleEventCode = "durn";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Long>";
+                };
+                audioChannelCount = {
+                    AppleEventCode = "acha";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Short>";
+                };
+                audioCharacteristic = {
+                    AppleEventCode = "audi";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Bool>";
+                };
+                audioSampleRate = {
+                    AppleEventCode = "asra";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Float>";
+                };
+                audioSampleSize = {
+                    AppleEventCode = "assz";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Short>";
+                };
+                dataFormat = {
+                    AppleEventCode = "tdfr";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                dataRate = {
+                    AppleEventCode = "ddra";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Long>";
+                };
+                enabled = {
+                    AppleEventCode = "enaB";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+                highQuality = {
+                    AppleEventCode = "hqua";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Bool>";
+                };
+                href = {
+                    AppleEventCode = "href";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                kind = {
+                    AppleEventCode = "kind";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                startTime = {
+                    AppleEventCode = "offs";
+                    ReadOnly = "NO";
+                    Type = "NSNumber<Long>";
+                };
+                type = {
+                    AppleEventCode = "ptyp";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                typeClass = {
+                    AppleEventCode = "type";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                videoDepth = {
+                    AppleEventCode = "vcdp";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Short>";
+                };
+                visualCharacteristic = {
+                    AppleEventCode = "visu";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Bool>";
+                };
+            };
+        };
+        sevsQTFile = {
+            AppleEventCode = "qtff";
+            Superclass = "DiskFolderFile.File";
+			DefaultSubcontainerAttribute = "contents";
+            Attributes = {
+                contents = {
+                    AppleEventCode = "pcnt";
+                    ReadOnly = "YES";
+                    Type = "sevsQTData";
+                };
+            };
+        };
+        sevsQTData = {
+            AppleEventCode = "qtfd";
+            Superclass = "NSCoreSuite.AbstractObject";
+            ToManyRelationships = {
+                qtTracks = {
+                    AppleEventCode = "trak";
+                    ReadOnly = "NO";
+                    Type = "sevsQTTrack";
+                };
+                qtAnnotations = {
+                    AppleEventCode = "anno";
+                    ReadOnly = "NO";
+                    Type = "sevsQTAnnotation";
+                };
+            };
+            Attributes = {
+                duration = {
+                    AppleEventCode = "durn";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Long>";
+                };
+                timeScale = {
+                    AppleEventCode = "tmsc";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Long>";
+                };
+                looping = {
+                    AppleEventCode = "loop";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Bool>";
+                };
+                autoPlay = {
+                    AppleEventCode = "autp";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Bool>";
+                };
+                autoPresent = {
+                    AppleEventCode = "apre";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Bool>";
+                };
+                autoQuitWhenDone = {
+                    AppleEventCode = "aqui";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Bool>";
+                };
+                href = {
+                    AppleEventCode = "href";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                presentationMode = {
+                    AppleEventCode = "prmd";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<PresentationModes>";
+                };
+                presentationSize = {
+                    AppleEventCode = "prsz";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<PresentationSizes>";
+                };
+                storedStream = {
+                    AppleEventCode = "isss";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Bool>";
+                };
+                creationTime = {
+                    AppleEventCode = "mdcr";
+                    ReadOnly = "YES";
+                    Type = "NSDate";
+                };
+                modificationTime = {
+                    AppleEventCode = "mdtm";
+                    ReadOnly = "YES";
+                    Type = "NSDate";
+                };
+                dataSize = {
+                    AppleEventCode = "dsiz";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Long>";
+                };
+                preferredRate = {
+                    AppleEventCode = "prfr";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Long>";
+                };
+                preferredVolume = {
+                    AppleEventCode = "prfv";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Short>";
+                };
+            };
+        };
+    };
+	Enumerations = {
+        PresentationModes = {
+            AppleEventCode = "prmd";
+            Enumerators = {
+				Normal = "norm";
+				SlideShow = "pmss";
+			};
+        };
+        PresentationSizes = {
+            AppleEventCode = "mvsz";
+            Enumerators = {
+				Half = "half";
+				Normal = "norm";
+				Double = "doub";
+				Screen  = "fits";
+				Current  = "cust";
+			};
+        };
+    };
+}

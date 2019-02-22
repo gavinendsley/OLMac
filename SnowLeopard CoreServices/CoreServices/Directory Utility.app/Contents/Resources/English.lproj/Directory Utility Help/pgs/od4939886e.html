@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Specifying BSD Configuration File Settings</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to configure Mac OS X to retrieve administrative data from BSD configuration files on the computer." />
+      <meta name="topicid" content="od4939886e" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od4939886e"></a><a name="x42534420284265726B656C65792053797374656D20446973747269627574696F6E292066696C6573"></a><a name="x636C69656E7420636F6D707574657273"></a><a name="x636F6E66696775726174696F6E"></a><a name="x66696C6573"></a><a name="x4D6163204F53205820536572766572"></a><a name="x4D6163204F532058"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od4939886e">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Specifying BSD Configuration File Settings</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">Historically, UNIX computers have stored administrative data in configuration files such as /etc/master.passwd, /etc/group,
+                     and /etc/hosts. Mac OS X is based on a BSD version of UNIX, but normally gets administrative data from directory systems.
+                  </p>
+                  <p class="Para">Mac OS X Server supports a fixed set of BSD configuration files. You can’t specify which configuration files to use, nor can
+                     you map their contents to Mac OS X record types and attributes.
+                  </p>
+                  <p class="Para">In Mac OS X v10.2 or later (including Mac OS X Server v10.2 or later), Open Directory can retrieve administrative data from
+                     BSD configuration files. This capability enables organizations that have BSD configuration files to use copies of the existing
+                     files on Mac OS X computers. BSD configuration files can be used alone or with other directory domains.
+                  </p>
+               </div>
+               <div class="Task">
+                  <div class="Name">To use BSD configuration files:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Make sure the BSD configuration files contain the data required by Mac OS X directory services.</p>
+                        <p class="Para">For more information, see <a href="od49463a7e.html">Setting Up Data in BSD Configuration Files</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Join or Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Services.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list of services, select “BSD Flat File and NIS” and click the Edit (/) button.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Select “Use User and Group records in BSD local node,” then click OK.</p>
+                        <p class="Para">The BSD configuration files domain is added to the computer’s authentication search policy as /BSD/local.</p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

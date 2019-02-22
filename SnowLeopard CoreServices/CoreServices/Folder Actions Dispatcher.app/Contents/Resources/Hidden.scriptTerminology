@@ -1,0 +1,62 @@
+{
+    Name = "Hidden Suite";
+    Description = "Hidden Terms and Events for controlling the Folder Actions Dispatcher application";
+
+    Classes = {
+        NSApplication = {
+            Name = "application";
+            PluralName = "applications";
+            Description = "The Folder Actions Dispatcher application";
+            Attributes = {
+                pollingInterval = {
+                    Name = "polling interval";
+                    Description = "the interval, in seconds, after which the file system will be polled for changes";
+                };
+                granularity = {
+                    Name = "granularity";
+                    Description = "the interval, in seconds, after which a file will be considered to have stopped changing";
+                };
+			};
+        };
+    };
+    Commands = {
+        doAction = {
+            Description = "Send a folder action code to a folder action script";
+            Name = "do folder action";
+			UnnamedArgument = {
+				Description = "The folder for which the actions are to be performed.";
+			};
+            Arguments = {
+                code = {
+                    Name = "folder action code";
+                    Description = "the folder action message to process";
+                };
+                itemList = {
+                    Name = "with item list";
+                    Description = "a list of items for the folder action message to process";
+                };
+                windowSize = {
+                    Name = "with window size";
+                    Description = "the new window size for the folder action message to process";
+                };
+            };
+        };
+        tick = {
+            Description = "Scan all of the watched folders for changes.";
+            Name = "tick";
+			UnnamedArgument = {
+				Description = "Not used at this time.";
+			};
+        };
+    };
+	Enumerations = {
+        ActionCodes = {
+            WindowOpened = {Description = "window opened"; Name = "window opened"; };
+            WindowClosed = {Description = "window closed"; Name = "window closed"; };
+            WindowMoved = {Description = "window moved"; Name = "window moved"; };
+            ItemsAdded = {Description = "items added"; Name = "items added"; };
+            ItemsRemoved = {Description = "items removed"; Name = "items removed"; };
+        };
+    };
+}
+

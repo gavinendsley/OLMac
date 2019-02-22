@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>pfm_description</key>
+	<string>Mobile Account creation deletion and other options.</string>
+	<key>pfm_domain</key>
+	<string>com.apple.MCX</string>
+	<key>pfm_name</key>
+	<string>mcx</string>
+	<key>pfm_subkeys</key>
+	<array>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Create a mobile account with default sync at login.</string>
+			<key>pfm_name</key>
+			<string>com.apple.cachedaccounts.CreatePHDAtLogin</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Create Portable Home Directory</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Create mobile account with sync off at user login.</string>
+			<key>pfm_name</key>
+			<string>com.apple.cachedaccounts.CreateAtLogin</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Create Mobile Account</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Before a mobile account is created show a dialog that allows the user to bypass mobile account creation and log in with their network account and network home.</string>
+			<key>pfm_name</key>
+			<string>com.apple.cachedaccounts.WarnOnCreate</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Show Mobile Account Dialog</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>In the mobile account creation dialog allow the user to select an option to not show the dialog during later logins.</string>
+			<key>pfm_name</key>
+			<string>cachedaccounts.WarnOnCreate.allowNever</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Show Mobile Account Dialog's Never Option</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Create mobile account homes with FileVault encryption.</string>
+			<key>pfm_name</key>
+			<string>cachedaccounts.create.encrypt</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Require FileVault Mobile Homes</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>A computer master password is required to create FileVault mobile homes. If set to true and a master password is not available FileVault home creation or any login that creates a mobile home may be denied. If set to false the FileVault may be created without a master password.</string>
+			<key>pfm_name</key>
+			<string>cachedaccounts.create.encrypt.requireMasterPassword</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>FileVault Mobile Homes Require Master Password</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>noMaxSize</string>
+			<key>pfm_description</key>
+			<string>FileVault mobile homes maximum size. Set to "noMaxSize" for no size limit "fixed" to specify a size limit in the "FileVault Mobile Home Max Size" (cachedaccounts.create.maxSize.fixedSize) key or "percentOfNetworkHome" to specify a size limit as a percent of the network home disk quota in the "FileVault Mobile Home Max Size Percent" (cachedaccounts.create.maxSize.percentOfNetworkHome) key.</string>
+			<key>pfm_name</key>
+			<string>cachedaccounts.create.maxSize</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string></string>
+				<string>noMaxSize</string>
+				<string>fixed</string>
+				<string>percentOfNetworkHome</string>
+			</array>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>FileVault Mobile Home Size Limit</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>512000</string>
+			<key>pfm_description</key>
+			<string>FileVault mobile home maximum size in bytes (as a string). The "FileVault Mobile Home Size Limit" (cachedaccounts.create.maxSize) key must be set to "fixed" for this value to have effect.</string>
+			<key>pfm_name</key>
+			<string>cachedaccounts.create.maxSize.fixedSize</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>FileVault Mobile Home Max Size</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_range_min</key>
+			<integer>0</integer>
+			<key>pfm_default</key>
+			<integer>100</integer>
+			<key>pfm_description</key>
+			<string>Maximum FileVault mobile home size as a percent of the network home quota. The "FileVault Mobile Home Size Limit" (cachedaccounts.create.maxSize) key must be set to "percentOfNetworkHome" for this value to have effect.</string>
+			<key>pfm_name</key>
+			<string>cachedaccounts.create.maxSize.percentOfNetworkHome</string>
+			<key>pfm_range_min</key>
+			<integer>0</integer>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>FileVault Mobile Home Max Size Percent</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>startup</string>
+			<key>pfm_description</key>
+			<string>Mobile home location. Set to "startup" to create in /Users on the startup volume "path" to specify a folder path in the "Mobile Home Path" (cachedaccounts.create.location.path) key or "userPicksVolume" to allow the user to pick the volume.</string>
+			<key>pfm_name</key>
+			<string>cachedaccounts.create.location</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>startup</string>
+				<string>path</string>
+				<string>userPicksVolume</string>
+				<string>userPicksInternalVolume</string>
+				<string>userPicksExternalVolume</string>
+			</array>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Mobile Home Location</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>/Users</string>
+			<key>pfm_description</key>
+			<string>A file system path to the folder where the user's Mobile Home will be created. The "Mobile Home Location" (cachedaccounts.create.location) key must be set to "path" for this value to have effect.</string>
+			<key>pfm_name</key>
+			<string>cachedaccounts.create.location.path</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Mobile Home Parent Path</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>-1</integer>
+			<key>pfm_description</key>
+			<string>Time to wait before deleting a mobile account and its home in seconds. A value of -1 never deletes a Mobile Account. A value of 0 deletes the Mobile Account as soon as possible.</string>
+			<key>pfm_name</key>
+			<string>cachedaccounts.expiry.delete.disusedSeconds</string>
+			<key>pfm_range_min</key>
+			<integer>-1</integer>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Mobile Account Time To Live</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Require a successful home sync before deleting a mobile account. This only applies to automatic deletions as directed by the "Mobile Account Time To Live" (cachedaccounts.expiry.delete.disusedSeconds) key.</string>
+			<key>pfm_name</key>
+			<string>cachedaccounts.expiry.cond.successfulSync</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Require Sync To Delete Mobile Account</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>When creating a mobile account create the local home folder using the computer's user template.</string>
+			<key>pfm_name</key>
+			<string>cachedaccounts.create.useLocalUserTemplate</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Create Mobile Home With Local User Template</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string></string>
+			<key>pfm_description</key>
+			<string>Server target of home synchronization as a URL string to use when creating a mobile account. The string "%@" will be substituted with the user record name. Example: afp://myserver.apple.com/Users/BuildingA/%@.</string>
+			<key>pfm_name</key>
+			<string>cachedaccounts.create.syncURL</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Synchronization URL</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string></string>
+			<key>pfm_description</key>
+			<string>Set to a recognized time zone name such as "America/Los_Angeles" or "US/Pacific" as found in /usr/share/zoneinfo.</string>
+			<key>pfm_name</key>
+			<string>timeZone</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Time Zone</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string></string>
+			<key>pfm_description</key>
+			<string>Set to a recognized time server name such as "time.apple.com".</string>
+			<key>pfm_name</key>
+			<string>timeServer</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Time Server</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Set to true to disable the guest account. Set to false to enable a guest account.</string>
+			<key>pfm_name</key>
+			<string>DisableGuestAccount</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>system-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Disable Guest Account</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to false to not allow users to create their PHD account if a sync error occurs.</string>
+			<key>pfm_name</key>
+			<string>cachedaccounts.onFirstTimeErrAskToContinue</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>system-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Allow PHD Creation If Error Occurs</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>0</integer>
+			<key>pfm_description</key>
+			<string>Set to the number of additional times the user list should ask to be refreshed.</string>
+			<key>pfm_name</key>
+			<string>loginwindowRefreshUserListUpdateTimes</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>system-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Loginwindow User List Update Times</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>0</integer>
+			<key>pfm_description</key>
+			<string>Set to the number of seconds between times that we ask the user list to be refreshed.  Set to 0 to disable.</string>
+			<key>pfm_name</key>
+			<string>loginwindowRefreshUserListUpdateSecs</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>system-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Loginwindow User List Update Delay Seconds</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Set to true to require admin authentication to create individual AirPort IBSS networks. Set to false to disable.</string>
+			<key>pfm_name</key>
+			<string>RequireAdminForIBSS</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>system-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Require Admin For AirPort IBSS</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Set to true to require admin authentication to change AirPort networks. Set to false to disable.</string>
+			<key>pfm_name</key>
+			<string>RequireAdminForAirPortNetworkChange</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>system-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Require Admin For AirPort Network Change</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Set to true to require admin authentication to turn AirPort power on or off. Set to false to disable.</string>
+			<key>pfm_name</key>
+			<string>RequireAdminToTurnAirPortOnOff</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>system-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Require Admin For AirPort Power Change</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+	</array>
+	<key>pfm_title</key>
+	<string>Mobile Account And Other Options</string>
+	<key>pfm_version</key>
+	<real>3.1</real>
+</dict>
+</plist>

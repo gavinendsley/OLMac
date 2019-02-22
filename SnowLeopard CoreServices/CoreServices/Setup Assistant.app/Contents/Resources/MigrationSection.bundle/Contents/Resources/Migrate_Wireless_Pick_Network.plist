@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>Migrate_Wireless_Pick_Network</key>
+	<dict>
+		<key>0100</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:WirelessNetwork</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>WirelessNetworkName</string>
+			</array>
+			<key>WirelessNetworkName</key>
+			<string>0100</string>
+		</dict>
+		<key>0200</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:WirelessPassword</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>RequiredAny</string>
+				<string>WirelessNetworkPassword</string>
+			</array>
+			<key>WirelessNetworkName</key>
+			<string>0100</string>
+			<key>NSAccessibility</key>
+			<dict>
+				<key>AXDescription</key>
+				<string>wireless network password</string>
+			</dict>
+		</dict>
+		<key>0300</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:WirelessNetwork</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>Required</string>
+				<string>WirelessNetworkName</string>
+			</array>
+			<key>NSAccessibility</key>
+			<dict>
+				<key>AXDescription</key>
+				<string>preferred network name</string>
+			</dict>
+		</dict>
+		<key>0400</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:WirelessPassword</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>WirelessNetworkPassword</string>
+			</array>
+			<key>WirelessNetworkName</key>
+			<string>0300</string>
+			<key>NSAccessibility</key>
+			<dict>
+				<key>AXDescription</key>
+				<string>preferred network password</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>nextPage</key>
+	<string>Migrate_Pair</string>
+</dict>
+</plist>

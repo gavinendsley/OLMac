@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DisplayName</key>
+	<string>Dock</string>
+	<key>Entities</key>
+	<dict>
+		<key>com.apple.dock.item</key>
+		<array>
+			<string>path</string>
+			<string>type</string>
+			<string>label</string>
+			<string>properties</string>
+		</array>
+		<key>com.apple.dock.itemlist</key>
+		<array>
+			<string>allItems</string>
+			<string>name</string>
+		</array>
+	</dict>
+	<key>Type</key>
+	<string>app</string>
+	<key>ImagePath</key>
+    <string>/System/Library/CoreServices/Dock.app/Contents/Resources/DockSyncClient.app/Contents/Resources/Dock.png</string>
+    <key>SyncsWith</key>
+    <dict>
+        <key>SyncAlertToolPath</key>
+        <string>/System/Library/CoreServices/Dock.app/Contents/Resources/DockSyncClient.app/Contents/MacOS/DockSyncClient</string>
+        <key>SyncAlertTypes</key>
+        <array>
+            <string>app</string>
+            <string>server</string>
+        </array>
+    </dict>
+</dict>
+</plist>

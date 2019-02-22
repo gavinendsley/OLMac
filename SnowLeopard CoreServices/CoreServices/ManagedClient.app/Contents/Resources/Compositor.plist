@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PostLoginExcludeBundles</key>
+	<array>
+		<string>com.apple.mcxloginscripts</string>
+		<string>com.apple.remoteaccess</string>
+	</array>
+	<key>PreLoginExcludeBundles</key>
+	<array>
+		<string>com.apple.applicationaccess</string>
+		<string>com.apple.Classic</string>
+		<string>com.apple.DiscRecording</string>
+		<string>com.apple.dock</string>
+		<string>com.apple.finder</string>
+		<string>com.apple.homeSync</string>
+		<string>com.apple.internet</string>
+		<string>com.apple.mcxprinting</string>
+		<string>com.apple.remoteaccess</string>
+		<string>com.apple.Safari</string>
+		<string>com.apple.safari</string>
+		<string>com.apple.screenreaderd</string>
+		<string>com.apple.SystemConfiguration</string>
+		<string>com.apple.systempreferences</string>
+		<string>com.apple.systemuiserver</string>
+		<string>com.apple.universalaccess</string>
+		<string>loginwindow</string>
+	</array>
+</dict>
+</plist>

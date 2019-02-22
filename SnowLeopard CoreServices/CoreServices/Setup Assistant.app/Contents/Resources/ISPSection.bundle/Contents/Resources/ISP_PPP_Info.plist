@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>ISP_PPP_Info</key>
+	<dict>
+		<key>0100</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:Login</string>
+			<key>NSAccessibility</key>
+			<dict>
+				<key>AXDescription</key>
+				<string>user name</string>
+			</dict>
+		</dict>
+		<key>0200</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:LoginPassword</string>
+			<key>NSAccessibility</key>
+			<dict>
+				<key>AXDescription</key>
+				<string>password</string>
+			</dict>
+		</dict>
+		<key>0300</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:Phone</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>Required</string>
+			</array>
+			<key>NSAccessibility</key>
+			<dict>
+				<key>AXDescription</key>
+				<string>ISP phone number</string>
+			</dict>
+		</dict>
+		<key>0400</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:DialingInfo:OutsideLine</string>
+			<key>NSAccessibility</key>
+			<dict>
+				<key>AXDescription</key>
+				<string>dialing prefix to obtain an outside line</string>
+			</dict>
+		</dict>
+		<key>0500</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>CallWaiting</string>
+		</dict>
+		<key>0501</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>YES</string>
+		</dict>
+		<key>0502</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>NO</string>
+		</dict>
+	</dict>
+	<key>nextPage</key>
+	<string>ISP__CallWaitingOrNot</string>
+</dict>
+</plist>

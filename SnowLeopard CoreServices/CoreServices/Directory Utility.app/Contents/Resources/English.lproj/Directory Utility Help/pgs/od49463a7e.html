@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Setting Up Data in BSD Configuration Files</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="If you want a Mac OS X computer to get administrative data from BSD configuration files, the data must exist in the files and must be in the format required by Mac OS X." />
+      <meta name="topicid" content="od49463a7e" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od49463a7e"></a><a name="x42534420284265726B656C65792053797374656D20446973747269627574696F6E292066696C6573"></a><a name="x636C69656E7420636F6D707574657273"></a><a name="x636F6E66696775726174696F6E"></a><a name="x66696C6573"></a><a name="x4D6163204F532058"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od49463a7e">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Setting Up Data in BSD Configuration Files</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">If you want a Mac OS X computer to get administrative data from BSD configuration files, the data must exist in the files
+                     and must be in the format required by Mac OS X.
+                  </p>
+                  <p class="Para">You might need to add, change, or reorganize data in the files. Workgroup Manager cannot make changes to data in BSD configuration
+                     files, so you must make the necessary modifications by using a text editor or other tools.
+                  </p>
+                  <p class="Para">The following table lists the names of the files and describes the content in them.</p>
+                  <table type="Multicolumn" cols="2" border="0" cellspacing="2" cellpadding="2">
+                     <tr class="TableHead">
+                        <th>
+                           <div class="TableHead">BSD configuration file</div>
+                        </th>
+                        <th>
+                           <div class="TableHead">Contains</div>
+                        </th>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p class="Para">/etc/master.passwd</p>
+                        </td>
+                        <td>
+                           <p class="Para">User names, passwords, IDs, primary group IDs, and so forth</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p class="Para">/etc/group</p>
+                        </td>
+                        <td>
+                           <p class="Para">Group names, IDs, and members</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p class="Para">/etc/fstab</p>
+                        </td>
+                        <td>
+                           <p class="Para">NFS mounts</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p class="Para">/etc/hosts</p>
+                        </td>
+                        <td>
+                           <p class="Para">Computer names and addresses</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p class="Para">/etc/networks</p>
+                        </td>
+                        <td>
+                           <p class="Para">Network names and addresses</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p class="Para">/etc/services</p>
+                        </td>
+                        <td>
+                           <p class="Para">Service names, ports, and protocols</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p class="Para">/etc/protocols</p>
+                        </td>
+                        <td>
+                           <p class="Para">IP protocol names and numbers</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p class="Para">/etc/rpcs</p>
+                        </td>
+                        <td>
+                           <p class="Para">Open Network Computing RPC servers</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p class="Para">/etc/printcap</p>
+                        </td>
+                        <td>
+                           <p class="Para">Printer names and capabilities</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p class="Para">/etc/bootparams</p>
+                        </td>
+                        <td>
+                           <p class="Para">Bootparam settings</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p class="Para">/etc/bootp</p>
+                        </td>
+                        <td>
+                           <p class="Para">Bootp settings</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p class="Para">/etc/aliases</p>
+                        </td>
+                        <td>
+                           <p class="Para">Mail aliases and distribution lists</p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p class="Para">/etc/netgroup</p>
+                        </td>
+                        <td>
+                           <p class="Para">Network-wide group names and members</p>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

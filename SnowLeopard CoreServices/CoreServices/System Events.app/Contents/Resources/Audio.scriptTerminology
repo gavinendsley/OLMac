@@ -1,0 +1,22 @@
+{
+    Name = "Audio File Suite";
+    Description = "Terms and Events for accessing the content of Audio files";
+
+    Classes = {
+        AudioFile = {
+            Name = "audio file";
+            PluralName = "audio files";
+            Description = "A file containing data in Audio format";
+            Attributes = {
+                contents = {
+                    Name = "contents";
+                    Description = "the contents of the audio file; elements and properties of the audio data may be accessed as if they were elements and properties of the audio file";
+                };
+            };
+        };
+        AudioData = {
+            Name = "audio data";
+            Description = "Data in Audio format";
+        };
+    };
+}

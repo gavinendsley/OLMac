@@ -1,0 +1,74 @@
+{
+    Name = "Folder Actions Setup Suite";
+    Description = "Terms and Events for controlling the Folder Actions Setup application";
+
+    Commands = {
+        Open = {
+            Name = "open";
+            Description = "Open a folder action associated with a folder, for the purpose of attaching a script.";
+			UnnamedArgument = {
+				Description = "The associated folder";
+			};
+        };
+	};
+    Classes = {
+        NSApplication = {
+            Name = "application";
+            PluralName = "applications";
+            Description = "The Folder Actions Setup application";
+            Attributes = {
+                folderActionsEnabled = {
+ 					Name = "folder actions enabled";
+                    Description = "Are Folder Actions currently being processed?";
+                };
+			};
+        };
+        FolderAction = {
+            Name = "folder action";
+            PluralName = "folder actions";
+            Description = "An action attached to a folder in the file system";
+            Attributes = {
+                name = {
+                    Name = "name";
+                    Description = "the name of the folder action, which is also the name of the folder";
+                };
+                volume = {
+                    Name = "volume";
+                    Description = "the volume on which the folder action resides";
+                };
+                path = {
+                    Name = "path";
+                    Description = "the path to the folder to which the folder action applies";
+                };
+                enabled = {
+                    Name = "enabled";
+                    Description = "Is the folder action enabled?";
+                };
+            };
+        };
+        Script = {
+            Name = "script";
+            PluralName = "scripts";
+            Description = "A script invoked by a folder action";
+            Attributes = {
+                name = {
+                    Name = "name";
+                    Description = "the name of the script";
+                };
+                hfsPath = {
+                    Name = "path";
+                    Description = "the file system path of the disk";
+                };
+                posixPath = {
+                    Name = "POSIX path";
+                    Description = "the POSIX file system path of the disk";
+                };
+                enabled = {
+                    Name = "enabled";
+                    Description = "Is the script enabled?";
+                };
+            };
+        };
+    };
+}
+

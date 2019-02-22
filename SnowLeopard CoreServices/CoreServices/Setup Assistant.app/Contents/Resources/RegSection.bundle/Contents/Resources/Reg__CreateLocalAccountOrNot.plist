@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>nextPage</key>
+	<string>Reg_Local_Account</string>
+	<key>ClassName</key>
+	<string>MBChooseCreateLocalAccountOrNot</string>
+</dict>
+</plist>

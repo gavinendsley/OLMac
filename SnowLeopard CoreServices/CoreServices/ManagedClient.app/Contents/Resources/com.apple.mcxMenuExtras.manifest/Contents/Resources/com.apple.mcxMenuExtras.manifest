@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>pfm_description</key>
+	<string>Managed menu extras. Specified menu extras will be added or removed from the menu bar after user login. Standard menu extra may be specified by file name. Non-standard menu extras are specified by full path.</string>
+	<key>pfm_domain</key>
+	<string>com.apple.mcxMenuExtras</string>
+	<key>pfm_name</key>
+	<string>mcxMenuExtras</string>
+	<key>pfm_subkeys</key>
+	<array>
+		<dict>
+			<key>pfm_default</key>
+			<real>1</real>
+			<key>pfm_description</key>
+			<string>Seconds to delay after login before adding or removing menu extras. If the delay is too short\, the menu extras will not appear or disappear in the menu bar.</string>
+			<key>pfm_name</key>
+			<string>delaySeconds</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Add or Remove Delay</string>
+			<key>pfm_type</key>
+			<string>real</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<real>10</real>
+			<key>pfm_description</key>
+			<string>Maximum wait for all menu extras to be added or removed.</string>
+			<key>pfm_name</key>
+			<string>maxWaitSeconds</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Maximum Wait</string>
+			<key>pfm_type</key>
+			<string>real</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the AirPort menu extra. Set to false to remove the AirPort menu extra.</string>
+			<key>pfm_name</key>
+			<string>AirPort.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>AirPort Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the Battery menu extra. Set to false to remove the Battery menu extra.</string>
+			<key>pfm_name</key>
+			<string>Battery.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Battery Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the Bluetooth menu extra. Set to false to remove the Bluetooth menu extra.</string>
+			<key>pfm_name</key>
+			<string>Bluetooth.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Bluetooth Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the CPU menu extra. Set to false to remove the CPU menu extra.</string>
+			<key>pfm_name</key>
+			<string>CPU.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>CPU Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the Clock menu extra. Set to false to remove the Clock menu extra.</string>
+			<key>pfm_name</key>
+			<string>Clock.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Clock Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the Displays menu extra. Set to false to remove the Displays menu extra.</string>
+			<key>pfm_name</key>
+			<string>Displays.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Displays Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the Eject menu extra. Set to false to remove the Eject menu extra.</string>
+			<key>pfm_name</key>
+			<string>Eject.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Eject Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the Fax menu extra. Set to false to remove the Fax menu extra.</string>
+			<key>pfm_name</key>
+			<string>Fax.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Fax Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the HomeSync menu extra. Set to false to remove the HomeSync menu extra.</string>
+			<key>pfm_name</key>
+			<string>HomeSync.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>HomeSync Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the Ink menu extra. Set to false to remove the Ink menu extra.</string>
+			<key>pfm_name</key>
+			<string>Ink.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Ink Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the Infrared menu extra. Set to false to remove the Infrared menu extra.</string>
+			<key>pfm_name</key>
+			<string>IrDA.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Infrared Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the PC Card menu extra. Set to false to remove the PC Card menu extra.</string>
+			<key>pfm_name</key>
+			<string>PCCard.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>PCCard Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the PPP menu extra. Set to false to remove the PPP menu extra.</string>
+			<key>pfm_name</key>
+			<string>PPP.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>PPP Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the PPPoE menu extra. Set to false to remove the PPPoE menu extra.</string>
+			<key>pfm_name</key>
+			<string>PPPoE.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>PPPoE Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the Remote Management menu extra. Set to false to remove the Remote Management menu extra.</string>
+			<key>pfm_name</key>
+			<string>RemoteDesktop.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Remote Management Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the AppleScript menu extra. Set to false to remove the AppleScript menu extra.</string>
+			<key>pfm_name</key>
+			<string>Script Menu.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>AppleScript Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the Spaces menu extra. Set to false to remove the Spaces menu extra.</string>
+			<key>pfm_name</key>
+			<string>Spaces.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Spaces Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the iSync menu extra. Set to false to remove the iSync menu extra.</string>
+			<key>pfm_name</key>
+			<string>Sync.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>iSync Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the Input menu extra. Set to false to remove the Input menu extra.</string>
+			<key>pfm_name</key>
+			<string>TextInput.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Input Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the Time Machine menu extra. Set to false to remove the Time Machine menu extra.</string>
+			<key>pfm_name</key>
+			<string>TimeMachine.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Time Machine Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the Universal Access menu extra. Set to false to remove the Universal Access menu extra.</string>
+			<key>pfm_name</key>
+			<string>UniversalAccess.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Universal Access Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the Fast User Switching menu extra. Set to false to remove the Fast User Switching menu extra.</string>
+			<key>pfm_name</key>
+			<string>User.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Fast User Switching Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the VPN menu extra. Set to false to remove the VPN menu extra.</string>
+			<key>pfm_name</key>
+			<string>VPN.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>VPN Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the Sound menu extra. Set to false to remove the Sound menu extra.</string>
+			<key>pfm_name</key>
+			<string>Volume.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Sound Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the WWAN menu extra. Set to false to remove the WWAN menu extra.</string>
+			<key>pfm_name</key>
+			<string>WWAN.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>WWAN Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Set to true to add the iChat menu extra. Set to false to remove the iChat menu extra.</string>
+			<key>pfm_name</key>
+			<string>iChat.menu</string>
+			<key>pfm_targets</key>
+			<array>
+				<string>user</string>
+				<string>user-managed</string>
+			</array>
+			<key>pfm_title</key>
+			<string>iChat Menu Extra</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+	</array>
+	<key>pfm_title</key>
+	<string>Managed Menu Extras</string>
+	<key>pfm_version</key>
+	<real>1.1</real>
+</dict>
+</plist>

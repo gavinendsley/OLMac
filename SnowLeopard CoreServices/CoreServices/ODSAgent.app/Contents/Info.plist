@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>ODSAgent</string>
+	<key>CFBundleExecutable</key>
+	<string>ODSAgent</string>
+	<key>CFBundleGetInfoString</key>
+	<string>1.4.1 (141.6), Copyright © 2007-2009 Apple Inc. All Rights Reserved.</string>
+	<key>CFBundleIconFile</key>
+	<string>CD</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.ODSAgent</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>ODSAgent</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.4.1</string>
+	<key>CFBundleVersion</key>
+	<string>141.6</string>
+	<key>LSHasLocalizedDisplayName</key>
+	<true/>
+	<key>LSUIElement</key>
+	<string>1</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>

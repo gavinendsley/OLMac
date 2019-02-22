@@ -1,0 +1,44 @@
+{
+    Name = "AppleScript Utility Suite";
+    Description = "Terms and Events for controlling the AppleScript Utility application";
+
+    Classes = {
+        NSApplication = {
+            Name = "application";
+            PluralName = "applications";
+            Description = "the AppleScript Utility application";
+            Attributes = {
+                defaultScriptEditor = {
+ 					Name = "default script editor";
+                    Description = "the editor to be used to open scripts";
+                };
+                uiElementsEnabled = {
+ 					Name = "UI elements enabled";
+                    Description = "Are UI element events currently being processed?";
+                };
+                guiScriptingEnabled = {
+ 					Name = "GUI Scripting enabled";
+                    Description = "Are GUI Scripting events currently being processed?";
+                };
+				scriptMenuEnabled = {
+ 					Name = "Script menu enabled";
+                    Description = "Is the Script menu installed in the menu bar?";
+                };
+				showLibraryScripts = {
+ 					Name = "show Computer scripts";
+                    Description = "Are the Computer scripts shown in the Script menu?";
+                };
+				applicationScriptsPosition = {
+ 					Name = "application scripts position";
+                    Description = "the position in the Script menu at which the application scripts are displayed";
+                };
+			};
+        };
+    };
+	Enumerations = {
+        ApplicationScriptsPositions = {
+			Top = {Description = "top"; Name = "top"; };
+			Bottom = {Description = "bottom"; Name = "bottom"; };
+        };
+    };
+}

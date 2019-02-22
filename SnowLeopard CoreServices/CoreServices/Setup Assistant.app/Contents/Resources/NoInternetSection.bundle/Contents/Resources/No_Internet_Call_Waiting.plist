@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>No_Internet_Call_Waiting</key>
+	<dict>
+		<key>0100</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:DialingInfo:DisableCallWaiting</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>Required</string>
+			</array>
+			<key>MaxLength</key>
+			<string>255</string>
+			<key>NSAccessibility</key>
+			<dict>
+				<key>AXDescription</key>
+				<string>code to disable call waiting</string>
+			</dict>
+		</dict>
+	</dict>
+	<key>nextPage</key>
+	<string>No_Internet_Modem_Selection</string>
+</dict>
+</plist>

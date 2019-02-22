@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Protecting Computers from a Malicious DHCP Server</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn why you shouldn’t use DHCP-supplied LDAP directory service if security is a major concern." />
+      <meta name="topicid" content="od49451b71" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od49451b71"></a><a name="x44484350202844796E616D696320486F737420436F6E66696775726174696F6E2050726F746F636F6C292073657276696365"></a><a name="x73656172636820706F6C6963696573"></a><a name="x7365637572697479"></a><a name="x6D6F62696C65206163636F756E7473"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od49451b71">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Protecting Computers from a Malicious DHCP Server</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">Apple recommends that you don’t use an automatic authentication search policy with a DHCP-supplied LDAP server or a DHCP-supplied
+                     shared directory domain in an environment where security is a major concern.
+                  </p>
+                  <p class="Para">A malicious hacker with access to your network can use a sham DHCP server and a sham LDAP directory (or shared directory domain)
+                     to control your computer by using the root user account.
+                  </p>
+                  <p class="Para">For a hacker to access your network, the hacker’s sham DHCP server must be part of your local network or subnet. Therefore,
+                     if your computers are the only ones on your local network and they get Internet access through Mac OS X Server NAT service
+                     or a NAT router, this type of security breach is not possible. However, a wireless local network decreases security because
+                     a hacker can join a wireless local network more easily than a wired local network.
+                  </p>
+                  <p class="Para">You can protect your Mac against malicious attacks from a sham DHCP server by disabling use of a DHCP-supplied LDAP directory
+                     and disabling broadcast and DHCP binding for local directory domain (or disabling the local directory domain).
+                  </p>
+                  <p class="Para">If you have a mobile computer that connects to an LDAP server when the computer is connected to a network, and you change
+                     the computer’s search policy from automatic to custom (in the Authentication pane of Search Policy in Directory Utility),
+                     a startup delay occurs when the computer is not connected to the network.
+                  </p>
+                  <p class="Para">The delay occurs because the computer can’t connect to a specific directory domain listed in the computer’s custom search
+                     policy. No delay is noticeable when waking a computer that’s been disconnected from the network while sleeping.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

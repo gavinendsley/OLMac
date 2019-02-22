@@ -1,0 +1,25 @@
+{
+    Name = "AppleScriptRunner";
+    AppleEventCode = "asru";
+
+    UsedFeatures = (UnnamedArguments); 
+    Commands = {
+        doScript = {
+            AppleEventClassCode = "misc";
+            AppleEventCode = "dosc";
+            CommandClass = "DoScriptVerb";
+            ResultAppleEventCode = "****";
+            Type = "NSObject";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "NSString";
+			};
+        };
+	};
+    Classes = {
+        NSApplication = {
+            AppleEventCode = "capp";
+            Superclass = "NSCoreSuite.NSApplication";
+        };
+    };
+}

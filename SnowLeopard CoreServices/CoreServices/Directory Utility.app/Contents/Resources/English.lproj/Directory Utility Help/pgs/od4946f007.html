@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Changing the Password Used for Authenticating an LDAP Connection</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to update an authenticated LDAP connection to use a password that has been changed on the LDAP server." />
+      <meta name="topicid" content="od4946f007" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od4946f007"></a><a name="x61757468656E7469636174696F6E"></a><a name="x4C44415020284C69676874776569676874204469726563746F7279204163636573732050726F746F636F6C292073657276696365"></a><a name="x70617373776F726473"></a><a name="x7365637572697479"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od4946f007">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Changing the Password Used for Authenticating an LDAP Connection</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">Using Directory Utility, you can update an authenticated LDAP connection to use a password that has been changed on the LDAP
+                     server. (All computers having an authenticated connection to an LDAP server must be updated if the password used to authenticate
+                     the LDAP connection is changed on the server.)
+                  </p>
+               </div>
+               <div class="Task">
+                  <div class="Name">To change the password for an LDAP connection:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Services.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list of services, select LDAPv3 and click the Edit (/) button.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the list of server configurations is hidden, click Show Options.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list, select a server configuration and click Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Security and change the Password setting:</p>
+                        <ul class="ListBullet">
+                           <li>
+                              <p class="Para">If the Password setting is dimmed because “Use authentication when connecting” is not selected, see <a href="od49475b81.html">Authenticating an LDAP Connection</a>.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">If the Password setting is dimmed because “Bound to the directory as” is selected (but dimmed), the connection isn’t authenticated
+                                 with a user password. Instead, the connection uses an authenticated computer record for trusted binding.
+                              </p>
+                           </li>
+                        </ul>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

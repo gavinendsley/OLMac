@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Commands</key>
+	<dict>
+		<key>GetURL</key>
+		<dict>
+			<key>Description</key>
+			<string>Opens a vnc: URL</string>
+			<key>Name</key>
+			<string>GetURL</string>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>Terms and Events for controlling the Liason application</string>
+	<key>Name</key>
+	<string>Liason Suite</string>
+</dict>
+</plist>

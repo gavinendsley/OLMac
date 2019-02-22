@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Configuring Access to an LDAP Directory</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how Directory Utility can assist you in creating a configuration that specifies how Mac OS X accesses an LDAP directory." />
+      <meta name="topicid" content="od4937cc9f" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od4937cc9f"></a><a name="x636F6E66696775726174696F6E"></a><a name="x4C44415020284C69676874776569676874204469726563746F7279204163636573732050726F746F636F6C292073657276696365"></a><a name="x4C444150763320616363657373"></a><a name="x6D617070696E6773"></a><a name="x747275737465642062696E64696E67"></a><a name="x61757468656E7469636174696F6E"></a><a name="x62696E64696E67"></a><a name="x64697374696E67756973686564206E616D652028444E29"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od4937cc9f">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Configuring Access to an LDAP Directory</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">Using Directory Utility, you can specify how Mac OS X accesses an LDAPv3 directory if you know the DNS name or IP address
+                     of the LDAP directory server.
+                  </p>
+                  <p class="Para">If the directory is not hosted by a server that supplies its own mappings (such as Mac OS X Server) you must know the search
+                     base and the template for mapping Mac OS X data to the directory’s data.
+                  </p>
+                  <p class="Para">Supported mapping templates are:</p>
+                  <ul class="ListBullet">
+                     <li>
+                        <p class="Para"><span class="Emphasis">Open Directory Server, </span>for a directory that uses the Mac OS X Server schema
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para"><span class="Emphasis">Active Directory, </span>for a directory hosted by a Windows 2000, Windows 2003, or later server
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para"><span class="Emphasis">RFC 2307, </span>for most directories hosted by UNIX servers
+                        </p>
+                     </li>
+                  </ul>
+                  <p class="Para">The LDAPv3 plug-in fully supports Open Directory replication and failover. If the Open Directory master becomes unavailable,
+                     the plug-in falls back to a nearby replica.
+                  </p>
+                  <p class="Para">To specify custom mappings for the directory data, follow the instructions in <a href="od49360419.html">Configuring Access to an LDAP Directory Manually</a> instead of the instructions here.
+                  </p>
+                  <div class="Alert">
+                     <div class="Important"><span class="Important">Important:  </span>If your computer name contains a hyphen, you might not be able to join or bind to a Directory Domain such as LDAP or Active
+                        Directory. To establish binding, use a computer name that does not contain a hyphen.
+                     </div>
+                  </div>
+               </div>
+               <div class="Task">
+                  <div class="Name">To have Directory Utility help you configure access to an LDAP directory:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Join or Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Services.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list of services, select LDAPv3 and click the Edit (/) button.</p>
+                        <p class="Para">You can select LDAPv3 in the list of services without selecting the Enable checkbox for LDAPv3.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click New and enter the LDAP server’s DNS name or IP address.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Select the options for accessing the directory:</p>
+                        <ul class="ListBullet">
+                           <li>
+                              <p class="Para">Select “Encrypt using SSL” if you want Open Directory to use Secure Sockets Layer (SSL) for connections with the LDAP directory.
+                                 Before you select this, ask your Open Directory administrator to determine if SSL is needed.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">Select “Use for authentication” if this directory contains user accounts that someone will use to log in or authenticate to
+                                 services.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">Select “Use for contacts” if this directory contains mail addresses and other information you want to use in Address Book.</p>
+                           </li>
+                        </ul>
+                        <p class="Para">If Directory Utility can’t contact the LDAP server, a message appears and you must configure access manually or cancel the
+                           setup process. For more information about manual configuration instructions, see <a href="od49360419.html">Configuring Access to an LDAP Directory Manually</a>.
+                        </p>
+                        <p class="Para">If the dialog expands to show mapping options, choose the mapping template from the pop-up menu, enter the search base suffix,
+                           and then click Continue.
+                        </p>
+                        <p class="Para">Typically, the search base suffix is derived from the server’s DNS name. For example, the search base suffix could be “dc=ods,dc=example,dc=com”
+                           for a server whose DNS name is ods.example.com.
+                        </p>
+                        <p class="Para">If no available mapping templates apply to the connection you’re setting up, click Manual. For more information, see <a href="od49360419.html">Configuring Access to an LDAP Directory Manually</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para">To have Directory Utility get information from the LDAP server, click Continue.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the dialog expands to display options for trusted binding, enter the name of the computer and the name and password of
+                           a directory administrator. (The binding might be optional.)
+                        </p>
+                        <p class="Para">The dialog tells you whether the LDAP directory requires trusted binding or makes it optional. Trusted binding is mutual: each
+                           time the computer connects to the LDAP directory, they authenticate each other. If trusted binding is set up or the LDAP directory
+                           doesn’t support trusted binding, the Bind button does not appear. Make sure you supplied the correct computer name.
+                        </p>
+                        <p class="Para">If you see an alert saying that a computer record exists, click Cancel to go back and change the computer name, or click Overwrite
+                           to replace the existing computer record.
+                        </p>
+                        <p class="Para">The existing computer record might be abandoned, or it might belong to another computer.</p>
+                        <p class="Para">If you replace an existing computer record, notify the LDAP directory administrator in case replacing the record disables
+                           another computer. In this case, the LDAP directory administrator must give the disabled computer a different name and add
+                           it back to the computer group it belonged to.
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para">If the dialog expands to display connection options, select “Use authentication when selecting” and enter the distinguished
+                           name and password of a user account in the directory.
+                        </p>
+                        <p class="Para">The options for an authenticated connection appear if the LDAP server supports an authenticated connection but not trusted
+                           binding. An authentication connection is not mutual: the LDAP server authenticates the client but the client doesn’t authenticate
+                           the server.
+                        </p>
+                        <p class="Para">“Use authentication when selecting” is preselected but dimmed if the LDAP server requires you to enter a user account’s distinguished
+                           name and password for an authenticated connection.
+                        </p>
+                        <p class="Para">The distinguished name can specify any user account that has permission to see data in the directory. For example, a user
+                           account whose short name is dirauth on an LDAP server and whose address is ods.example.com would have the distinguished name
+                           uid=dirauth,cn=users,dc=ods,dc=example,dc=com.
+                        </p>
+                        <div class="Alert">
+                           <div class="Important"><span class="Important">Important:  </span>If the distinguished name or password are incorrect, you can log in to the computer using user accounts from the LDAP directory.
+                           </div>
+                        </div>
+                     </li>
+                     <li>
+                        <p class="Para">Click OK to finish creating the LDAP connection.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click OK to finish configuring LDAPv3 options.</p>
+                     </li>
+                  </ol>
+               </div>
+               <div class="Outro">
+                  <p class="Para">If you selected “Use for authentication” or “Use for contacts” in step 5, the LDAP directory configuration you created is
+                     added to a custom search policy in the Authentication or Contacts pane of Directory Utility.
+                  </p>
+                  <p class="Para">Make sure LDAPv3 is enabled in the Services pane so the computer will use the LDAP configuration you created. For more information,
+                     see <a href="od493c0032.html">Enabling or Disabling LDAP Directory Services</a>.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

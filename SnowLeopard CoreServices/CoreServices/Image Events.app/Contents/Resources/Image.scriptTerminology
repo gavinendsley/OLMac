@@ -1,0 +1,383 @@
+{
+    Name = "Image Suite"; 
+    Description = "Terms and Events for controlling Images";
+    
+    Commands = {
+        save = {
+            Name = "save";
+            Description = "Save an image to a file in one of various formats";
+            Arguments = {
+                File = {
+                    Name = "in";
+                    Description = "file path in which to save the image, in HFS or POSIX form";
+                };
+                FileType = {
+                    Name = "as";
+                    Description = "file type in which to save the image ( default is to make no change )";
+                };
+                packBits = {
+                    Name = "PackBits";
+                    Description = "Are the bytes to be compressed with PackBits? ( default is false, applies only to TIFF )";
+                };
+                addIcon = {
+                    Name = "icon";
+                    Description = "Shall an icon be added? ( default is false )";
+                };
+                compressionLevel = {
+                    Name = "with compression level";
+                    Description = "specifies the compression level of the resultant file ( applies only to JPEG )";
+                };
+            };
+        };
+        close = {
+            Name = "close";
+            Description = "Close an image";
+            Arguments = {
+                File = {
+                    Name = "saving in";
+                    Description = "The file in which to save the image.";
+                };
+                SaveOptions = {
+                    Name = "saving";
+                    Description = "Specifies whether changes should be saved before closing.";
+                };
+            };
+        };
+        scale = {
+            Name = "scale";
+            Description = "Scale an image";
+            Arguments = {
+                byFactor = {
+                    Name = "by factor";
+                    Description = "scale using a scalefactor";
+                };
+                toSize = {
+                    Name = "to size";
+                    Description = "scale using a max width/length";
+                };
+            };
+        };
+        rotate = {
+            Name = "rotate";
+            Description = "Rotate an image";
+            Arguments = {
+                toAngle = {
+                    Name = "to angle";
+                    Description = "rotate using an angle";
+                };
+            };
+        };
+        flip = {
+            Name = "flip";
+            Description = "Flip an image";
+            Arguments = {
+                horizontal = {
+                    Name = "horizontal";
+                    Description = "flip horizontally";
+                };
+                vertical = {
+                    Name = "vertical";
+                    Description = "flip vertically";
+                };
+            };
+        };
+        crop = {
+            Name = "crop";
+            Description = "Crop an image";
+            Arguments = {
+                toDimensions = {
+                    Name = "to dimensions";
+                    Description = "the width and height of the new image, respectively, in pixels, as a pair of integers";
+                };
+            };
+        };
+        pad = {
+            Name = "pad";
+            Description = "Pad an image";
+            Arguments = {
+                toDimensions = {
+                    Name = "to dimensions";
+                    Description = "the width and height of the new image, respectively, in pixels, as a pair of integers";
+                };
+                withPadColor = {
+                    Name = "with pad color";
+                    Description = "the RGB color values with which to pad the new image, as a list of integers";
+                };
+            };
+        };
+        embed = {
+            Name = "embed";
+            Description = "Embed an image with an ICC profile";
+            Arguments = {
+                withSource = {
+                    Name = "with source";
+                    Description = "the profile to embed in the image";
+                };
+            };
+        };
+        unembed = {
+            Name = "unembed";
+            Description = "Remove any embedded ICC profiles from an image";
+        };
+        match = {
+            Name = "match";
+            Description = "Match an image";
+            Arguments = {
+                toDestination = {
+                    Name = "to destination";
+                    Description = "the destination profile for the match";
+                };
+            };
+        };
+	};
+    Classes = {
+		Image = {
+			Name = "image";
+			PluralName = "images"; 
+			Description = "An image contained in a file"; 
+			Attributes = {
+				name = {
+					Name = "name";
+					Description = "the name of the image";
+				};
+				dimensions = {
+					Name = "dimensions";
+					Description = "the width and height of the image, respectively, in pixels";
+				};
+				fileType = {
+					Name = "file type";
+                    Description = "file type of the image's file";
+				};
+				bitDepth = {
+					Name = "bit depth";
+                    Description = "bit depth of the image's color representation";
+				};
+				colorSpace = {
+					Name = "color space";
+                    Description = "color space of the image's color representation";
+				};
+				resolution = {
+					Name = "resolution";
+					Description = "the horizontal and vertical pixel density of the image, respectively, in dots per inch";
+				};
+				imageFile = {
+					Name = "image file";
+					Description = "the file that contains the image";
+				};
+                location = {
+					Name = "location";
+					Description = "the folder or disk that encloses the file that contains the image";
+                };
+                embeddedProfile = {
+					Name = "embedded profile";
+					Description = "the profile, if any, embedded in the image";
+                };
+            };
+		};
+        Tag = {
+			Name = "metadata tag";
+			PluralName = "metadata tags"; 
+			Description = "A metadata tag: EXIF, IPTC, etc."; 
+            Attributes = {
+                name = {
+					Name = "name";
+					Description = "the name of the tag";
+                };
+                aeDescription = {
+					Name = "description";
+					Description = "the description of the tag's function";
+                };
+                value = {
+					Name = "value";
+					Description = "the current setting of the tag";
+                };
+            };
+		};
+        Profile = {
+			Name = "profile";
+			PluralName = "profiles"; 
+			Description = "A ColorSync ICC profile."; 
+            Attributes = {
+                name = {
+					Name = "name";
+					Description = "the description text of the profile";
+                };
+                size = {
+					Name = "size";
+					Description = "the size of the profile in bytes";
+                };
+                preferredCMM = {
+					Name = "preferred CMM";
+					Description = "the preferred CMM of the profile";
+                };
+                version = {
+					Name = "version";
+					Description = "the version number of the profile";
+                };
+                deviceClass = {
+					Name = "device class";
+					Description = "the device class of the profile";
+                };
+                colorSpace = {
+					Name = "color space";
+					Description = "the color space of the profile";
+                };
+                connectionSpace = {
+					Name = "connection space";
+					Description = "the connection space of the profile";
+                };
+                creationDate = {
+					Name = "creation date";
+					Description = "the creation date of the profile";
+                };
+                platform = {
+					Name = "platform";
+					Description = "the intended platform of the profile";
+                };
+                quality = {
+					Name = "quality";
+					Description = "the quality of the profile";
+                };
+                deviceManufacturer = {
+					Name = "device manufacturer";
+					Description = "the device manufacturer of the profile";
+                };
+                deviceModel = {
+					Name = "device model";
+					Description = "the device model of the profile";
+                };
+                renderingIntent = {
+					Name = "rendering intent";
+					Description = "the rendering intent of the profile";
+                };
+                creator = {
+					Name = "creator";
+					Description = "the creator type of the profile";
+                };
+                location = {
+					Name = "location";
+					Description = "the file location of the profile";
+                };
+            };
+        };
+        Display = {
+			Name = "display";
+			PluralName = "displays"; 
+			Description = "A monitor connected to the computer"; 
+            Attributes = {
+                name = {
+					Name = "name";
+					Description = "the name of the display";
+                };
+                number = {
+					Name = "number";
+					Description = "the number of the display";
+                };
+                displayProfile = {
+					Name = "display profile";
+					Description = "the profile for the display";
+                };
+            };
+        };
+	};
+	Enumerations = {
+        FileTypes = {
+			BMP = {Description = "BMP"; Name = "BMP"; };
+			GIF = {Description = "GIF"; Name = "GIF"; };
+			JPEG = {Description = "JPEG"; Name = "JPEG"; };
+			JPEG2 = {Description = "JPEG2"; Name = "JPEG2"; };
+			MacPaint = {Description = "MacPaint"; Name = "MacPaint"; };
+			Photoshop = {Description = "Photoshop"; Name = "Photoshop"; };
+			PDF = {Description = "PDF"; Name = "PDF"; };
+			PICT = {Description = "PICT"; Name = "PICT"; };
+			PNG = {Description = "PNG"; Name = "PNG"; };
+			PSD = {Description = "PSD"; Name = "PSD"; };
+			QuickTimeImage = {Description = "QuickTime Image"; Name = "QuickTime Image"; };
+			SGI = {Description = "SGI"; Name = "SGI"; };
+			Text = {Description = "Text"; Name = "Text"; };
+			TIFF = {Description = "TIFF"; Name = "TIFF"; };
+			TGA = {Description = "TGA"; Name = "TGA"; };
+        };
+        SaveFileTypes = {
+			BMP = {Description = "BMP"; Name = "BMP"; };
+			JPEG = {Description = "JPEG"; Name = "JPEG"; };
+			JPEG2 = {Description = "JPEG2"; Name = "JPEG2"; };
+			PICT = {Description = "PICT"; Name = "PICT"; };
+			PNG = {Description = "PNG"; Name = "PNG"; };
+			PSD = {Description = "PSD"; Name = "PSD"; };
+			QuickTimeImage = {Description = "QuickTime Image"; Name = "QuickTime Image"; };
+			TIFF = {Description = "TIFF"; Name = "TIFF"; };
+        };
+        BitDepths = {
+			best = {Description = "best"; Name = "best"; };
+			blackAndWhite = {Description = "black & white"; Name = "black & white"; };
+			color = {Description = "color"; Name = "color"; };
+			grayscale = {Description = "grayscale"; Name = "grayscale"; };
+			fourGrays = {Description = "four grays"; Name = "four grays"; };
+			fourColors = {Description = "four colors"; Name = "four colors"; };
+			sixteenGrays = {Description = "sixteen grays"; Name = "sixteen grays"; };
+			sixteenColors = {Description = "sixteen colors"; Name = "sixteen colors"; };
+			twoHundredFiftySixGrays = {Description = "two hundred fifty six grays"; Name = "two hundred fifty six grays"; };
+			twoHundredFiftySixColors = {Description = "two hundred fifty six colors"; Name = "two hundred fifty six colors"; };
+			thousandsOfColors = {Description = "thousands of colors"; Name = "thousands of colors"; };
+			millionsOfColors = {Description = "millions of colors"; Name = "millions of colors"; };
+			millionsOfColorsPlus = {Description = "millions of colors plus"; Name = "millions of colors plus"; };
+        };
+        Qualities = {
+			least = {Description = "least"; Name = "least"; };
+			low = {Description = "low"; Name = "low"; };
+			medium = {Description = "medium"; Name = "medium"; };
+			high = {Description = "high"; Name = "high"; };
+			best = {Description = "best"; Name = "best"; };
+        };
+        RenderingIntents = {
+			perceptual = {Description = "perceptual"; Name = "perceptual intent"; };
+			relativeColorimetric = {Description = "relative colorimetric"; Name = "relative colorimetric intent"; };
+			saturation = {Description = "saturation"; Name = "saturation intent"; };
+			absoluteColorimetric = {Description = "absolute colorimetric"; Name = "absolute colorimetric intent"; };
+        };
+        ProfileQualities = {
+			normal = {Description = "normal"; Name = "normal"; };
+			draft = {Description = "draft"; Name = "draft"; };
+			best = {Description = "best"; Name = "best"; };
+        };
+        DeviceClasses = {
+			monitor = {Description = "display device"; Name = "monitor"; };
+			input = {Description = "input device"; Name = "input"; };
+			output = {Description = "output device"; Name = "output"; };
+			link = {Description = "device-link profile"; Name = "link"; };
+			abstract = {Description = "abstract profile"; Name = "abstract"; };
+			colorspace = {Description = "colorspace profile"; Name = "colorspace"; };
+			named = {Description = "named color space profile"; Name = "named"; };
+        };
+		ColorSpaces = {
+			rgb = {Description = "RGB"; Name = "RGB"; };
+			cmyk = {Description = "CMYK"; Name = "CMYK"; };
+			lab = {Description = "Lab"; Name = "Lab"; };
+			xyz = {Description = "XYZ"; Name = "XYZ"; };
+			gray = {Description = "Gray"; Name = "Gray"; };
+			fiveChannel = {Description = "Five channel"; Name = "Five channel"; };
+			sixChannel = {Description = "Six channel"; Name = "Six channel"; };
+			sevenChannel = {Description = "Seven channel"; Name = "Seven channel"; };
+			eightChannel = {Description = "Eight channel"; Name = "Eight channel"; };
+			fiveColor = {Description = "Five color"; Name = "Five color"; };
+			sixColor = {Description = "Six color"; Name = "Six color"; };
+			sevenColor = {Description = "Seven color"; Name = "Seven color"; };
+			eightColor = {Description = "Eight color"; Name = "Eight color"; };
+			named = {Description = "Named"; Name = "Named"; };
+        };
+		ConnectionSpaces = {
+			lab = {Description = "Lab"; Name = "Lab"; };
+			xyz = {Description = "XYZ"; Name = "XYZ"; };
+        };
+		SaveOptions = {
+			No = {Description = "Do not save the image."; Name = "no"; };
+			Yes = {Description = "Save the image."; Name = "yes"; };
+        };
+		CompressionLevels = {
+			Low = {Description = "Low compression"; Name = "low"; };
+			Medium = {Description = "Medium compression"; Name = "medium"; };
+			High = {Description = "High compression"; Name = "high"; };
+        };
+    };
+}

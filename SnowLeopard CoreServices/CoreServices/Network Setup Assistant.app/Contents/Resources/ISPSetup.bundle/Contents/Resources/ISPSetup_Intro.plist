@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>ISPSetup_Intro</key>
+	<dict>
+		<key>0100</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>LocationName</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>Required</string>
+				<string>LocationName</string>
+			</array>
+			<key>MaxLength</key>
+			<string>128</string>
+			<key>Error_Required</key>
+			<string>ERROR_MUST_ENTER_LOCATION_NAME</string>
+			<key>Error_LocationName</key>
+			<string>ERROR_MUST_ENTER_UNIQUE_LOCATION_NAME</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

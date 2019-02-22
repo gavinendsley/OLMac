@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Setting Up LDAP Access to Active Directory Domains</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to use Directory Utility’s LDAPv3 plug-in to access an Active Directory domain." />
+      <meta name="topicid" content="od4940ce70" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od4940ce70"></a><a name="x616363657373"></a><a name="x416374697665204469726563746F7279"></a><a name="x4C44415020284C69676874776569676874204469726563746F7279204163636573732050726F746F636F6C292073657276696365"></a><a name="x4C444150763320616363657373"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od4940ce70">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Setting Up LDAP Access to Active Directory Domains</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">Using Directory Utility, you can set up an LDAPv3 configuration to access an Active Directory domain on a Windows server.
+                     An LDAPv3 configuration gives you full control over mapping Mac OS X record types and attributes to Active Directory object
+                     classes, search bases, and attributes.
+                  </p>
+                  <p class="Para">Mapping some important Mac OS X record types and attributes, such as the unique user ID (UID), requires extending the Active
+                     Directory schema.
+                  </p>
+                  <p class="Para">An LDAPv3 configuration does not include the following features of the Active Directory connector listed in Directory Utility:</p>
+                  <ul class="ListBullet">
+                     <li>
+                        <p class="Para">Dynamic generation of unique user ID and primary group ID</p>
+                     </li>
+                     <li>
+                        <p class="Para">Creation of a local Mac OS X home folder</p>
+                     </li>
+                     <li>
+                        <p class="Para">Automatic mounting of the Windows home folder</p>
+                     </li>
+                     <li>
+                        <p class="Para">Mobile user accounts with cached authentication credentials</p>
+                     </li>
+                     <li>
+                        <p class="Para">Discovery of all domains in an Active Directory forest</p>
+                     </li>
+                     <li>
+                        <p class="Para">Support for Active Directory replication and failover</p>
+                     </li>
+                  </ul>
+                  <p class="Para">For more information, see <a href="od4943d89d.html">About Active Directory Access</a>.
+                  </p>
+               </div>
+               <div class="Task">
+                  <div class="Name">To create an Active Directory server configuration:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Join or Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Services.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list of services, select LDAPv3 and click the Edit (/) button.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click New and enter the Active Directory server’s DNS name or IP address.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Select from the following options for accessing the directory, then click Continue to have Directory Utility get information
+                           from the Active Directory server.
+                        </p>
+                        <ul class="ListBullet">
+                           <li>
+                              <p class="Para">Select “Encrypt using SSL” if you want Open Directory to use SSL for connections with the Active Directory server. Before
+                                 you select the SSL checkbox, ask your Open Directory administrator if SSL is needed.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">Select “Use for authentication” if this directory contains user accounts that someone will use for logging in or authenticating
+                                 to services.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para">Select “Use for contacts” if this directory contains mail addresses and other information you want to use in Address Book.</p>
+                           </li>
+                        </ul>
+                        <p class="Para">If Directory Utility can’t contact the Active Directory server, a message appears and you must configure access manually or
+                           cancel the setup process. For more information, see <a href="od49360419.html">Configuring Access to an LDAP Directory Manually</a>.
+                        </p>
+                        <p class="Para">If you selected “Use for authentication” or “Use for contacts,” the LDAPv3 connection to the Active Directory domain is added
+                           to a custom search policy in the Authentication or Contacts pane of Directory Utility.
+                        </p>
+                        <p class="Para">Make sure LDAPv3 is enabled in the Services pane so the computer will use the connection you set up. For more information,
+                           see <a href="od493c0032.html">Enabling or Disabling LDAP Directory Services</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para">When the dialog expands to display mappings options, choose Active Directory from the pop-up menu, enter the search base,
+                           then click Continue.
+                        </p>
+                        <p class="Para">The Active Directory mapping template for an LDAPv3 configuration maps some Mac OS X record types and attributes to object
+                           classes and attributes that are not part of a standard Active Directory schema. You can change the mappings defined by the
+                           template, or you can extend the Active Directory schema.
+                        </p>
+                        <p class="Para">Alternatively, you might be able to access your Active Directory domain through the Active Directory connector instead of
+                           LDAPv3. For more information, see <a href="od493f86e4.html">Configuring Access to an Active Directory Domain</a>.
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para">When the dialog expands to display connection options, enter the distinguished name and password of an Active Directory user
+                           account.
+                        </p>
+                     </li>
+                     <li>
+                        <p class="Para">Click OK to finish creating the LDAP connection.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click OK to finish configuring LDAPv3 options.</p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

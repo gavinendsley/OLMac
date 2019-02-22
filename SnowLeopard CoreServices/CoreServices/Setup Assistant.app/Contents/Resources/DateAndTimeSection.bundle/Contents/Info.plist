@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>DateAndTimeSection</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Copyright Apple Computer, Inc. 2005</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.SetupAssistant.DateAndTimeSection</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>SetupAssistant DateAndTimeSection</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>10.6</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>655</string>
+	<key>SectionGateClassName</key>
+	<string>MBDateAndTimeSectionGate</string>
+	<key>_firstPage</key>
+	<string>DAT_Time_Zone</string>
+</dict>
+</plist>

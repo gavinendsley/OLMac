@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Specifying NIS Settings</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to create a configuration that specifies how Mac OS X accesses an NIS domain." />
+      <meta name="topicid" content="od4942de87" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od4942de87"></a><a name="x636C69656E7420636F6D707574657273"></a><a name="x646F6D61696E732C206469726563746F7279"></a><a name="x4E495320284E6574776F726B20496E666F726D6174696F6E205365727669636529"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od4942de87">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Specifying NIS Settings</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">Using Directory Utility, you can create a configuration that specifies how Mac OS X accesses a Network Information Service
+                     (NIS) domain.
+                  </p>
+               </div>
+               <div class="Task">
+                  <div class="Name">To create a configuration for accessing an NIS domain:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Join or Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Services.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list of services, select “BSD Flat File and NIS” and click the Edit (/) button.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Enter the NIS domain name or the DNS name or the IP address of the server where the NIS domain resides.</p>
+                        <p class="Para">Include the NIS server’s hostname or IP address if it is required for security or if the server is not on the same subnet
+                           as the computer you’re configuring.
+                        </p>
+                        <p class="Para">If you don’t specify a server, NIS uses a broadcast protocol to discover an NIS server on the subnet.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Select “Use NIS domain for authentication,” then click OK.</p>
+                        <p class="Para">The NIS domain is added to the computer’s authentication search policy as /BSD/<span class="Emphasis">domain</span>, where <span class="Emphasis">domain</span> is the name you entered in step 4.
+                        </p>
+                     </li>
+                  </ol>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

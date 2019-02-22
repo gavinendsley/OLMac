@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>Want_Internet_No_New_ISP</key>
+	<dict>
+		<key>0100</key>
+		<dict>
+			<key>Key_Connection</key>
+			<string>Connection</string>
+			<key>Key_Main</key>
+			<string>Task</string>
+			<key>Key_SaveList</key>
+			<array>
+				<string>Key_Main</string>
+				<string>Key_Connection</string>
+				<string>Key_TCPIP</string>
+			</array>
+			<key>Key_TCPIP</key>
+			<string>MacBuddy:ManualSetup:TCPIP:Connection</string>
+		</dict>
+		<key>0101</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>ExistingAccount</string>
+		</dict>
+		<key>0102</key>
+		<dict>
+			<key>Key_Connection</key>
+			<string>Modem</string>
+			<key>Key_Main</key>
+			<string>DontWantInternet</string>
+			<key>Key_TCPIP</key>
+			<string>PPP</string>
+		</dict>
+	</dict>
+	<key>nextPage</key>
+	<string>Want_Internet_Connect_How_No_New_ISP</string>
+</dict>
+</plist>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ABOUT_ITEMS</key>
+	<array>
+		<dict>
+			<key>allowLaunch</key>
+			<true/>
+			<key>launchName</key>
+			<string>AirPort Admin Utility.app</string>
+			<key>title</key>
+			<string>AirPort Admin Utility:</string>
+			<key>versionPath</key>
+			<string>/Contents/version.plist</string>
+		</dict>
+		<dict>
+			<key>allowLaunch</key>
+			<true/>
+			<key>launchName</key>
+			<string>AirPort Setup Assistant.app</string>
+			<key>title</key>
+			<string>AirPort Setup Assistant:</string>
+			<key>versionPath</key>
+			<string>/Contents/version.plist</string>
+		</dict>
+	</array>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>AirPort</string>
+	<key>CFBundleGetInfoString</key>
+	<string>6.2.2, Copyright © 2000–2009 Apple Inc. All rights reserved.</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.menuextra.airport</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>AirPort</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>6.2.2</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>622.2</string>
+	<key>LSHasLocalizedDisplayName</key>
+	<true/>
+	<key>NSMenuExtraWidth</key>
+	<integer>22</integer>
+	<key>NSPrincipalClass</key>
+	<string>AirPortExtra</string>
+	<key>SIGNAL_MAP_QUAL</key>
+	<array>
+		<integer>0</integer>
+		<integer>20</integer>
+		<integer>40</integer>
+		<integer>60</integer>
+		<integer>80</integer>
+	</array>
+	<key>SIGNAL_MAP_TX</key>
+	<array>
+		<integer>0</integer>
+		<integer>1</integer>
+		<integer>5</integer>
+		<integer>12</integer>
+		<integer>36</integer>
+	</array>
+	<key>USE_COMMQUAL</key>
+	<true/>
+	<key>USE_TXRATE</key>
+	<true/>
+</dict>
+</plist>

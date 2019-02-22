@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>About Active Directory Access</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how the Active Directory connector provides access to basic user account information in an Active Directory domain of a Windows 2000 or 2003 or later server." />
+      <meta name="topicid" content="od4943d89d" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od4943d89d"></a><a name="x616363657373"></a><a name="x75736572206163636F756E7473"></a><a name="x706C75672D696E73"></a><a name="x7573657273"></a><a name="x736368656D61732C206469726563746F727920646F6D61696E"></a><a name="x646F6D61696E732C206469726563746F7279"></a><a name="x61747472696275746573"></a><a name="x656E6372797074696F6E"></a><a name="x7061636B6574732C2064617461"></a><a name="x636F6D6D616E642D6C696E6520746F6F6C73"></a><a name="x636F6E66696775726174696F6E"></a><a name="x6473636F6E666967616420746F6F6C20"></a><a name="x4C44415020284C69676874776569676874204469726563746F7279204163636573732050726F746F636F6C292073657276696365"></a><a name="x554944732028757365722049447329"></a><a name="x474944202867726F757020494429"></a><a name="x67726F7570206163636F756E7473"></a><a name="x416374697665204469726563746F7279"></a><a name="x686F6D6520666F6C64657273"></a><a name="x6D6F62696C65206163636F756E7473"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od4943d89d">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">About Active Directory Access</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">You can configure Mac OS X to access basic user account information in an Active Directory domain of a Windows 2000 or later
+                     server. This is possible because of an Active Directory connector for Directory Utility. This Active Directory connector is
+                     listed in the Services pane of Directory Utility.
+                  </p>
+                  <p class="Para">You do not need to make schema changes to the Active Directory domain to get basic user account information. You might change
+                     the default Access Control List (ACL) of specific attributes so computer accounts can read user properties.
+                  </p>
+                  <p class="Para">The Active Directory connector generates all attributes required for Mac OS X authentication from standard attributes in Active
+                     Directory user accounts. The connector also supports Active Directory authentication policies, including password changes,
+                     expirations, forced changes, and security options.
+                  </p>
+                  <p class="Para">Mac OS X v10.6 supports packet encryption and packet signing options for all Windows Active Directory domains. This functionality
+                     is on by default as “allow.” You can change the default setting to disabled or required by using the <span class="CodeBody">dsconfigad</span> command-line tool. The packet encryption and packet signing options ensures all data to and from the Active Directory Domain
+                     for record lookups is protected.
+                  </p>
+                  <p class="Para">The Active Directory connector dynamically generates a unique user ID and a primary group ID based on the user account’s Globally
+                     Unique ID (GUID) in the Active Directory domain. The generated user ID and primary group ID are the same for each user account,
+                     even if the account is used to log in to different Mac OS X computers.
+                  </p>
+                  <p class="Para">Alternatively, you can force the Active Directory connector to map the user ID to Active Directory attributes that you specify.</p>
+                  <p class="Para">The Active Directory connector generates a group ID based on the Active Directory group account’s GUID. You can also force
+                     the plug-in to map the group ID for group accounts to Active Directory attributes that you specify.
+                  </p>
+                  <p class="Para">When someone logs in to Mac OS X with an Active Directory user account, the Active Directory connector can mount the Windows
+                     network home folder specified in the Active Directory user account as the user’s Mac OS X home folder. You can specify whether
+                     to use the network home specified by Active Directory’s standard home Directory attribute or by Mac OS X’s home Directory
+                     attribute (if the Active Directory schema has been extended to include it).
+                  </p>
+                  <p class="Para">Alternatively, you can configure the plug-in to create a local home folder on the startup volume of the Mac OS X client computer.
+                     In this case, the plug-in also mounts the user’s Windows network home folder (specified in the Active Directory user account)
+                     as a network volume, like a share point. Using the Finder, the user can then copy files between the Windows home folder network
+                     volume and the local Mac OS X home folder.
+                  </p>
+                  <p class="Para">The Active Directory connector can also create mobile accounts for users. A mobile account has a local home folder on the
+                     startup volume of the Mac OS X client computer. (The user also has a network home folder as specified in the user’s Active
+                     Directory account).
+                  </p>
+                  <p class="Para">A mobile account caches the user’s Active Directory authentication credentials on the Mac OS X client computer. The cached
+                     credentials permit the user to log in using the Active Directory name and password when the client computer is disconnected
+                     from the Active Directory server.
+                  </p>
+                  <p class="Para">A mobile account has a local home folder on the startup volume of the Mac OS X client computer. (The user also has a network
+                     home folder as specified in the user’s Active Directory account.)
+                  </p>
+                  <p class="Para">If the Active Directory schema has been extended to include Mac OS X record types (object classes) and attributes, the Active
+                     Directory connector detects and accesses them.
+                  </p>
+                  <p class="Para">For example, the Active Directory schema could be changed using Windows administration tools to include Mac OS X managed client
+                     attributes. This schema change enables the Active Directory connector to support managed client settings made using Mac OS X
+                     Server’s Workgroup Manager application.
+                  </p>
+                  <p class="Para">Mac OS X clients assume full read access to attributes that are added to the directory. Therefore, it might be necessary to
+                     change the ACL of those attributes to permit computer groups to read these added attributes.
+                  </p>
+                  <p class="Para">The Active Directory connector discovers all domains in an Active Directory forest. You can configure the plug-in to permit
+                     users from any domain in the forest to authenticate on a Mac OS X computer. Alternatively, you can permit only specific domains
+                     to be authenticated on the client.
+                  </p>
+                  <p class="Para">The Active Directory connector fully supports Active Directory replication and failover. It discovers multiple domain controllers
+                     and determines the closest one. If a domain controller becomes unavailable, the plug-in falls back to another nearby domain
+                     controller.
+                  </p>
+                  <p class="Para">The Active Directory connector uses LDAP to access Active Directory user accounts and Kerberos to authenticate them. The Active
+                     Directory connector does not use Microsoft’s proprietary Active Directory Services Interface (ADSI) to get directory or authentication
+                     services.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

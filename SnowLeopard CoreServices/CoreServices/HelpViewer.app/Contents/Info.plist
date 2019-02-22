@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFAppleHelpAnchor</key>
+	<string>hlpvw003</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>Help Viewer</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeIconFile</key>
+			<string>HelpDoc.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>HBWR</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>hbwr</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>NSDocumentClass</key>
+			<string>HelpDocument</string>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>HelpViewer</string>
+	<key>CFBundleIconFile</key>
+	<string>HelpViewer.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.apple.helpviewer</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>Help Viewer</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>5.0.4</string>
+	<key>CFBundleSignature</key>
+	<string>hbwr</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>help</string>
+			</array>
+			<key>LSIsAppleDefaultForScheme</key>
+			<true/>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>190.2.1</string>
+	<key>LSHasLocalizedDisplayName</key>
+	<true/>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.6</string>
+	<key>LSUIElement</key>
+	<string>1</string>
+	<key>NSAppleScriptEnabled</key>
+	<true/>
+	<key>NSMainNibFile</key>
+	<string>HelpApplication</string>
+	<key>NSPrincipalClass</key>
+	<string>HelpApplication</string>
+	<key>NSSupportsSuddenTermination</key>
+	<true/>
+</dict>
+</plist>

@@ -1,0 +1,277 @@
+/*
+Copyright © 2005, Apple Computer, Inc.  All rights reserved.
+NOTE:  Use of this source code is subject to the terms of the Software
+License Agreement for Mac OS X, which accompanies the code.  Your use
+of this source code signifies your agreement to such license terms and
+conditions.  Except as expressly granted in the Software License Agreement
+for Mac OS X, no other copyright, patent, or other intellectual property
+license or right is granted, either expressly or by implication, by Apple.
+*/
+
+
+body {
+	margin: 0;
+}
+
+#top {
+	position:absolute;
+	top:0;
+	left:0;
+	width:298px;
+	height:76px;
+	background: url(Images/top.png) no-repeat;
+}
+
+#close-box {
+	position:absolute;
+	top: 14px;
+	left: 14px;
+	-apple-dashboard-region:dashboard-region(control circle);
+}
+
+#sort-select {
+	position:absolute;
+	left:41px;
+	top:31px;
+	width:158px;
+	height:21px;
+	opacity:0;
+}
+
+#sort-popup {
+	position:absolute;
+	left:41px;
+	top:31px;
+	-apple-dashboard-region: dashboard-region(control rectangle);
+}
+
+#sort-popup-text {
+	font: 11px "Helvetica Neue";
+	font-weight: bold;
+	color:rgba(0, 0, 0, 0.7);
+	text-shadow: 0px 1px rgba(255,255,255,0.46);
+	position:absolute;
+	left: 54px;
+	top: 34px;
+	width:127px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+
+#disable-help {
+	font: 11px "Helvetica Neue";
+	font-weight: bold;
+	color:rgba(0, 0, 0, 0.62);
+	text-shadow: 0px 1px rgba(255,255,255,0.53);
+	position:absolute;
+	left: 43px;
+	top: 56px;
+}
+
+#mid {
+	position:absolute;
+	top:76px;
+	left:0px;
+	width:298px;
+}
+
+#mid-left {
+	position:absolute;
+	left:0;
+	top:0;
+	width:7px;
+	background:url(Images/left_edge.png) repeat-y top left;
+	height:100%
+}
+
+#mid-right {
+	position:absolute;
+	right:0;
+	top:0;
+	width:22px;
+	background:url(Images/right_edge.png) repeat-y top right;
+	height:100%
+}
+
+#mid-right-gradient {
+	position:absolute;
+	right:0;
+	bottom:0;
+	width:22px;
+	height:41px;
+	background:url(Images/gradient_piece.png) no-repeat;
+}
+
+#content-frame {
+	position:absolute;
+	top:0;
+	left:7px;
+	bottom:0;
+	width:269px;
+	overflow:hidden;
+}
+
+#content-background {
+	width:269px;
+	height:100%;
+	background:url(Images/light_dark_bar.png) repeat-y top left;
+}
+
+#content {
+	position:absolute;
+	top:0;
+	left:0;
+	width:269px;
+	background:url(Images/light_dark_bar.png) repeat-y top left;
+}
+
+#content-table {
+	position:relative;
+	top:0;
+	left:8px;
+	width:253px;
+}
+
+.content-row {
+	position:relative;
+	height:35px;
+	width:253px;
+	overflow:hidden;
+}
+
+.check-image {
+	position:absolute;
+	top:8px;
+	-apple-dashboard-region:dashboard-region(control rectangle);
+}
+
+.icon-image {
+	position:absolute;
+	top:5px;
+	left:28px;
+}
+
+div.text-disabled .icon-image {
+	opacity:0.5;
+}
+
+.text-disabled {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.label-div {
+	position:absolute;
+	top:9px;
+	left:63px;
+	width:148px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	
+	font: 13px "Helvetica Neue";
+	font-weight: bold;
+	text-shadow: 0px 1px rgba(255,255,255,0.75);
+	text-align:left;
+}
+
+.delete-image {
+	position:absolute;
+	top:9px;
+	left:221px;
+	-apple-dashboard-region:dashboard-region(control circle);
+}
+
+#scroller {
+	position:absolute;
+	top:0;
+	right:11px;
+	bottom:0;
+	width:19px;
+}
+
+
+#bottom {
+	position:absolute;
+	top:280px;
+	left:0;
+	width:298px;
+	height:45px;
+	background: url(Images/bottom.png) no-repeat;
+}
+
+#more-widget-button {
+	position:absolute;
+	bottom:18px;
+	left:95px;
+}
+
+#resize {
+	position:absolute;
+	right:16px;
+	bottom:21px;
+}
+
+#resize-event-helper {
+	position:absolute;
+	bottom:14px;
+	right:7px;
+	height: 17px;
+	width:20px;
+	-apple-dashboard-region: dashboard-region(control rectangle);
+}
+
+.dialog-background {
+	position:absolute;
+	top:75px;
+	left:7px;
+	background-color:rgba(0,0,0,0.82);
+	width:284px;
+	opacity:0;
+}
+
+.dialog-icon {
+	position: absolute;
+	left:113px;
+	top:30px;
+}
+
+.dialog-text {
+	font: 14px "Helvetica Neue";
+	font-weight:bold;
+	text-align:center;
+	color:white;
+	margin-bottom:14px;
+}
+
+.dialog-first-line {
+	font: 15px "Helvetica Neue";
+	font-weight:bold;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+	margin-top:96px;
+}
+
+#dialog-ok-button {
+	position:absolute;
+	top:162px;
+	left:150px;
+}
+
+#dialog-cancel-button {
+	position:absolute;
+	top:162px;
+	right:150px;
+
+}
+
+.dialog-button {
+	font: 12px "Helvetica Neue";
+	font-weight:bold;
+	color: white;
+}
+
+.dialog-button-down {
+	color: rgba(255,255,255,0.5);	
+}

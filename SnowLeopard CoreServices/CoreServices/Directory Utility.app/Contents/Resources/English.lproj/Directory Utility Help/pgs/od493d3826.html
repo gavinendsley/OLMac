@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <title>Changing the Connection Settings for an LDAP Directory</title>
+      <meta http-equiv="contentBlock-Type" content="text/html; charset=UTF-8" />
+      <meta name="dategen" content="6-23-2009 10:43:14" />
+      <meta name="xsltver" content="1.5.1" />
+      <meta name="release" content="3.5" />
+      <meta name="project" content="Directory Utility Help" />
+      <meta name="description"
+            content="Learn how to change the connection settings of a configuration that specifies how the computer accesses an LDAPv3 or LDAPv2 directory." />
+      <meta name="topicid" content="od493d3826" />
+      <link href="../sty/layout.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/typography.css" rel="stylesheet" type="text/css" />
+      <link href="../sty/print.css" rel="stylesheet" type="text/css" media="print" />
+   </head>
+   <body class="en" id="x4469726563746F7279205574696C6974792048656C70">
+      <div id="Nav"><a name="od493d3826"></a><a name="x6E6574776F726B73"></a><a name="x636F6E66696775726174696F6E"></a><a name="x4C44415020284C69676874776569676874204469726563746F7279204163636573732050726F746F636F6C292073657276696365"></a><div id="NavLeft"><a class="NavLinkLeft" href="help:anchor='access' bookID=Directory Utility Help">Home</a></div>
+         <div id="NavRight"></div>
+      </div>
+      <div class="AppleTopic" id="od493d3826">
+         <div class="Section">
+            <div id="Header">
+               <div id="Icon"><img src="../gfx/xicndrst.gif" alt="Directory Utility Icon" /></div>
+               <div class="Name">Changing the Connection Settings for an LDAP Directory</div>
+            </div>
+            <div class="AppleTopicBody">
+               <div class="Intro">
+                  <p class="Para">You can use Directory Utility to change the connection settings of a configuration that specifies how the computer accesses
+                     an LDAPv3 or LDAPv2 directory.
+                  </p>
+               </div>
+               <div class="Task">
+                  <div class="Name">To change the connection settings for accessing an LDAP directory:</div>
+                  <ol class="ListNumber">
+                     <li>
+                        <p class="Para">Open System Preferences and click Accounts.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Login Options, then click Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Open Directory Utility.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the lock icon is locked, unlock it by clicking it and entering the name and password of an administrator.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Services.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list of services, select LDAPv3 and click the Edit (/) button.</p>
+                     </li>
+                     <li>
+                        <p class="Para">If the list of server configurations is hidden, click Show Options.</p>
+                     </li>
+                     <li>
+                        <p class="Para">In the list, select a server configuration and click Edit.</p>
+                     </li>
+                     <li>
+                        <p class="Para">Click Connection and change any of the following settings:</p>
+                        <ul class="ListBullet">
+                           <li>
+                              <p class="Para"><span class="Emphasis">Configuration Name: </span>Identifies this configuration in the list of LDAP directory configurations. (You can also change the name in the list of LDAP
+                                 directory configurations.)
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Server Name or IP Address: </span>Specifies the server’s DNS name or its IP address. (You can also change this in the list of LDAP directory configurations.)
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Open/close times out in: </span>Specifies the maximum length of time a connection attempt can last before the attempt is cancelled.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Query times out in: </span>Specifies the maximum length of time a query can last before the query is cancelled.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Re-bind attempted in: </span>Specifies the number of seconds to wait before attempting to reconnect if the LDAP server fails to respond. To prevent continuous
+                                 reconnection attempts, increase this value.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Connection idles out in: </span>Specifies the number of minutes to permit an idle or unresponsive connection to remain open.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Encrypt using SSL: </span>Determines whether to encrypt communications with the LDAP directory by using an SSL connection. (You can also change this
+                                 setting in the list of LDAP directory configurations.) Before you select the SSL checkbox, ask your Open Directory administrator
+                                 if SSL is needed.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Use custom port: </span>Specifies a port number other than the standard port for LDAP connections (389 without SSL, 636 with SSL).
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Ignore server referrals: </span>Determines whether to ignore or follow an LDAP server’s referral to look on other LDAP servers or replicas for information.
+                                 Server referrals can help a computer find information but can also delay logins or cause other delays if the computer must
+                                 verify referrals to other LDAP servers.
+                              </p>
+                           </li>
+                           <li>
+                              <p class="Para"><span class="Emphasis">Use LDAPv2 (read only): </span>Determines whether to use the older LDAPv2 protocol for read-only access to an LDAP directory.
+                              </p>
+                           </li>
+                        </ul>
+                     </li>
+                  </ol>
+               </div>
+               <div class="LinkInternal"><span class="LinkInternal">Related Topics</span><div class="LinkTopicPage"><a href="od4936baf1.html">Changing the Open/Close Timeout for an LDAP Connection</a></div>
+                  <div class="LinkTopicPage"><a href="od4937b2cc.html">Changing the Query Timeout for an LDAP Connection</a></div>
+                  <div class="LinkTopicPage"><a href="od49445a3e.html">Changing the Rebind-Try Delay Time for an LDAP Connection</a></div>
+                  <div class="LinkTopicPage"><a href="od4939a390.html">Changing the Idle Timeout for an LDAP Connection</a></div>
+                  <div class="LinkTopicPage"><a href="od493fc4a0.html">Ignoring LDAP Server Referrals</a></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

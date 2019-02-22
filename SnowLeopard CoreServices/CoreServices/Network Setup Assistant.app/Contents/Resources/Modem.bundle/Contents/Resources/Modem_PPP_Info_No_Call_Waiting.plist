@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Modem_PPP_Info_No_Call_Waiting</key>
+	<dict>
+		<key>0100</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:Login</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>Required</string>
+			</array>
+		</dict>
+		<key>0200</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:LoginPassword</string>
+			<key>Error_Match</key>
+			<string>ERROR_PASSWORD_DO_NOT_MATCH</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>Required</string>
+				<string>Match</string>
+			</array>
+			<key>Match</key>
+			<string>210</string>
+		</dict>
+		<key>0210</key>
+		<dict>
+			<key>Error_Match</key>
+			<string>ERROR_PASSWORD_DO_NOT_MATCH</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>Required</string>
+				<string>Match</string>
+			</array>
+			<key>Match</key>
+			<string>200</string>
+		</dict>
+		<key>0300</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:ManualSetup:TCPIP:Phone</string>
+			<key>Key_ValidateList</key>
+			<array>
+				<string>Required</string>
+			</array>
+		</dict>
+		<key>0400</key>
+		<dict>
+			<key>Key_Main</key>
+			<string>MacBuddy:DialingInfo:OutsideLine</string>
+		</dict>
+		<key>ISO Country Code</key>
+		<array>
+			<string>JP</string>
+			<string>DE</string>
+		</array>
+	</dict>
+	<key>mbNextCountryPage</key>
+	<string>Modem_PPP_Info</string>
+</dict>
+</plist>

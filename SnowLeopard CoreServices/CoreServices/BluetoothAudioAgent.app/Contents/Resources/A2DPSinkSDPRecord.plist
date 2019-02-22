@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>0000 - ServiceRecordHandle*</key>
+	<integer>35542</integer>
+	<key>0001 - ServiceClassIDList</key>
+	<array>
+		<data>
+		EQs=
+		</data>
+	</array>
+	<key>0004 - ProtocolDescriptorList</key>
+	<array>
+		<array>
+			<data>
+			AQA=
+			</data>
+			<dict>
+				<key>DataElementSize</key>
+				<integer>1</integer>
+				<key>DataElementType</key>
+				<integer>1</integer>
+				<key>DataElementValue</key>
+				<data>
+				ABk=
+				</data>
+			</dict>
+		</array>
+		<array>
+			<data>
+			ABk=
+			</data>
+			<dict>
+				<key>DataElementSize</key>
+				<integer>1</integer>
+				<key>DataElementType</key>
+				<integer>1</integer>
+				<key>DataElementValue</key>
+				<data>
+				AQA=
+				</data>
+			</dict>
+		</array>
+	</array>
+	<key>0005 - BrowseGroupList*</key>
+	<array>
+		<data>
+		EAI=
+		</data>
+	</array>
+	<key>0009 - BluetoothProfileDescriptorList</key>
+	<array>
+		<array>
+			<data>
+			EQ0=
+			</data>
+			<dict>
+				<key>DataElementSize</key>
+				<integer>1</integer>
+				<key>DataElementType</key>
+				<integer>1</integer>
+				<key>DataElementValue</key>
+				<data>
+				AQA=
+				</data>
+			</dict>
+		</array>
+	</array>
+	<key>0100 - ServiceName*</key>
+	<string>A2DP Audio Sink</string>
+	<key>0311 - Supported Features</key>
+	<data>
+	AQE=
+	</data>
+	<key>0777 - Apple Macintosh Identifer</key>
+	<data>
+	b22Y8jw6EdaVagADk1PoWA==
+	</data>
+	<key>LocalAttributes</key>
+	<dict>
+		<key>Persistent</key>
+		<true/>
+		<key>TargetApplication</key>
+		<string></string>
+	</dict>
+</dict>
+</plist>

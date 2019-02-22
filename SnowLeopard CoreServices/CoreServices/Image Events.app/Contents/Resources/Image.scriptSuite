@@ -1,0 +1,507 @@
+{
+    Name = "Image"; 
+    AppleEventCode = "imgs"; 
+    
+    Commands = {
+        save = {
+            AppleEventClassCode = "core";
+            AppleEventCode = "save";
+            CommandClass = "NSScriptCommand";
+            ResultAppleEventCode = "alis";
+			Type = "DiskFolderFile.Alias";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "Image.Image";
+			};
+            Arguments = {
+                File = {
+                    Type = "DiskFolderFile.Item";
+                    AppleEventCode = "kfil";
+                    Optional = "YES";
+                };
+                FileType = {
+                    Type = "NSNumber<SaveFileTypes>";
+                    AppleEventCode = "fltp";
+                    Optional = "YES";
+                };
+                packBits = {
+                    Type = "NSNumber<Bool>";
+                    AppleEventCode = "pack";
+                    Optional = "YES";
+                };
+                addIcon = {
+                    Type = "NSNumber<Bool>";
+                    AppleEventCode = "iimg";
+                    Optional = "YES";
+                };
+                compressionLevel = {
+                    Type = "NSNumber<CompressionLevels>";
+                    AppleEventCode = "cmlv";
+                    Optional = "YES";
+                };
+            };
+        };
+        close = {
+            AppleEventClassCode = "core";
+            AppleEventCode = "clos";
+            CommandClass = "NSScriptCommand";
+            Type = "";
+			UnnamedArgument = {
+				Optional = "NO";
+				Type = "Image.Image";
+			};
+            Arguments = {
+                File = {
+                    Type = "NSString";
+                    AppleEventCode = "kfil";
+                    Optional = "YES";
+                };
+                SaveOptions = {
+                    Type = "NSNumber<SaveOptions>";
+                    AppleEventCode = "savo";
+                    Optional = "YES";
+                };
+			};
+        };
+        scale = {
+            AppleEventClassCode = "icas";
+            AppleEventCode = "scal";
+            CommandClass = "NSScriptCommand";
+            ResultAppleEventCode = "imag";
+            Arguments = {
+                byFactor = {
+                    Type = "NSNumber<Double>";
+                    AppleEventCode = "fact";
+                    Optional = "YES";
+                };
+                toSize = {
+                    Type = "NSNumber";
+                    AppleEventCode = "maxi";
+                    Optional = "YES";
+                };
+            };
+        };
+        rotate = {
+            AppleEventClassCode = "icas";
+            AppleEventCode = "rota";
+            CommandClass = "NSScriptCommand";
+            ResultAppleEventCode = "imag";
+            Arguments = {
+                toAngle = {
+                    Type = "NSNumber<Double>";
+                    AppleEventCode = "angl";
+                    Optional = "NO";
+                };
+            };
+        };
+        flip = {
+            AppleEventClassCode = "imgs";
+            AppleEventCode = "flip";
+            CommandClass = "NSScriptCommand";
+            ResultAppleEventCode = "imag";
+            Arguments = {
+                horizontal = {
+                    Type = "NSNumber<Bool>";
+                    AppleEventCode = "hori";
+                    Optional = "YES";
+                };
+                vertical = {
+                    Type = "NSNumber<Bool>";
+                    AppleEventCode = "vert";
+                    Optional = "YES";
+                };
+            };
+        };
+        crop = {
+            AppleEventClassCode = "imgs";
+            AppleEventCode = "crop";
+            CommandClass = "NSScriptCommand";
+            ResultAppleEventCode = "imag";
+            Arguments = {
+                toDimensions = {
+                    Type = "NSArray";
+                    AppleEventCode = "Dmns";
+                    Optional = "NO";
+                };
+            };
+        };
+        pad = {
+            AppleEventClassCode = "imgs";
+            AppleEventCode = "padd";
+            CommandClass = "NSScriptCommand";
+            ResultAppleEventCode = "imag";
+            Arguments = {
+                toDimensions = {
+                    Type = "NSArray";
+                    AppleEventCode = "Dmns";
+                    Optional = "NO";
+                };
+                withPadColor = {
+                    Type = "NSArray";
+                    AppleEventCode = "wpdc";
+                    Optional = "YES";
+                };
+            };
+        };
+		embed = {
+            AppleEventClassCode = "sync";
+            AppleEventCode = "csEI";
+            CommandClass = "NSScriptCommand";
+            Arguments = {
+                withSource = {
+                    Type = "Image.Profile";
+                    AppleEventCode = "ePrf";
+                    Optional = "NO";
+                };
+            };
+		};
+		unembed = {
+            AppleEventClassCode = "sync";
+            AppleEventCode = "csUI";
+            CommandClass = "NSScriptCommand";
+		};
+		match = {
+            AppleEventClassCode = "sync";
+            AppleEventCode = "csMI";
+            CommandClass = "NSScriptCommand";
+            Arguments = {
+                toDestination = {
+                    Type = "Image.Profile";
+                    AppleEventCode = "dPrf";
+                    Optional = "NO";
+                };
+            };
+		};
+	};
+    Classes = {
+        Image = {
+            AppleEventCode = "imag";
+            Superclass = "NSCoreSuite.AbstractObject";
+            SupportedCommands = {
+                "Image.save" = "save:"; 
+                "Image.close" = "close:"; 
+                "Image.scale" = "scale:"; 
+                "Image.rotate" = "rotate:"; 
+                "Image.flip" = "flip:"; 
+                "Image.crop" = "crop:"; 
+                "Image.pad" = "pad:"; 
+                "Image.embed" = "embed:"; 
+                "Image.unembed" = "unembed:"; 
+                "Image.match" = "match:"; 
+            }; 
+            ToManyRelationships = {
+                tags = {
+                    AppleEventCode = "tag ";
+                    Type = "Image.Tag";
+                };
+                profiles = {
+                    AppleEventCode = "prof";
+                    Type = "Image.Profile";
+                };
+			};
+            Attributes = {
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                dimensions = {
+                    AppleEventCode = "dmns";
+                    ReadOnly = "YES";
+                    Type = "NSArray";
+                };
+                fileType = {
+                    AppleEventCode = "asty";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<FileTypes>";
+                };
+                bitDepth = {
+                    AppleEventCode = "pdpt";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<BitDepths>";
+                };
+                colorSpace = {
+                    AppleEventCode = "pSpc";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<ColorSpaces>";
+                };
+                resolution = {
+                    AppleEventCode = "reso";
+                    ReadOnly = "YES";
+                    Type = "NSArray";
+                };
+                imageFile = {
+                    AppleEventCode = "imgf";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.File";
+                };
+                location = {
+                    AppleEventCode = "pLoc";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Item";
+                };
+                embeddedProfile = {
+                    AppleEventCode = "eprf";
+                    ReadOnly = "YES";
+                    Type = "Image.Profile";
+                };
+            };
+        };
+        Tag = {
+            AppleEventCode = "tag ";
+            Superclass = "NSCoreSuite.AbstractObject";
+            Attributes = {
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                aeDescription = {
+                    AppleEventCode = "dscr";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                value = {
+                    AppleEventCode = "valL";
+                    ReadOnly = "YES";
+                    Type = "NSCoreSuite.AbstractObject";
+                };
+			};
+        };
+        Profile = {
+            AppleEventCode = "prof";
+            Superclass = "NSCoreSuite.AbstractObject";
+            Attributes = {
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                size = {
+                    AppleEventCode = "ptsz";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Int>";
+                };
+                preferredCMM = {
+                    AppleEventCode = "pcmm";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                version = {
+                    AppleEventCode = "vers";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                deviceClass = {
+                    AppleEventCode = "pCla";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<DeviceClasses>";
+                };
+                colorSpace = {
+                    AppleEventCode = "pSpc";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<ColorSpaces>";
+                };
+                connectionSpace = {
+                    AppleEventCode = "pPCS";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<ConnectionSpaces>";
+                };
+                creationDate = {
+                    AppleEventCode = "ascd";
+                    ReadOnly = "YES";
+                    Type = "NSDate";
+                };
+                platform = {
+                    AppleEventCode = "pPlt";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                quality = {
+                    AppleEventCode = "pQal";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<ProfileQualities>";
+                };
+                deviceManufacturer = {
+                    AppleEventCode = "pMan";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                deviceModel = {
+                    AppleEventCode = "pMod";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<Long>";
+                };
+                renderingIntent = {
+                    AppleEventCode = "pRdr";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<RenderingIntents>";
+                };
+                creator = {
+                    AppleEventCode = "pCre";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                location = {
+                    AppleEventCode = "pLoc";
+                    ReadOnly = "YES";
+                    Type = "DiskFolderFile.Alias";
+                };
+            };
+        };
+        Display = {
+            AppleEventCode = "disp";
+            Superclass = "NSCoreSuite.AbstractObject";
+            Attributes = {
+                name = {
+                    AppleEventCode = "pnam";
+                    ReadOnly = "YES";
+                    Type = "NSString";
+                };
+                number = {
+                    AppleEventCode = "mNum";
+                    ReadOnly = "YES";
+                    Type = "NSNumber<UnsignedLong>";
+                };
+                displayProfile = {
+                    AppleEventCode = "mPrf";
+                    ReadOnly = "YES";
+                    Type = "Image.Profile";
+                };
+            };
+        };
+    }; 
+	Enumerations = {
+        FileTypes = {
+            AppleEventCode = "typz";
+            Enumerators = {
+				BMP = "BMPf";
+				GIF = "GIF ";
+				JPEG = "JPEG";
+				JPEG2 = "jpg2";
+				MacPaint = "PNTG";
+				Photoshop = "8BPS";
+				PDF = "PDF ";
+				PICT = "PICT";
+				PNG = "PNGf";
+				PSD = "psd ";
+				QuickTimeImage = "qtif";
+				SGI = ".SGI";
+				Text = "TEXT";
+				TIFF = "TIFF";
+				TGA = "tga ";
+			};
+        };
+        SaveFileTypes = {
+            AppleEventCode = "typv";
+            Enumerators = {
+				BMP = "BMPf";
+				JPEG = "JPEG";
+				JPEG2 = "jpg2";
+				PICT = "PICT";
+				PNG = "PNGf";
+				PSD = "psd ";
+				QuickTimeImage = "qtif";
+				TIFF = "TIFF";
+			};
+        };
+        BitDepths = {
+            AppleEventCode = "bitz";
+            Enumerators = {
+				best = "best";
+				blackAndWhite = "b&w ";
+				color = "colr";
+				grayscale = "gray";
+				fourGrays = "4gry";
+				fourColors = "4clr";
+				sixteenGrays = "16gr";
+				sixteenColors = "16cl";
+				twoHundredFiftySixGrays = "256g";
+				twoHundredFiftySixColors = "256c";
+				thousandsOfColors = "thou";
+				millionsOfColors = "mill";
+				millionsOfColorsPlus = "mil+";
+			};
+        };
+        Qualities = {
+            AppleEventCode = "qual";
+            Enumerators = {
+				least = "leas";
+				low = "low ";
+				medium = "medi";
+				high = "high";
+				best = "best";
+			};
+        };
+        RenderingIntents = {
+            AppleEventCode = "pRdr";
+            Enumerators = {
+				perceptual = "Rdr0";
+				relativeColorimetric = "Rdr1";
+				saturation = "Rdr2";
+				absoluteColorimetric = "Rdr3";
+			};
+        };
+        ProfileQualities = {
+            AppleEventCode = "pQua";
+            Enumerators = {
+				normal = "Qua0";
+				draft = "Qua1";
+				best = "Qua2";
+			};
+        };
+        DeviceClasses = {
+            AppleEventCode = "pCla";
+            Enumerators = {
+				monitor = "mntr";
+				input = "scnr";
+				output = "prtr";
+				link = "link";
+				abstract = "abst";
+				colorspace = "spac";
+				named = "nmcl";
+			};
+        };
+		ColorSpaces = {
+            AppleEventCode = "pSpc";
+            Enumerators = {
+				rgb = "RGB ";
+				cmyk = "CMYK";
+				lab = "Lab ";
+				xyz = "XYZ ";
+				gray = "GRAY";
+				fiveChannel = "MCH5";
+				sixChannel = "MCH6";
+				sevenChannel = "MCH7";
+				eightChannel = "MCH8";
+				fiveColor = "5CLR";
+				sixColor = "6CLR";
+				sevenColor = "7CLR";
+				eightColor = "8CLR";
+				named = "NAME";
+			};
+        };
+		ConnectionSpaces = {
+            AppleEventCode = "pPCS";
+            Enumerators = {
+				lab = "Lab ";
+				xyz = "XYZ ";
+			};
+        };
+		SaveOptions = {
+            AppleEventCode = "savo";
+            Enumerators = {
+				No = "no  ";
+				Yes = "yes ";
+			};
+        };
+		CompressionLevels = {
+            AppleEventCode = "cmlv";
+            Enumerators = {
+				Low = "low ";
+				Medium = "medi";
+				High = "high";
+			};
+        };
+    };
+}

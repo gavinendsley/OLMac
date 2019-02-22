@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Migrate_How</key>
+	<dict>
+	</dict>
+	<key>mbAltNextPage</key>
+	<string>Migrate_Customize</string>
+	<key>nextPage</key>
+	<string>Migrate_How2</string>
+</dict>
+</plist>

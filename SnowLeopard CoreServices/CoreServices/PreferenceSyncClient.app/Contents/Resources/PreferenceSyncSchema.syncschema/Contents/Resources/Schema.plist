@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ConflictResolverClass</key>
+	<string>PreferencesConflictResolver</string>
+	<key>DataClasses</key>
+	<array>
+		<dict>
+			<key>Category</key>
+			<string>Application Settings</string>
+			<key>ImagePath</key>
+			<string>com.apple.Preferences.icns</string>
+			<key>Name</key>
+			<string>com.apple.Preferences</string>
+		</dict>
+	</array>
+	<key>Entities</key>
+	<array>
+		<dict>
+			<key>Attributes</key>
+			<array>
+				<dict>
+					<key>Name</key>
+					<string>domainName</string>
+					<key>Type</key>
+					<string>string</string>
+				</dict>
+			</array>
+			<key>Comment</key>
+			<string>Preference Domain</string>
+			<key>DataClass</key>
+			<string>com.apple.Preferences</string>
+			<key>ExcludeFromDataChangeAlert</key>
+			<true/>
+			<key>IdentityProperties</key>
+			<array>
+				<string>domainName</string>
+			</array>
+			<key>Name</key>
+			<string>com.apple.preferences.Domain</string>
+		</dict>
+		<dict>
+			<key>Attributes</key>
+			<array>
+				<dict>
+					<key>Name</key>
+					<string>name</string>
+					<key>Type</key>
+					<string>string</string>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>domainName</string>
+					<key>Type</key>
+					<string>string</string>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>value</string>
+					<key>Type</key>
+					<string>array</string>
+				</dict>
+			</array>
+			<key>Comment</key>
+			<string>Preference setting</string>
+			<key>DataClass</key>
+			<string>com.apple.Preferences</string>
+			<key>ExcludeFromDataChangeAlert</key>
+			<true/>
+			<key>IdentityProperties</key>
+			<array>
+				<string>name</string>
+				<string>domainName</string>
+			</array>
+			<key>Name</key>
+			<string>com.apple.preferences.Preference</string>
+		</dict>
+	</array>
+	<key>Name</key>
+	<string>com.apple.Preferences</string>
+	<key>MajorVersion</key>
+	<integer>1</integer>
+	<key>MinorVersion</key>
+	<integer>1</integer>
+	<key>UIHelperClass</key>
+	<string>PreferencesUIHelper</string>
+</dict>
+</plist>

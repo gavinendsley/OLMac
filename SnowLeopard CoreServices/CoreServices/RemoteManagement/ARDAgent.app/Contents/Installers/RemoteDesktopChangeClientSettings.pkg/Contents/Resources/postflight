@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+
+# ARGV[0] = Path to package being installed 
+# ARGV[1] = Destination path of where package is being installed
+# ARGV[2] = Mountpoint of the destination volume
+# ARGV[3] = Path to the directory containing the System folder that contains the active Installation framework. 
+
+## Process "*_actions" scripts e.g. postflight_actions
+
+$0 =~ m/.*\/(.*)$/;
+my $stage = $1;
+my $actionsDir = $ARGV[0] . "/Contents/Resources/" . $stage . "_actions/";
+
+exit 0 unless -d $actionsDir;
+
+my $actionResult = 0;
+
+foreach my $action (`/bin/ls \"$actionsDir\"`) {
+	chomp($action);
+	system($actionsDir . $action, $ARGV[0], $ARGV[1], $ARGV[2], $ARGV[3]);
+	$actionResult = ($? << 8);
+}
+
+exit(0);

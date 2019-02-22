@@ -1,0 +1,37 @@
+#!/bin/sh
+
+##
+# Start the Network Assistant Helper which launches the agent
+##
+
+. /etc/rc.common
+
+StartService ()
+{
+    if [ $( /usr/bin/sw_vers -productVersion ) \< "10.5" ]; then
+        if [ "${ARDAGENT:=-NO-}" = "-YES-" ]; then
+            '/System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Support/ARDHelper'
+        fi
+    fi
+}
+StopService ()
+{
+    if [ $( sw_vers -productVersion ) \< "10.5" ]; then
+        '/System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart' -stop
+    fi
+	return 0
+}
+RestartService ()
+{
+	StopService
+	StartService
+}
+
+## Puma compatible way to start up...
+if [ $( /usr/bin/sw_vers -productVersion ) \< "10.5" ]; then
+    if typeset -f RunService > /dev/null; then
+        RunService "$1"
+    else
+        StartService
+    fi
+fi

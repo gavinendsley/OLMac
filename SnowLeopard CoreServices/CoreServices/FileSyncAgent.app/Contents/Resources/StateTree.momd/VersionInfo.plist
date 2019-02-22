@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSManagedObjectModel_CurrentVersionName</key>
+	<string>StateTree-v2</string>
+	<key>NSManagedObjectModel_VersionHashes</key>
+	<dict>
+		<key>StateTree-v2</key>
+		<dict>
+			<key>SNode</key>
+			<data>
+			QSDTP1juuXXCiiOG3GpeiVALv0fHKeTayBGRUWI8MII=
+			</data>
+			<key>SNodeHistory</key>
+			<data>
+			GR5W86S0TKiVTZq9xt4SFfOc3JXUZibtlPuDOkJtpBk=
+			</data>
+			<key>SPersistentStoreID</key>
+			<data>
+			PGZvfS7/SzBFl/a3EIMZXjkqoj1GwLxOHCqU65KM8Aw=
+			</data>
+			<key>SRootNode</key>
+			<data>
+			wH+9WrUS5GAFBzeD65Rv/zkP7e+sb7Xn4oDYFv6Nqr8=
+			</data>
+			<key>SStore</key>
+			<data>
+			iKyzKjYYVVjw9G2dnSuMbzAfw40s2tFaAROKyP4pC+I=
+			</data>
+			<key>SStore_FS</key>
+			<data>
+			dDsJB1P5EZ2BG43j7Gi3FT7MYvGgJHsVktM6kNELaBc=
+			</data>
+			<key>SStore_FS_PHD</key>
+			<data>
+			LZNlNvIwIqZG7NCqO2bVsE/wlCdXFq3UmnU1VjLWjQ4=
+			</data>
+			<key>SStore_iDisk</key>
+			<data>
+			HTKANyHQLYTB2mWHuKJGTwvX3SreLSyYhJBJJmB4/8E=
+			</data>
+			<key>SVersionVector</key>
+			<data>
+			Ye1NW6Ub9wFeEGVduhJZZFPUVlVSfabRmVaOpIKDNhE=
+			</data>
+		</dict>
+	</dict>
+</dict>
+</plist>

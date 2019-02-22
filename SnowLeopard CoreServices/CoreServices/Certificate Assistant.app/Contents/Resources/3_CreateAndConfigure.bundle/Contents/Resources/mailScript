@@ -1,0 +1,24 @@
+(*
+Create New Invitation CA Email Message From Certificate Assistant
+
+	1st tag = subject
+	2nd tag = body
+	3rd tag = attachment path name
+
+Copyright © 2004 Apple Computer, Inc.
+
+*)
+
+tell application "Mail"
+	set newMessage to make new outgoing message with properties {subject:"%@", content:"%@" & return & return}
+	tell newMessage to make new to recipient with properties {address:"%@" &return}
+	tell newMessage
+		set visible to true
+		tell content
+				-- Position must be specified for attachments
+				make new attachment with properties {file name:"%@"} at after the last paragraph
+		end tell
+	end tell
+	-- Bring the new compose window to the foreground.
+	activate
+end tell

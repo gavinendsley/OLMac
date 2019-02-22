@@ -1,0 +1,57 @@
+{
+    Name = "Database Suite"; 
+    Description = "Terms and Events for controlling databases";
+    
+    Classes = {
+        Database = {
+            Name = "database";
+            PluralName = "databases"; 
+            Description = "A collection of records, residing at a location in the file system"; 
+            Attributes = {
+                name = {
+                    Name = "name";
+                    Description = "the name of the database";
+                };
+                location = {
+                    Name = "location";
+                    Description = "the folder that contains the database";
+                };
+            };
+        };
+        Record = {
+            Name = "record";
+            PluralName = "records"; 
+            Description = "A collection of fields, residing in a database"; 
+            Attributes = {
+                uniqueID = {
+                    Name = "id";
+                    Description = "the unique id of the record";
+                };
+                name = {
+                    Name = "name";
+                    Description = "the name of the record, equivalent to the value of the field named \"name\"";
+                };
+            };
+        };
+        Field = {
+            Name = "field";
+            PluralName = "fields"; 
+            Description = "A named piece of data, residing in a record"; 
+            Attributes = {
+                uniqueID = {
+                    Name = "id";
+                    Description = "the unique id of the field";
+                };
+                name = {
+                    Name = "name";
+                    Description = "the name of the field";
+                };
+                value = {
+                    Name = "value";
+                    Description = "the value of the field";
+                };
+            };
+        };
+    };
+}
+

@@ -1,0 +1,17 @@
+#!/usr/bin/perl
+
+$0 =~ m/.*\/(.*)$/;
+my $stage = $1;
+my $actionsDir = $ARGV[0] . "/Contents/Resources/" . $stage . "_actions/";
+
+my $actionResult = 0;
+
+exit 0 unless -d $actionsDir;
+
+foreach my $action (`/bin/ls \"$actionsDir\"`) {
+	chomp($action);
+	system($actionsDir . $action, $ARGV[0], $ARGV[1], $ARGV[2], $ARGV[3]);
+	$actionResult = ($? << 8);
+}
+
+exit(0);

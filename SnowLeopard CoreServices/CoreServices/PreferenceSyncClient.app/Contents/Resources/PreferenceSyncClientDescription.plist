@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DisplayName</key>
+	<string>Preferences</string>
+	<key>ImagePath</key>
+	<string>PreferenceSyncClient.icns</string>
+	<key>SyncsWith</key>
+	<dict>
+		<key>SyncAlertToolPath</key>
+		<string>/System/Library/CoreServices/PreferenceSyncClient.app/Contents/MacOS/PreferenceSyncClient</string>
+		<key>SyncAlertTypes</key>
+		<array>
+			<string>app</string>
+			<string>peer</string>
+			<string>server</string>
+		</array>
+	</dict>
+	<key>Type</key>
+	<string>app</string>
+    <key>Entities</key>
+	<dict>
+		<key>com.apple.preferences.Domain</key>
+		<array>
+			<string>com.apple.syncservices.RecordEntityName</string>
+			<string>domainName</string>
+        </array>
+		<key>com.apple.preferences.Preference</key>
+		<array>
+			<string>com.apple.syncservices.RecordEntityName</string>
+			<string>name</string>
+			<string>domainName</string>
+			<string>value</string>
+        </array>
+    </dict>
+</dict>
+</plist>
